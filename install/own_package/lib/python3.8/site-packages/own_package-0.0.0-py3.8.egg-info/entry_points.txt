@@ -1,0 +1,3 @@
+[console_scripts]
+image_subscriber = own_package.image_subscriber:main
+

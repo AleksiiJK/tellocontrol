@@ -1,0 +1,24 @@
+[0.772s] Invoking command in '/home/eeavir/drone_ws/src/own_package': PYTHONPATH=/home/eeavir/drone_ws/build/own_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/own_package build --build-base /home/eeavir/drone_ws/build/own_package/build install --record /home/eeavir/drone_ws/build/own_package/install.log --single-version-externally-managed install_data
+[0.951s] running egg_info
+[0.951s] writing ../../build/own_package/own_package.egg-info/PKG-INFO
+[0.951s] writing dependency_links to ../../build/own_package/own_package.egg-info/dependency_links.txt
+[0.951s] writing entry points to ../../build/own_package/own_package.egg-info/entry_points.txt
+[0.951s] writing requirements to ../../build/own_package/own_package.egg-info/requires.txt
+[0.951s] writing top-level names to ../../build/own_package/own_package.egg-info/top_level.txt
+[0.982s] reading manifest file '../../build/own_package/own_package.egg-info/SOURCES.txt'
+[0.982s] writing manifest file '../../build/own_package/own_package.egg-info/SOURCES.txt'
+[0.982s] running build
+[0.982s] running build_py
+[0.982s] copying own_package/image_subscriber.py -> /home/eeavir/drone_ws/build/own_package/build/lib/own_package
+[0.983s] running install
+[0.983s] running install_lib
+[0.984s] copying /home/eeavir/drone_ws/build/own_package/build/lib/own_package/image_subscriber.py -> /home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages/own_package
+[0.984s] byte-compiling /home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages/own_package/image_subscriber.py to image_subscriber.cpython-38.pyc
+[0.985s] running install_data
+[0.985s] running install_egg_info
+[0.987s] removing '/home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info' (and everything under it)
+[0.987s] Copying ../../build/own_package/own_package.egg-info to /home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info
+[0.987s] running install_scripts
+[1.001s] Installing image_subscriber script to /home/eeavir/drone_ws/install/own_package/lib/own_package
+[1.002s] writing list of installed files to '/home/eeavir/drone_ws/build/own_package/install.log'
+[1.031s] Invoked command in '/home/eeavir/drone_ws/src/own_package' returned '0': PYTHONPATH=/home/eeavir/drone_ws/build/own_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/own_package build --build-base /home/eeavir/drone_ws/build/own_package/build install --record /home/eeavir/drone_ws/build/own_package/install.log --single-version-externally-managed install_data

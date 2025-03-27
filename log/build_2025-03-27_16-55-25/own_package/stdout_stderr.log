@@ -1,0 +1,22 @@
+running egg_info
+writing ../../build/own_package/own_package.egg-info/PKG-INFO
+writing dependency_links to ../../build/own_package/own_package.egg-info/dependency_links.txt
+writing entry points to ../../build/own_package/own_package.egg-info/entry_points.txt
+writing requirements to ../../build/own_package/own_package.egg-info/requires.txt
+writing top-level names to ../../build/own_package/own_package.egg-info/top_level.txt
+reading manifest file '../../build/own_package/own_package.egg-info/SOURCES.txt'
+writing manifest file '../../build/own_package/own_package.egg-info/SOURCES.txt'
+running build
+running build_py
+copying own_package/image_subscriber.py -> /home/eeavir/drone_ws/build/own_package/build/lib/own_package
+running install
+running install_lib
+copying /home/eeavir/drone_ws/build/own_package/build/lib/own_package/image_subscriber.py -> /home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages/own_package
+byte-compiling /home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages/own_package/image_subscriber.py to image_subscriber.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/own_package/own_package.egg-info to /home/eeavir/drone_ws/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info
+running install_scripts
+Installing image_subscriber script to /home/eeavir/drone_ws/install/own_package/lib/own_package
+writing list of installed files to '/home/eeavir/drone_ws/build/own_package/install.log'
