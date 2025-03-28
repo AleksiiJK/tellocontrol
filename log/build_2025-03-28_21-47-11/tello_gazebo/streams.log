@@ -1,0 +1,207 @@
+[0.011s] Invoking command in '/home/eeavir/tellocontrol/build/tello_gazebo': CMAKE_PREFIX_PATH=/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic LD_LIBRARY_PATH=/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo -DCMAKE_INSTALL_PREFIX=/home/eeavir/tellocontrol/install/tello_gazebo
+[0.049s] -- The C compiler identification is GNU 9.4.0
+[0.085s] -- The CXX compiler identification is GNU 9.4.0
+[0.088s] -- Check for working C compiler: /usr/bin/cc
+[0.135s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.136s] -- Detecting C compiler ABI info
+[0.184s] -- Detecting C compiler ABI info - done
+[0.191s] -- Detecting C compile features
+[0.192s] -- Detecting C compile features - done
+[0.193s] -- Check for working CXX compiler: /usr/bin/c++
+[0.248s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.249s] -- Detecting CXX compiler ABI info
+[0.306s] -- Detecting CXX compiler ABI info - done
+[0.313s] -- Detecting CXX compile features
+[0.314s] -- Detecting CXX compile features - done
+[0.315s] -- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)
+[0.332s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.332s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.389s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+[0.392s] -- Checking for module 'bullet>=2.82'
+[0.402s] --   Found bullet, version 2.88
+[0.480s] -- Found ccd: /usr/include (found suitable version "2.0", minimum required is "2.0") 
+[0.520s] -- Found fcl: /usr/include (found suitable version "0.5.0", minimum required is "0.3.2") 
+[0.557s] -- Found assimp: /usr/include (found version "5.0.0") 
+[0.571s] -- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+[0.777s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found suitable version "1.71.0", minimum required is "1.40.0") found components: thread system filesystem program_options regex iostreams date_time 
+[0.792s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread (found version "3.6.1") 
+[0.794s] -- Looking for ignition-math6 -- found version 6.15.1
+[0.798s] -- Searching for dependencies of ignition-math6
+[0.800s] -- Looking for OGRE...
+[0.800s] -- OGRE_PREFIX_WATCH changed.
+[0.804s] -- Checking for module 'OGRE'
+[0.814s] --   Found OGRE, version 1.9.0
+[0.838s] -- Found Ogre Ghadamon (1.9.0)
+[0.843s] -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+[0.850s] -- Looking for OGRE_Paging...
+[0.855s] -- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+[0.855s] -- Looking for OGRE_Terrain...
+[0.858s] -- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+[0.859s] -- Looking for OGRE_Property...
+[0.862s] -- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+[0.862s] -- Looking for OGRE_RTShaderSystem...
+[0.866s] -- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+[0.866s] -- Looking for OGRE_Volume...
+[0.870s] -- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+[0.870s] -- Looking for OGRE_Overlay...
+[0.874s] -- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+[0.950s] -- Looking for ignition-math6 -- found version 6.15.1
+[0.951s] -- Looking for ignition-transport8 -- found version 8.3.0
+[0.951s] -- Searching for dependencies of ignition-transport8
+[0.964s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread (found suitable version "3.6.1", minimum required is "3") 
+[0.971s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[0.974s] -- Checking for module 'libzmq >= 4'
+[0.984s] --   Found libzmq , version 4.3.2
+[1.010s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[1.014s] -- Checking for module 'uuid'
+[1.024s] --   Found uuid, version 2.34.0
+[1.049s] -- Found UUID: TRUE  
+[1.050s] -- Looking for ignition-msgs5 -- found version 5.10.0
+[1.051s] -- Searching for dependencies of ignition-msgs5
+[1.064s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.068s] -- Checking for module 'tinyxml2'
+[1.078s] --   Found tinyxml2, version 6.2.0
+[1.105s] -- Looking for ignition-msgs5 -- found version 5.10.0
+[1.106s] -- Looking for ignition-common3 -- found version 3.14.2
+[1.106s] -- Searching for dependencies of ignition-common3
+[1.106s] -- Looking for dlfcn.h - found
+[1.107s] -- Looking for libdl - found
+[1.108s] -- Found DL: TRUE  
+[1.114s] -- Searching for <ignition-common3> component [graphics]
+[1.115s] -- Looking for ignition-common3-graphics -- found version 3.14.2
+[1.115s] -- Searching for dependencies of ignition-common3-graphics
+[1.115s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.117s] -- Looking for ignition-fuel_tools4 -- found version 4.6.0
+[1.117s] -- Searching for dependencies of ignition-fuel_tools4
+[1.167s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.68.0")  
+[1.172s] -- Checking for module 'jsoncpp'
+[1.183s] --   Found jsoncpp, version 1.7.4
+[1.209s] -- Found JSONCPP: TRUE  
+[1.213s] -- Checking for module 'libzip'
+[1.224s] --   Found libzip, version 1.5.1
+[1.248s] -- Found ZIP: TRUE  
+[1.248s] -- Looking for ignition-common3 -- found version 3.14.2
+[1.249s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.249s] -- Looking for ignition-msgs5 -- found version 5.10.0
+[1.251s] -- Found gazebo_dev: 3.5.2 (/opt/ros/galactic/share/gazebo_dev/cmake)
+[1.251s] -- Gazebo version: 11.11
+[1.252s] -- Found gazebo_ros: 3.5.2 (/opt/ros/galactic/share/gazebo_ros/cmake)
+[1.283s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.288s] -- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+[1.370s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.408s] -- Found FastRTPS: /opt/ros/galactic/include  
+[1.572s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.657s] -- Found rmw_implementation_cmake: 3.3.1 (/opt/ros/galactic/share/rmw_implementation_cmake/cmake)
+[1.662s] -- Found rmw_cyclonedds_cpp: 0.22.6 (/opt/ros/galactic/share/rmw_cyclonedds_cpp/cmake)
+[1.689s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[1.692s] -- Found Threads: TRUE  
+[1.937s] -- Found geometry_msgs: 2.2.4 (/opt/ros/galactic/share/geometry_msgs/cmake)
+[1.986s] -- Found sensor_msgs: 2.2.4 (/opt/ros/galactic/share/sensor_msgs/cmake)
+[2.086s] -- Found tello_msgs: 0.1.0 (/home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake)
+[2.325s] -- Configuring done
+[2.361s] -- Generating done
+[2.377s] -- Build files have been written to: /home/eeavir/tellocontrol/build/tello_gazebo
+[2.398s] Invoked command in '/home/eeavir/tellocontrol/build/tello_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic LD_LIBRARY_PATH=/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo -DCMAKE_INSTALL_PREFIX=/home/eeavir/tellocontrol/install/tello_gazebo
+[2.399s] Invoking command in '/home/eeavir/tellocontrol/build/tello_gazebo': CMAKE_PREFIX_PATH=/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic LD_LIBRARY_PATH=/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/eeavir/tellocontrol/build/tello_gazebo -- -j8 -l8
+[2.544s] [35m[1mScanning dependencies of target TelloPlugin[0m
+[2.820s] [ 50%] [32mBuilding CXX object CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o[0m
+[20.974s] [100%] [32m[1mLinking CXX shared library libTelloPlugin.so[0m
+[21.526s] [100%] Built target TelloPlugin
+[21.534s] Invoked command in '/home/eeavir/tellocontrol/build/tello_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic LD_LIBRARY_PATH=/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/eeavir/tellocontrol/build/tello_gazebo -- -j8 -l8
+[21.536s] Invoking command in '/home/eeavir/tellocontrol/build/tello_gazebo': CMAKE_PREFIX_PATH=/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic LD_LIBRARY_PATH=/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /home/eeavir/tellocontrol/build/tello_gazebo
+[21.542s] -- Install configuration: ""
+[21.542s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/lib/libTelloPlugin.so
+[21.546s] -- Set runtime path of "/home/eeavir/tellocontrol/install/tello_gazebo/lib/libTelloPlugin.so" to ""
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_red
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_red/model.sdf
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_red/square_gate.dae
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_red/model.config
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_blue
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_blue/model.sdf
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_blue/circle_gate.dae
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_blue/model.config
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_red
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_red/model.sdf
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_red/circle_gate.dae
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_red/model.config
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green/model.sdf
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green/square_gate.dae
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green/model.config
+[21.547s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green/model.sdf
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green/circle_gate.dae
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green/model.config
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_tall
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_tall/model.sdf
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_tall/square_gate_tall.dae
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_tall/model.config
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/textures
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/textures/StopSign_Diffuse.png
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/textures/StopSign_Spec.png
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/scripts
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/scripts/stopsign.material
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/meshes
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/meshes/stop_sign.dae
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/model.sdf
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/model-1_3.sdf
+[21.548s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/model.config
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/model-1_4.sdf
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_blue
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_blue/model.sdf
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_blue/square_gate.dae
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_blue/model.config
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_short
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_short/circle_gate_short.dae
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_short/model.sdf
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_short/model.config
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_short
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_short/square_gate_short.dae
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_short/model.sdf
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_short/model.config
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_tall
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_tall/circle_gate_tall.dae
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_tall/model.sdf
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_tall/model.config
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet/meshes
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet/meshes/pallet.dae
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet/model.sdf
+[21.549s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet/model.config
+[21.550s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane
+[21.550s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials
+[21.550s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials/textures
+[21.550s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials/textures/tarmac.png
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials/scripts
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials/scripts/asphalt.material
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/model.sdf
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/model.config
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/model-1_4.sdf
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/worlds
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/worlds/simple.world
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/worlds/demo_track.world
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch/__pycache__
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch/__pycache__/vlam_launch.cpython-38.pyc
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch/simple_launch.py
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch/demo_track_launch.py
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/lib/tello_gazebo/inject_entity.py
+[21.551s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/ament_index/resource_index/package_run_dependencies/tello_gazebo
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/ament_index/resource_index/parent_prefix_path/tello_gazebo
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/environment/ament_prefix_path.sh
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/environment/ament_prefix_path.dsv
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/environment/path.sh
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/environment/path.dsv
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/local_setup.bash
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/local_setup.sh
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/local_setup.zsh
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/local_setup.dsv
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/package.dsv
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/ament_index/resource_index/packages/tello_gazebo
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/cmake/tello_gazeboConfig.cmake
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/cmake/tello_gazeboConfig-version.cmake
+[21.552s] -- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/package.xml
+[21.554s] Invoked command in '/home/eeavir/tellocontrol/build/tello_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic LD_LIBRARY_PATH=/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /home/eeavir/tellocontrol/build/tello_gazebo
