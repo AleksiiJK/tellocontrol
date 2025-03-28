@@ -1,8 +1,8 @@
 {
   "package_name": "tello_msgs",
   "non_idl_tuples": [
-    "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_msgs:msg/FlightData.msg",
-    "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_msgs:msg/TelloResponse.msg",
-    "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_msgs:srv/TelloAction.srv"
+    "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_msgs:msg/FlightData.msg",
+    "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_msgs:msg/TelloResponse.msg",
+    "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_msgs:srv/TelloAction.srv"
   ]
 }

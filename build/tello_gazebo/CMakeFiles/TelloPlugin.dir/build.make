@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo
+CMAKE_SOURCE_DIR = /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_gazebo
+CMAKE_BINARY_DIR = /home/eeavir/tellocontrol/build/tello_gazebo
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TelloPlugin.dir/depend.make
@@ -58,17 +58,17 @@ include CMakeFiles/TelloPlugin.dir/progress.make
 include CMakeFiles/TelloPlugin.dir/flags.make
 
 CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o: CMakeFiles/TelloPlugin.dir/flags.make
-CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o: /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eeavir/drone_ws/build/tello_gazebo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o -c /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp
+CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o: /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eeavir/tellocontrol/build/tello_gazebo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o -c /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp
 
 CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp > CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp > CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.i
 
 CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp -o CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp -o CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.s
 
 # Object files for target TelloPlugin
 TelloPlugin_OBJECTS = \
@@ -84,10 +84,10 @@ libTelloPlugin.so: /opt/ros/galactic/lib/libgeometry_msgs__rosidl_typesupport_c.
 libTelloPlugin.so: /opt/ros/galactic/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
 libTelloPlugin.so: /opt/ros/galactic/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
 libTelloPlugin.so: /opt/ros/galactic/lib/librclcpp.so
-libTelloPlugin.so: /home/eeavir/drone_ws/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_introspection_c.so
-libTelloPlugin.so: /home/eeavir/drone_ws/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_c.so
-libTelloPlugin.so: /home/eeavir/drone_ws/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_introspection_cpp.so
-libTelloPlugin.so: /home/eeavir/drone_ws/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_cpp.so
+libTelloPlugin.so: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_introspection_c.so
+libTelloPlugin.so: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_c.so
+libTelloPlugin.so: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_introspection_cpp.so
+libTelloPlugin.so: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_cpp.so
 libTelloPlugin.so: /opt/ros/galactic/lib/libgazebo_ros_node.so
 libTelloPlugin.so: /opt/ros/galactic/lib/libgazebo_ros_utils.so
 libTelloPlugin.so: /opt/ros/galactic/lib/libgazebo_ros_init.so
@@ -180,7 +180,7 @@ libTelloPlugin.so: /opt/ros/galactic/lib/libyaml.so
 libTelloPlugin.so: /opt/ros/galactic/lib/librmw.so
 libTelloPlugin.so: /opt/ros/galactic/lib/librosgraph_msgs__rosidl_generator_c.so
 libTelloPlugin.so: /opt/ros/galactic/lib/libstatistics_msgs__rosidl_generator_c.so
-libTelloPlugin.so: /home/eeavir/drone_ws/install/tello_msgs/lib/libtello_msgs__rosidl_generator_c.so
+libTelloPlugin.so: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_generator_c.so
 libTelloPlugin.so: /opt/ros/galactic/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
 libTelloPlugin.so: /opt/ros/galactic/lib/libstd_msgs__rosidl_generator_c.so
 libTelloPlugin.so: /opt/ros/galactic/lib/libstd_msgs__rosidl_typesupport_c.so
@@ -220,7 +220,7 @@ libTelloPlugin.so: /usr/lib/x86_64-linux-gnu/libignition-common3.so.3.14.2
 libTelloPlugin.so: /usr/lib/x86_64-linux-gnu/libuuid.so
 libTelloPlugin.so: /usr/lib/x86_64-linux-gnu/libuuid.so
 libTelloPlugin.so: CMakeFiles/TelloPlugin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eeavir/drone_ws/build/tello_gazebo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libTelloPlugin.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eeavir/tellocontrol/build/tello_gazebo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libTelloPlugin.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TelloPlugin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -233,6 +233,6 @@ CMakeFiles/TelloPlugin.dir/clean:
 .PHONY : CMakeFiles/TelloPlugin.dir/clean
 
 CMakeFiles/TelloPlugin.dir/depend:
-	cd /home/eeavir/drone_ws/build/tello_gazebo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo /home/eeavir/drone_ws/build/tello_gazebo /home/eeavir/drone_ws/build/tello_gazebo /home/eeavir/drone_ws/build/tello_gazebo/CMakeFiles/TelloPlugin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eeavir/tellocontrol/build/tello_gazebo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo /home/eeavir/tellocontrol/build/tello_gazebo /home/eeavir/tellocontrol/build/tello_gazebo /home/eeavir/tellocontrol/build/tello_gazebo/CMakeFiles/TelloPlugin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/TelloPlugin.dir/depend
 

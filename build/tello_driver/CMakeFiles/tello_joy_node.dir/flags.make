@@ -6,5 +6,5 @@ CXX_FLAGS =  -pthread -Wno-deprecated-declarations -fPIC   -std=gnu++17
 
 CXX_DEFINES = -DCOMPOSITION_BUILDING_DLL -DDEFAULT_RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -Dtello_joy_node_EXPORTS
 
-CXX_INCLUDES = -I/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/include -I/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/h264decoder -isystem /home/eeavir/drone_ws/install/tello_msgs/include -isystem /opt/ros/galactic/include 
+CXX_INCLUDES = -I/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/include -I/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/h264decoder -isystem /home/eeavir/tellocontrol/install/tello_msgs/include -isystem /opt/ros/galactic/include 
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_msgs
+CMAKE_SOURCE_DIR = /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_msgs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_msgs
+CMAKE_BINARY_DIR = /home/eeavir/tellocontrol/build/tello_msgs
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(CMAKE_COMMAND) -E cmake_progress_start /home/eeavir/drone_ws/build/tello_msgs/CMakeFiles /home/eeavir/drone_ws/build/tello_msgs/tello_msgs__py/CMakeFiles/progress.marks
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eeavir/drone_ws/build/tello_msgs/CMakeFiles 0
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(CMAKE_COMMAND) -E cmake_progress_start /home/eeavir/tellocontrol/build/tello_msgs/CMakeFiles /home/eeavir/tellocontrol/build/tello_msgs/tello_msgs__py/CMakeFiles/progress.marks
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eeavir/tellocontrol/build/tello_msgs/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/clean
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/preinstall
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/preinstall
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tello_msgs__py/CMakeFiles/tello_msgs__py.dir/rule:
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/CMakeFiles/tello_msgs__py.dir/rule
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(MAKE) -f CMakeFiles/Makefile2 tello_msgs__py/CMakeFiles/tello_msgs__py.dir/rule
 .PHONY : tello_msgs__py/CMakeFiles/tello_msgs__py.dir/rule
 
 # Convenience name for target.
@@ -179,7 +179,7 @@ tello_msgs__py: tello_msgs__py/CMakeFiles/tello_msgs__py.dir/rule
 
 # fast build rule for target.
 tello_msgs__py/fast:
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(MAKE) -f tello_msgs__py/CMakeFiles/tello_msgs__py.dir/build.make tello_msgs__py/CMakeFiles/tello_msgs__py.dir/build
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(MAKE) -f tello_msgs__py/CMakeFiles/tello_msgs__py.dir/build.make tello_msgs__py/CMakeFiles/tello_msgs__py.dir/build
 .PHONY : tello_msgs__py/fast
 
 # Help Target
@@ -207,6 +207,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

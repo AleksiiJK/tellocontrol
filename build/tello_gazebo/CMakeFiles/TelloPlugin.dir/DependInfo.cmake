@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp" "/home/eeavir/drone_ws/build/tello_gazebo/CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o"
+  "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/src/tello_plugin.cpp" "/home/eeavir/tellocontrol/build/tello_gazebo/CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -29,7 +29,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/include"
+  "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/include"
   "/usr/include/gazebo-11"
   "/usr/include/bullet"
   "/usr/include/sdformat-9.8"
@@ -43,7 +43,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/ignition/msgs5"
   "/usr/include/ignition/common3"
   "/usr/include/ignition/fuel_tools4"
-  "/home/eeavir/drone_ws/install/tello_msgs/include"
+  "/home/eeavir/tellocontrol/install/tello_msgs/include"
   "/usr/include/eigen3"
   "/usr/include/sdformat-9.8/sdf/.."
   "/usr/include/ignition/cmake2"

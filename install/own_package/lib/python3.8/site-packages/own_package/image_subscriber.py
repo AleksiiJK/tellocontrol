@@ -13,7 +13,7 @@ class ImageSubscriber(Node):
         qos_profile = QoSProfile(
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=10,
-            reliability=QoSReliabilityPolicy.BEST_EFFORT  # Change to BEST_EFFORT if needed
+            reliability=QoSReliabilityPolicy.BEST_EFFORT  # Change to BEST_EFFORT as it is used by publisher
         )
 
         # Create a subscription with the custom QoS profile

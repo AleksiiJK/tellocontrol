@@ -6,5 +6,5 @@ CXX_FLAGS =  -pthread -Wno-deprecated-declarations   -std=gnu++17
 
 CXX_DEFINES = -DASIO_HAS_STD_CHRONO -DASIO_STANDALONE -DDEFAULT_RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -DRCUTILS_ENABLE_FAULT_INJECTION
 
-CXX_INCLUDES = -I/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/include -I/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/h264decoder -I/home/eeavir/drone_ws/install/ros2_shared/include -I/opt/ros/galactic/opt/yaml_cpp_vendor/include -isystem /home/eeavir/drone_ws/install/tello_msgs/include -isystem /opt/ros/galactic/include -isystem /usr/include/opencv4 
+CXX_INCLUDES = -I/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/include -I/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/h264decoder -I/home/eeavir/tellocontrol/install/ros2_shared/include -I/opt/ros/galactic/opt/yaml_cpp_vendor/include -isystem /home/eeavir/tellocontrol/install/tello_msgs/include -isystem /opt/ros/galactic/include -isystem /usr/include/opencv4 
 

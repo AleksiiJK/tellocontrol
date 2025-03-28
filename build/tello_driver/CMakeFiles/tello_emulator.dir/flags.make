@@ -6,5 +6,5 @@ CXX_FLAGS =  -pthread -Wno-deprecated-declarations   -std=gnu++14
 
 CXX_DEFINES = -DASIO_HAS_STD_CHRONO -DASIO_STANDALONE
 
-CXX_INCLUDES = -I/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/include -I/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/h264decoder 
+CXX_INCLUDES = -I/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/include -I/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/h264decoder 
 

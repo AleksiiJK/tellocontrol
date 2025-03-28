@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_msgs
+CMAKE_SOURCE_DIR = /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_msgs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_msgs
+CMAKE_BINARY_DIR = /home/eeavir/tellocontrol/build/tello_msgs
 
 # Utility rule file for tello_msgs__cpp.
 
@@ -117,8 +117,8 @@ rosidl_generator_cpp/tello_msgs/msg/flight_data.hpp: /opt/ros/galactic/share/std
 rosidl_generator_cpp/tello_msgs/msg/flight_data.hpp: /opt/ros/galactic/share/std_msgs/msg/UInt8MultiArray.idl
 rosidl_generator_cpp/tello_msgs/msg/flight_data.hpp: /opt/ros/galactic/share/builtin_interfaces/msg/Duration.idl
 rosidl_generator_cpp/tello_msgs/msg/flight_data.hpp: /opt/ros/galactic/share/builtin_interfaces/msg/Time.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/eeavir/drone_ws/build/tello_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
-	/usr/bin/python3 /opt/ros/galactic/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_cpp__arguments.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/eeavir/tellocontrol/build/tello_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/galactic/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_cpp__arguments.json
 
 rosidl_generator_cpp/tello_msgs/msg/detail/flight_data__builder.hpp: rosidl_generator_cpp/tello_msgs/msg/flight_data.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tello_msgs/msg/detail/flight_data__builder.hpp
@@ -180,6 +180,6 @@ CMakeFiles/tello_msgs__cpp.dir/clean:
 .PHONY : CMakeFiles/tello_msgs__cpp.dir/clean
 
 CMakeFiles/tello_msgs__cpp.dir/depend:
-	cd /home/eeavir/drone_ws/build/tello_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_msgs /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_msgs /home/eeavir/drone_ws/build/tello_msgs /home/eeavir/drone_ws/build/tello_msgs /home/eeavir/drone_ws/build/tello_msgs/CMakeFiles/tello_msgs__cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eeavir/tellocontrol/build/tello_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_msgs /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_msgs /home/eeavir/tellocontrol/build/tello_msgs /home/eeavir/tellocontrol/build/tello_msgs /home/eeavir/tellocontrol/build/tello_msgs/CMakeFiles/tello_msgs__cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tello_msgs__cpp.dir/depend
 

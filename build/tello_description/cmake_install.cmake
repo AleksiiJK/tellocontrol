@@ -1,8 +1,8 @@
-# Install script for directory: /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description
+# Install script for directory: /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/eeavir/drone_ws/install/tello_description")
+  set(CMAKE_INSTALL_PREFIX "/home/eeavir/tellocontrol/install/tello_description")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,15 +38,15 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE DIRECTORY FILES "/home/eeavir/drone_ws/build/tello_description/urdf")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE DIRECTORY FILES "/home/eeavir/tellocontrol/build/tello_description/urdf")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/tello_description")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/tello_description")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/tello_description")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/tello_description")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -54,7 +54,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description/environment" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description/environment" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -62,42 +62,42 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description/environment" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description/environment" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_description/ament_cmake_index/share/ament_index/resource_index/packages/tello_description")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_index/share/ament_index/resource_index/packages/tello_description")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description/cmake" TYPE FILE FILES
-    "/home/eeavir/drone_ws/build/tello_description/ament_cmake_core/tello_descriptionConfig.cmake"
-    "/home/eeavir/drone_ws/build/tello_description/ament_cmake_core/tello_descriptionConfig-version.cmake"
+    "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_core/tello_descriptionConfig.cmake"
+    "/home/eeavir/tellocontrol/build/tello_description/ament_cmake_core/tello_descriptionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_description" TYPE FILE FILES "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -108,5 +108,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/eeavir/drone_ws/build/tello_description/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/eeavir/tellocontrol/build/tello_description/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

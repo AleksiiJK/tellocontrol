@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_joy_main.cpp" "/home/eeavir/drone_ws/build/tello_driver/CMakeFiles/tello_joy_main.dir/src/tello_joy_main.cpp.o"
-  "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_joy_node.cpp" "/home/eeavir/drone_ws/build/tello_driver/CMakeFiles/tello_joy_main.dir/src/tello_joy_node.cpp.o"
+  "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_joy_main.cpp" "/home/eeavir/tellocontrol/build/tello_driver/CMakeFiles/tello_joy_main.dir/src/tello_joy_main.cpp.o"
+  "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_joy_node.cpp" "/home/eeavir/tellocontrol/build/tello_driver/CMakeFiles/tello_joy_main.dir/src/tello_joy_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,9 +17,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/include"
-  "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/h264decoder"
-  "/home/eeavir/drone_ws/install/tello_msgs/include"
+  "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/include"
+  "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/h264decoder"
+  "/home/eeavir/tellocontrol/install/tello_msgs/include"
   "/opt/ros/galactic/include"
   )
 

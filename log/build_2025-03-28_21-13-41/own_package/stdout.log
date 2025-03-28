@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/own_package/own_package.egg-info
+writing ../../build/own_package/own_package.egg-info/PKG-INFO
+writing dependency_links to ../../build/own_package/own_package.egg-info/dependency_links.txt
+writing entry points to ../../build/own_package/own_package.egg-info/entry_points.txt
+writing requirements to ../../build/own_package/own_package.egg-info/requires.txt
+writing top-level names to ../../build/own_package/own_package.egg-info/top_level.txt
+writing manifest file '../../build/own_package/own_package.egg-info/SOURCES.txt'
+reading manifest file '../../build/own_package/own_package.egg-info/SOURCES.txt'
+writing manifest file '../../build/own_package/own_package.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/eeavir/tellocontrol/build/own_package/build
+creating /home/eeavir/tellocontrol/build/own_package/build/lib
+creating /home/eeavir/tellocontrol/build/own_package/build/lib/own_package
+copying own_package/__init__.py -> /home/eeavir/tellocontrol/build/own_package/build/lib/own_package
+copying own_package/image_subscriber.py -> /home/eeavir/tellocontrol/build/own_package/build/lib/own_package
+running install
+running install_lib
+creating /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package
+copying /home/eeavir/tellocontrol/build/own_package/build/lib/own_package/__init__.py -> /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package
+copying /home/eeavir/tellocontrol/build/own_package/build/lib/own_package/image_subscriber.py -> /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package
+byte-compiling /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package/image_subscriber.py to image_subscriber.cpython-38.pyc
+running install_data
+creating /home/eeavir/tellocontrol/install/own_package/share/ament_index
+creating /home/eeavir/tellocontrol/install/own_package/share/ament_index/resource_index
+creating /home/eeavir/tellocontrol/install/own_package/share/ament_index/resource_index/packages
+copying resource/own_package -> /home/eeavir/tellocontrol/install/own_package/share/ament_index/resource_index/packages
+copying package.xml -> /home/eeavir/tellocontrol/install/own_package/share/own_package
+running install_egg_info
+Copying ../../build/own_package/own_package.egg-info to /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info
+running install_scripts
+Installing image_subscriber script to /home/eeavir/tellocontrol/install/own_package/lib/own_package
+writing list of installed files to '/home/eeavir/tellocontrol/build/own_package/install.log'

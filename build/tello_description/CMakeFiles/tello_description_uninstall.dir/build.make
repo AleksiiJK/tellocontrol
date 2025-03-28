@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description
+CMAKE_SOURCE_DIR = /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_description
+CMAKE_BINARY_DIR = /home/eeavir/tellocontrol/build/tello_description
 
 # Utility rule file for tello_description_uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_description
 include CMakeFiles/tello_description_uninstall.dir/progress.make
 
 CMakeFiles/tello_description_uninstall:
-	/usr/bin/cmake -P /home/eeavir/drone_ws/build/tello_description/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/eeavir/tellocontrol/build/tello_description/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 tello_description_uninstall: CMakeFiles/tello_description_uninstall
 tello_description_uninstall: CMakeFiles/tello_description_uninstall.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/tello_description_uninstall.dir/clean:
 .PHONY : CMakeFiles/tello_description_uninstall.dir/clean
 
 CMakeFiles/tello_description_uninstall.dir/depend:
-	cd /home/eeavir/drone_ws/build/tello_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description /home/eeavir/drone_ws/build/tello_description /home/eeavir/drone_ws/build/tello_description /home/eeavir/drone_ws/build/tello_description/CMakeFiles/tello_description_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eeavir/tellocontrol/build/tello_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description /home/eeavir/tellocontrol/build/tello_description /home/eeavir/tellocontrol/build/tello_description /home/eeavir/tellocontrol/build/tello_description/CMakeFiles/tello_description_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tello_description_uninstall.dir/depend
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo
+CMAKE_SOURCE_DIR = /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_gazebo
+CMAKE_BINARY_DIR = /home/eeavir/tellocontrol/build/tello_gazebo
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eeavir/drone_ws/build/tello_gazebo/CMakeFiles /home/eeavir/drone_ws/build/tello_gazebo/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eeavir/tellocontrol/build/tello_gazebo/CMakeFiles /home/eeavir/tellocontrol/build/tello_gazebo/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eeavir/drone_ws/build/tello_gazebo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eeavir/tellocontrol/build/tello_gazebo/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

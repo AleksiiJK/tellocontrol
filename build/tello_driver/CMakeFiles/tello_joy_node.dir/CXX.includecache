@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/eeavir/drone_ws/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__builder.hpp
+/home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__builder.hpp
 tello_msgs/srv/detail/tello_action__struct.hpp
-/home/eeavir/drone_ws/install/tello_msgs/include/tello_msgs/srv/detail/tello_msgs/srv/detail/tello_action__struct.hpp
+/home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_msgs/srv/detail/tello_action__struct.hpp
 rosidl_runtime_cpp/message_initialization.hpp
 -
 algorithm
@@ -16,7 +16,7 @@ algorithm
 utility
 -
 
-/home/eeavir/drone_ws/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__struct.hpp
+/home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__struct.hpp
 rosidl_runtime_cpp/bounded_vector.hpp
 -
 rosidl_runtime_cpp/message_initialization.hpp
@@ -32,9 +32,9 @@ string
 vector
 -
 
-/home/eeavir/drone_ws/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__traits.hpp
+/home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__traits.hpp
 tello_msgs/srv/detail/tello_action__struct.hpp
-/home/eeavir/drone_ws/install/tello_msgs/include/tello_msgs/srv/detail/tello_msgs/srv/detail/tello_action__struct.hpp
+/home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_msgs/srv/detail/tello_action__struct.hpp
 stdint.h
 -
 rosidl_runtime_cpp/traits.hpp
@@ -46,37 +46,37 @@ string
 type_traits
 -
 
-/home/eeavir/drone_ws/install/tello_msgs/include/tello_msgs/srv/tello_action.hpp
+/home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/tello_action.hpp
 tello_msgs/srv/detail/tello_action__struct.hpp
-/home/eeavir/drone_ws/install/tello_msgs/include/tello_msgs/srv/tello_msgs/srv/detail/tello_action__struct.hpp
+/home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/tello_msgs/srv/detail/tello_action__struct.hpp
 tello_msgs/srv/detail/tello_action__builder.hpp
-/home/eeavir/drone_ws/install/tello_msgs/include/tello_msgs/srv/tello_msgs/srv/detail/tello_action__builder.hpp
+/home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/tello_msgs/srv/detail/tello_action__builder.hpp
 tello_msgs/srv/detail/tello_action__traits.hpp
-/home/eeavir/drone_ws/install/tello_msgs/include/tello_msgs/srv/tello_msgs/srv/detail/tello_action__traits.hpp
+/home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/tello_msgs/srv/detail/tello_action__traits.hpp
 
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/include/tello_joy_node.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/include/tello_joy_node.hpp
 rclcpp/rclcpp.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/include/rclcpp/rclcpp.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/include/rclcpp/rclcpp.hpp
 geometry_msgs/msg/twist.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/include/geometry_msgs/msg/twist.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/include/geometry_msgs/msg/twist.hpp
 sensor_msgs/msg/joy.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/include/sensor_msgs/msg/joy.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/include/sensor_msgs/msg/joy.hpp
 tello_msgs/srv/tello_action.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/include/tello_msgs/srv/tello_action.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/include/tello_msgs/srv/tello_action.hpp
 
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_joy_node.cpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_joy_node.cpp
 tello_joy_node.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_joy_node.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_joy_node.hpp
 rclcpp/rclcpp.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/src/rclcpp/rclcpp.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/src/rclcpp/rclcpp.hpp
 geometry_msgs/msg/twist.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/src/geometry_msgs/msg/twist.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/src/geometry_msgs/msg/twist.hpp
 sensor_msgs/msg/joy.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/src/sensor_msgs/msg/joy.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/src/sensor_msgs/msg/joy.hpp
 tello_msgs/srv/tello_action.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_msgs/srv/tello_action.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/src/tello_msgs/srv/tello_action.hpp
 rclcpp_components/register_node_macro.hpp
-/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver/src/rclcpp_components/register_node_macro.hpp
+/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver/src/rclcpp_components/register_node_macro.hpp
 
 /opt/ros/galactic/include/builtin_interfaces/msg/detail/duration__builder.hpp
 builtin_interfaces/msg/detail/duration__struct.hpp

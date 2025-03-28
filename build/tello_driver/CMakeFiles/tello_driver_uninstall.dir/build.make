@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver
+CMAKE_SOURCE_DIR = /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_driver
+CMAKE_BINARY_DIR = /home/eeavir/tellocontrol/build/tello_driver
 
 # Utility rule file for tello_driver_uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_driver
 include CMakeFiles/tello_driver_uninstall.dir/progress.make
 
 CMakeFiles/tello_driver_uninstall:
-	/usr/bin/cmake -P /home/eeavir/drone_ws/build/tello_driver/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/eeavir/tellocontrol/build/tello_driver/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 tello_driver_uninstall: CMakeFiles/tello_driver_uninstall
 tello_driver_uninstall: CMakeFiles/tello_driver_uninstall.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/tello_driver_uninstall.dir/clean:
 .PHONY : CMakeFiles/tello_driver_uninstall.dir/clean
 
 CMakeFiles/tello_driver_uninstall.dir/depend:
-	cd /home/eeavir/drone_ws/build/tello_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_driver /home/eeavir/drone_ws/build/tello_driver /home/eeavir/drone_ws/build/tello_driver /home/eeavir/drone_ws/build/tello_driver/CMakeFiles/tello_driver_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eeavir/tellocontrol/build/tello_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_driver /home/eeavir/tellocontrol/build/tello_driver /home/eeavir/tellocontrol/build/tello_driver /home/eeavir/tellocontrol/build/tello_driver/CMakeFiles/tello_driver_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tello_driver_uninstall.dir/depend
 

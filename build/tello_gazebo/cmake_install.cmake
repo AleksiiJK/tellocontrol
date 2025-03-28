@@ -1,8 +1,8 @@
-# Install script for directory: /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo
+# Install script for directory: /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/eeavir/drone_ws/install/tello_gazebo")
+  set(CMAKE_INSTALL_PREFIX "/home/eeavir/tellocontrol/install/tello_gazebo")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,12 +44,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTelloPlugin.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/eeavir/drone_ws/build/tello_gazebo/libTelloPlugin.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/eeavir/tellocontrol/build/tello_gazebo/libTelloPlugin.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTelloPlugin.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTelloPlugin.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTelloPlugin.so"
-         OLD_RPATH "/opt/ros/galactic/lib:/home/eeavir/drone_ws/install/tello_msgs/lib:"
+         OLD_RPATH "/opt/ros/galactic/lib:/home/eeavir/tellocontrol/install/tello_msgs/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTelloPlugin.so")
@@ -62,22 +62,22 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE DIRECTORY FILES
-    "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/models"
-    "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/worlds"
-    "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/launch"
+    "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/models"
+    "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/worlds"
+    "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/launch"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tello_gazebo" TYPE PROGRAM FILES "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/src/inject_entity.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/tello_gazebo" TYPE PROGRAM FILES "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/src/inject_entity.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/tello_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/tello_gazebo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/tello_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/tello_gazebo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -85,7 +85,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo/environment" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo/environment" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -93,42 +93,42 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo/environment" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo/environment" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/tello_gazebo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_index/share/ament_index/resource_index/packages/tello_gazebo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo/cmake" TYPE FILE FILES
-    "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_core/tello_gazeboConfig.cmake"
-    "/home/eeavir/drone_ws/build/tello_gazebo/ament_cmake_core/tello_gazeboConfig-version.cmake"
+    "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_core/tello_gazeboConfig.cmake"
+    "/home/eeavir/tellocontrol/build/tello_gazebo/ament_cmake_core/tello_gazeboConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tello_gazebo" TYPE FILE FILES "/home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -139,5 +139,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/eeavir/drone_ws/build/tello_gazebo/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/eeavir/tellocontrol/build/tello_gazebo/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

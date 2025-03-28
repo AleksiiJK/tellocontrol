@@ -1,8 +1,8 @@
-# Install script for directory: /home/eeavir/drone_ws/build/tello_msgs/tello_msgs__py
+# Install script for directory: /home/eeavir/tellocontrol/build/tello_msgs/tello_msgs__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/eeavir/drone_ws/install/tello_msgs")
+  set(CMAKE_INSTALL_PREFIX "/home/eeavir/tellocontrol/install/tello_msgs")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description
+CMAKE_SOURCE_DIR = /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_description
+CMAKE_BINARY_DIR = /home/eeavir/tellocontrol/build/tello_description
 
 # Utility rule file for generate_urdf_6.
 
@@ -56,9 +56,9 @@ include CMakeFiles/generate_urdf_6.dir/progress.make
 CMakeFiles/generate_urdf_6: urdf/tello_6.urdf
 
 
-urdf/tello_6.urdf: /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description/urdf/tello.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/eeavir/drone_ws/build/tello_description/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generate /home/eeavir/drone_ws/build/tello_description/urdf/tello_6.urdf"
-	/usr/bin/python3 /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description/src/replace.py /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description/urdf/tello.xml suffix=_6 topic_ns=drone6 > /home/eeavir/drone_ws/build/tello_description/urdf/tello_6.urdf
+urdf/tello_6.urdf: /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description/urdf/tello.xml
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/eeavir/tellocontrol/build/tello_description/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generate /home/eeavir/tellocontrol/build/tello_description/urdf/tello_6.urdf"
+	/usr/bin/python3 /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description/src/replace.py /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description/urdf/tello.xml suffix=_6 topic_ns=drone6 > /home/eeavir/tellocontrol/build/tello_description/urdf/tello_6.urdf
 
 generate_urdf_6: CMakeFiles/generate_urdf_6
 generate_urdf_6: urdf/tello_6.urdf
@@ -76,6 +76,6 @@ CMakeFiles/generate_urdf_6.dir/clean:
 .PHONY : CMakeFiles/generate_urdf_6.dir/clean
 
 CMakeFiles/generate_urdf_6.dir/depend:
-	cd /home/eeavir/drone_ws/build/tello_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_description /home/eeavir/drone_ws/build/tello_description /home/eeavir/drone_ws/build/tello_description /home/eeavir/drone_ws/build/tello_description/CMakeFiles/generate_urdf_6.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eeavir/tellocontrol/build/tello_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_description /home/eeavir/tellocontrol/build/tello_description /home/eeavir/tellocontrol/build/tello_description /home/eeavir/tellocontrol/build/tello_description/CMakeFiles/generate_urdf_6.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/generate_urdf_6.dir/depend
 

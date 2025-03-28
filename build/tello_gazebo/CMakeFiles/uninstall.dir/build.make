@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo
+CMAKE_SOURCE_DIR = /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eeavir/drone_ws/build/tello_gazebo
+CMAKE_BINARY_DIR = /home/eeavir/tellocontrol/build/tello_gazebo
 
 # Utility rule file for uninstall.
 
@@ -67,6 +67,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/eeavir/drone_ws/build/tello_gazebo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo /home/eeavir/drone_ws/src/drone_racing_ros2/tello_ros/tello_gazebo /home/eeavir/drone_ws/build/tello_gazebo /home/eeavir/drone_ws/build/tello_gazebo /home/eeavir/drone_ws/build/tello_gazebo/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eeavir/tellocontrol/build/tello_gazebo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo /home/eeavir/tellocontrol/src/drone_racing_ros2/tello_ros/tello_gazebo /home/eeavir/tellocontrol/build/tello_gazebo /home/eeavir/tellocontrol/build/tello_gazebo /home/eeavir/tellocontrol/build/tello_gazebo/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

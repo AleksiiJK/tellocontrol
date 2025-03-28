@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/flight_data__functions.c
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/flight_data__functions.c
 tello_msgs/msg/detail/flight_data__functions.h
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/tello_msgs/msg/detail/flight_data__functions.h
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/tello_msgs/msg/detail/flight_data__functions.h
 assert.h
 -
 stdbool.h
@@ -18,13 +18,13 @@ stdlib.h
 string.h
 -
 std_msgs/msg/detail/header__functions.h
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/std_msgs/msg/detail/header__functions.h
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/std_msgs/msg/detail/header__functions.h
 rosidl_runtime_c/string_functions.h
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/rosidl_runtime_c/string_functions.h
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/rosidl_runtime_c/string_functions.h
 
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/tello_response__functions.c
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/tello_response__functions.c
 tello_msgs/msg/detail/tello_response__functions.h
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/tello_msgs/msg/detail/tello_response__functions.h
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/tello_msgs/msg/detail/tello_response__functions.h
 assert.h
 -
 stdbool.h
@@ -34,11 +34,11 @@ stdlib.h
 string.h
 -
 rosidl_runtime_c/string_functions.h
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/rosidl_runtime_c/string_functions.h
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/msg/detail/rosidl_runtime_c/string_functions.h
 
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/srv/detail/tello_action__functions.c
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/srv/detail/tello_action__functions.c
 tello_msgs/srv/detail/tello_action__functions.h
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/srv/detail/tello_msgs/srv/detail/tello_action__functions.h
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/srv/detail/tello_msgs/srv/detail/tello_action__functions.h
 assert.h
 -
 stdbool.h
@@ -48,7 +48,7 @@ stdlib.h
 string.h
 -
 rosidl_runtime_c/string_functions.h
-/home/eeavir/drone_ws/build/tello_msgs/rosidl_generator_c/tello_msgs/srv/detail/rosidl_runtime_c/string_functions.h
+/home/eeavir/tellocontrol/build/tello_msgs/rosidl_generator_c/tello_msgs/srv/detail/rosidl_runtime_c/string_functions.h
 
 /opt/ros/galactic/include/builtin_interfaces/msg/detail/time__struct.h
 stdbool.h
