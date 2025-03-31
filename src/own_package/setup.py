@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'image_subscriber = own_package.image_subscriber:main',
+            'hoop_detection = own_package.hoop_detection:main',
         ],
     },
 )

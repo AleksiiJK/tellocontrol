@@ -1,0 +1,850 @@
+[0.000000] (-) TimerEvent: {}
+[0.000175] (own_package) JobQueued: {'identifier': 'own_package', 'dependencies': OrderedDict()}
+[0.000213] (ros2_shared) JobQueued: {'identifier': 'ros2_shared', 'dependencies': OrderedDict()}
+[0.000229] (tello_description) JobQueued: {'identifier': 'tello_description', 'dependencies': OrderedDict()}
+[0.000240] (tello_msgs) JobQueued: {'identifier': 'tello_msgs', 'dependencies': OrderedDict()}
+[0.000250] (tello_driver) JobQueued: {'identifier': 'tello_driver', 'dependencies': OrderedDict([('ros2_shared', '/home/eeavir/tellocontrol/install/ros2_shared'), ('tello_msgs', '/home/eeavir/tellocontrol/install/tello_msgs')])}
+[0.000263] (tello_gazebo) JobQueued: {'identifier': 'tello_gazebo', 'dependencies': OrderedDict([('tello_msgs', '/home/eeavir/tellocontrol/install/tello_msgs')])}
+[0.000274] (tello_msgs) JobStarted: {'identifier': 'tello_msgs'}
+[0.006560] (ros2_shared) JobStarted: {'identifier': 'ros2_shared'}
+[0.010078] (own_package) JobStarted: {'identifier': 'own_package'}
+[0.016909] (tello_description) JobStarted: {'identifier': 'tello_description'}
+[0.023157] (tello_msgs) JobProgress: {'identifier': 'tello_msgs', 'progress': 'cmake'}
+[0.023591] (tello_msgs) JobProgress: {'identifier': 'tello_msgs', 'progress': 'build'}
+[0.024153] (tello_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/eeavir/tellocontrol/build/tello_msgs', '--', '-j8', '-l8'], 'cwd': '/home/eeavir/tellocontrol/build/tello_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/home/eeavir/tellocontrol/install/tello_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/tello_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[0.027561] (ros2_shared) JobProgress: {'identifier': 'ros2_shared', 'progress': 'cmake'}
+[0.027939] (ros2_shared) JobProgress: {'identifier': 'ros2_shared', 'progress': 'build'}
+[0.028066] (ros2_shared) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/eeavir/tellocontrol/build/ros2_shared', '--', '-j8', '-l8'], 'cwd': '/home/eeavir/tellocontrol/build/ros2_shared', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/home/eeavir/tellocontrol/install/tello_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/ros2_shared'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[0.099439] (-) TimerEvent: {}
+[0.198391] (tello_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)\n'}
+[0.198985] (tello_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.199178] (tello_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.199224] (tello_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)\n'}
+[0.199267] (tello_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.199309] (tello_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)\n'}
+[0.199501] (-) TimerEvent: {}
+[0.200088] (tello_description) JobProgress: {'identifier': 'tello_description', 'progress': 'cmake'}
+[0.200552] (tello_description) JobProgress: {'identifier': 'tello_description', 'progress': 'build'}
+[0.200891] (tello_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/eeavir/tellocontrol/build/tello_description', '--', '-j8', '-l8'], 'cwd': '/home/eeavir/tellocontrol/build/tello_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/home/eeavir/tellocontrol/install/tello_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/tello_description'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[0.204453] (ros2_shared) CommandEnded: {'returncode': 0}
+[0.204968] (ros2_shared) JobProgress: {'identifier': 'ros2_shared', 'progress': 'install'}
+[0.213527] (ros2_shared) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/eeavir/tellocontrol/build/ros2_shared'], 'cwd': '/home/eeavir/tellocontrol/build/ros2_shared', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/home/eeavir/tellocontrol/install/tello_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/ros2_shared'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[0.221957] (ros2_shared) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.222322] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/include\n'}
+[0.222441] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/include/ros2_shared\n'}
+[0.222528] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/include/ros2_shared/param_macros.hpp\n'}
+[0.222600] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/include/ros2_shared/string_printf.hpp\n'}
+[0.222684] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/include/ros2_shared/context_macros.hpp\n'}
+[0.222753] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ament_index/resource_index/package_run_dependencies/ros2_shared\n'}
+[0.222824] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ament_index/resource_index/parent_prefix_path/ros2_shared\n'}
+[0.222891] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/environment/ament_prefix_path.sh\n'}
+[0.222964] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/environment/ament_prefix_path.dsv\n'}
+[0.223026] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/environment/path.sh\n'}
+[0.223084] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/environment/path.dsv\n'}
+[0.223144] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/local_setup.bash\n'}
+[0.223205] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/local_setup.sh\n'}
+[0.223261] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/local_setup.zsh\n'}
+[0.223316] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/local_setup.dsv\n'}
+[0.223373] (ros2_shared) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/package.dsv\n'}
+[0.223432] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ament_index/resource_index/packages/ros2_shared\n'}
+[0.223521] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.223604] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/cmake/ros2_sharedConfig.cmake\n'}
+[0.223664] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/cmake/ros2_sharedConfig-version.cmake\n'}
+[0.223722] (ros2_shared) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/package.xml\n'}
+[0.224475] (ros2_shared) CommandEnded: {'returncode': 0}
+[0.225384] (tello_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)\n'}
+[0.240344] (ros2_shared) JobEnded: {'identifier': 'ros2_shared', 'rc': 0}
+[0.248164] (tello_description) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.250317] (tello_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.269420] (tello_msgs) StdoutLine: {'line': b'-- Found std_msgs: 2.2.4 (/opt/ros/galactic/share/std_msgs/cmake)\n'}
+[0.296368] (tello_description) StdoutLine: {'line': b'-- creating rules for /home/eeavir/tellocontrol/build/tello_description/urdf/tello.urdf\n'}
+[0.296560] (tello_description) StdoutLine: {'line': b'-- creating rules for /home/eeavir/tellocontrol/build/tello_description/urdf/tello_1.urdf\n'}
+[0.296625] (tello_description) StdoutLine: {'line': b'-- creating rules for /home/eeavir/tellocontrol/build/tello_description/urdf/tello_2.urdf\n'}
+[0.296681] (tello_description) StdoutLine: {'line': b'-- creating rules for /home/eeavir/tellocontrol/build/tello_description/urdf/tello_3.urdf\n'}
+[0.296732] (tello_description) StdoutLine: {'line': b'-- creating rules for /home/eeavir/tellocontrol/build/tello_description/urdf/tello_4.urdf\n'}
+[0.296801] (tello_description) StdoutLine: {'line': b'-- creating rules for /home/eeavir/tellocontrol/build/tello_description/urdf/tello_5.urdf\n'}
+[0.296841] (tello_description) StdoutLine: {'line': b'-- creating rules for /home/eeavir/tellocontrol/build/tello_description/urdf/tello_6.urdf\n'}
+[0.296881] (tello_description) StdoutLine: {'line': b'-- creating rules for /home/eeavir/tellocontrol/build/tello_description/urdf/tello_7.urdf\n'}
+[0.296921] (tello_description) StdoutLine: {'line': b'-- creating rules for /home/eeavir/tellocontrol/build/tello_description/urdf/tello_8.urdf\n'}
+[0.299602] (-) TimerEvent: {}
+[0.312607] (tello_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[0.341630] (tello_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.345524] (tello_description) StdoutLine: {'line': b'-- Generating done\n'}
+[0.347471] (tello_description) StdoutLine: {'line': b'-- Build files have been written to: /home/eeavir/tellocontrol/build/tello_description\n'}
+[0.379016] (tello_description) StdoutLine: {'line': b'[ 11%] \x1b[34m\x1b[1mGenerate /home/eeavir/tellocontrol/build/tello_description/urdf/tello_6.urdf\x1b[0m\n'}
+[0.379749] (tello_description) StdoutLine: {'line': b'[ 22%] \x1b[34m\x1b[1mGenerate /home/eeavir/tellocontrol/build/tello_description/urdf/tello_8.urdf\x1b[0m\n'}
+[0.379972] (tello_description) StdoutLine: {'line': b'[ 33%] \x1b[34m\x1b[1mGenerate /home/eeavir/tellocontrol/build/tello_description/urdf/tello.urdf\x1b[0m\n'}
+[0.384079] (tello_description) StdoutLine: {'line': b'[ 44%] \x1b[34m\x1b[1mGenerate /home/eeavir/tellocontrol/build/tello_description/urdf/tello_4.urdf\x1b[0m\n'}
+[0.388289] (tello_description) StdoutLine: {'line': b'[ 55%] \x1b[34m\x1b[1mGenerate /home/eeavir/tellocontrol/build/tello_description/urdf/tello_1.urdf\x1b[0m\n'}
+[0.389856] (tello_description) StdoutLine: {'line': b'[ 66%] \x1b[34m\x1b[1mGenerate /home/eeavir/tellocontrol/build/tello_description/urdf/tello_7.urdf\x1b[0m\n'}
+[0.396604] (tello_description) StdoutLine: {'line': b'[ 77%] \x1b[34m\x1b[1mGenerate /home/eeavir/tellocontrol/build/tello_description/urdf/tello_3.urdf\x1b[0m\n'}
+[0.399706] (-) TimerEvent: {}
+[0.403043] (tello_description) StdoutLine: {'line': b'[ 88%] \x1b[34m\x1b[1mGenerate /home/eeavir/tellocontrol/build/tello_description/urdf/tello_5.urdf\x1b[0m\n'}
+[0.429914] (tello_description) StdoutLine: {'line': b'[ 88%] Built target generate_urdf\n'}
+[0.437376] (tello_description) StdoutLine: {'line': b'[ 88%] Built target generate_urdf_4\n'}
+[0.447187] (tello_description) StdoutLine: {'line': b'[ 88%] Built target generate_urdf_1\n'}
+[0.448536] (tello_description) StdoutLine: {'line': b'[ 88%] Built target generate_urdf_8\n'}
+[0.452318] (tello_description) StdoutLine: {'line': b'[ 88%] Built target generate_urdf_6\n'}
+[0.457434] (tello_description) StdoutLine: {'line': b'[ 88%] Built target generate_urdf_7\n'}
+[0.464466] (tello_description) StdoutLine: {'line': b'[ 88%] Built target generate_urdf_5\n'}
+[0.466310] (tello_description) StdoutLine: {'line': b'[100%] \x1b[34m\x1b[1mGenerate /home/eeavir/tellocontrol/build/tello_description/urdf/tello_2.urdf\x1b[0m\n'}
+[0.473764] (tello_description) StdoutLine: {'line': b'[100%] Built target generate_urdf_3\n'}
+[0.499836] (-) TimerEvent: {}
+[0.506512] (tello_description) StdoutLine: {'line': b'[100%] Built target generate_urdf_2\n'}
+[0.513139] (tello_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/galactic/share/ament_cmake_ros/cmake)\n'}
+[0.517669] (tello_description) CommandEnded: {'returncode': 0}
+[0.518404] (tello_description) JobProgress: {'identifier': 'tello_description', 'progress': 'install'}
+[0.518546] (tello_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/eeavir/tellocontrol/build/tello_description'], 'cwd': '/home/eeavir/tellocontrol/build/tello_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/home/eeavir/tellocontrol/install/tello_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/tello_description'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[0.528582] (tello_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.528884] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf\n'}
+[0.528988] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf/tello_8.urdf\n'}
+[0.529062] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf/tello.urdf\n'}
+[0.529131] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf/tello_4.urdf\n'}
+[0.529200] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf/tello_3.urdf\n'}
+[0.529268] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf/tello_1.urdf\n'}
+[0.529381] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf/tello_7.urdf\n'}
+[0.529512] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf/tello_2.urdf\n'}
+[0.529608] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf/tello_6.urdf\n'}
+[0.529784] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/urdf/tello_5.urdf\n'}
+[0.529934] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/ament_index/resource_index/package_run_dependencies/tello_description\n'}
+[0.530027] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/ament_index/resource_index/parent_prefix_path/tello_description\n'}
+[0.530145] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/environment/ament_prefix_path.sh\n'}
+[0.530238] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/environment/ament_prefix_path.dsv\n'}
+[0.530320] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/environment/path.sh\n'}
+[0.530416] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/environment/path.dsv\n'}
+[0.530540] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/local_setup.bash\n'}
+[0.530630] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/local_setup.sh\n'}
+[0.530723] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/local_setup.zsh\n'}
+[0.530828] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/local_setup.dsv\n'}
+[0.530910] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/package.dsv\n'}
+[0.531004] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/ament_index/resource_index/packages/tello_description\n'}
+[0.531096] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/cmake/tello_descriptionConfig.cmake\n'}
+[0.531171] (tello_description) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/cmake/tello_descriptionConfig-version.cmake\n'}
+[0.531264] (tello_description) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_description/share/tello_description/package.xml\n'}
+[0.532337] (tello_description) CommandEnded: {'returncode': 0}
+[0.542857] (tello_description) JobEnded: {'identifier': 'tello_description', 'rc': 0}
+[0.599970] (-) TimerEvent: {}
+[0.615140] (own_package) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/own_package', 'build', '--build-base', '/home/eeavir/tellocontrol/build/own_package/build', 'install', '--record', '/home/eeavir/tellocontrol/build/own_package/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/eeavir/tellocontrol/src/own_package', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'eeavir', 'LC_TIME': 'fi_FI.UTF-8', 'SSH_AGENT_PID': '1510', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/home/eeavir/tellocontrol/install/tello_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:', 'HOME': '/home/eeavir', 'OLDPWD': '/home/eeavir', 'DESKTOP_SESSION': 'ubuntu', 'GAZEBO_MASTER_URI': 'http://localhost:11345', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'fi_FI.UTF-8', 'MANAGERPID': '1365', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/eeavir/tellocontrol/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'eeavir', 'JOURNAL_STREAM': '8:42724', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'eeavir', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'PATH': '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin', 'SESSION_MANAGER': 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548', 'INVOCATION_ID': 'a17f27862ccd4778b78fadca0cd8ac0b', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'fi_FI.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'fi_FI.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.84', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic', 'SHELL': '/bin/bash', 'LC_NAME': 'fi_FI.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'fi_FI.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo-11:', 'LC_IDENTIFICATION': 'fi_FI.UTF-8', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/eeavir/tellocontrol/build/own_package', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'GAZEBO_PLUGIN_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/eeavir/tellocontrol/build/own_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'LC_NUMERIC': 'fi_FI.UTF-8', 'LC_PAPER': 'fi_FI.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared'}, 'shell': False}
+[0.640976] (tello_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.681053] (tello_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.698459] (tello_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") \n'}
+[0.698660] (tello_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.8.1 (/opt/ros/galactic/share/python_cmake_module/cmake)\n'}
+[0.700034] (-) TimerEvent: {}
+[0.715065] (tello_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.715248] (tello_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8\n'}
+[0.715318] (tello_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so\n'}
+[0.745066] (tello_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.754549] (own_package) StdoutLine: {'line': b'running egg_info\n'}
+[0.754840] (own_package) StdoutLine: {'line': b'writing ../../build/own_package/own_package.egg-info/PKG-INFO\n'}
+[0.754948] (own_package) StdoutLine: {'line': b'writing dependency_links to ../../build/own_package/own_package.egg-info/dependency_links.txt\n'}
+[0.755042] (own_package) StdoutLine: {'line': b'writing entry points to ../../build/own_package/own_package.egg-info/entry_points.txt\n'}
+[0.755101] (own_package) StdoutLine: {'line': b'writing requirements to ../../build/own_package/own_package.egg-info/requires.txt\n'}
+[0.755161] (own_package) StdoutLine: {'line': b'writing top-level names to ../../build/own_package/own_package.egg-info/top_level.txt\n'}
+[0.790557] (own_package) StdoutLine: {'line': b"reading manifest file '../../build/own_package/own_package.egg-info/SOURCES.txt'\n"}
+[0.790769] (own_package) StdoutLine: {'line': b"writing manifest file '../../build/own_package/own_package.egg-info/SOURCES.txt'\n"}
+[0.790840] (own_package) StdoutLine: {'line': b'running build\n'}
+[0.790908] (own_package) StdoutLine: {'line': b'running build_py\n'}
+[0.791008] (own_package) StdoutLine: {'line': b'copying own_package/hoop_detection.py -> /home/eeavir/tellocontrol/build/own_package/build/lib/own_package\n'}
+[0.791082] (own_package) StdoutLine: {'line': b'running install\n'}
+[0.791469] (tello_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[0.791928] (own_package) StdoutLine: {'line': b'running install_lib\n'}
+[0.793072] (own_package) StdoutLine: {'line': b'copying /home/eeavir/tellocontrol/build/own_package/build/lib/own_package/hoop_detection.py -> /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package\n'}
+[0.793625] (own_package) StdoutLine: {'line': b'byte-compiling /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package/hoop_detection.py to hoop_detection.cpython-38.pyc\n'}
+[0.795492] (own_package) StdoutLine: {'line': b'running install_data\n'}
+[0.795668] (own_package) StdoutLine: {'line': b'copying package.xml -> /home/eeavir/tellocontrol/install/own_package/share/own_package\n'}
+[0.795755] (own_package) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.797889] (own_package) StdoutLine: {'line': b"removing '/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[0.800230] (own_package) StdoutLine: {'line': b'Copying ../../build/own_package/own_package.egg-info to /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info\n'}
+[0.800403] (-) TimerEvent: {}
+[0.800524] (own_package) StdoutLine: {'line': b'running install_scripts\n'}
+[0.811280] (tello_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/eeavir/tellocontrol/build/tello_msgs\n'}
+[0.819052] (own_package) StdoutLine: {'line': b'Installing hoop_detector script to /home/eeavir/tellocontrol/install/own_package/lib/own_package\n'}
+[0.819289] (own_package) StdoutLine: {'line': b'Installing image_subscriber script to /home/eeavir/tellocontrol/install/own_package/lib/own_package\n'}
+[0.819577] (own_package) StdoutLine: {'line': b"writing list of installed files to '/home/eeavir/tellocontrol/build/own_package/install.log'\n"}
+[0.850865] (own_package) CommandEnded: {'returncode': 0}
+[0.858426] (own_package) JobEnded: {'identifier': 'own_package', 'rc': 0}
+[0.861605] (tello_msgs) StdoutLine: {'line': b'[  2%] Built target tello_msgs__cpp\n'}
+[0.871567] (tello_msgs) StdoutLine: {'line': b'[ 12%] Built target tello_msgs__rosidl_generator_c\n'}
+[0.888856] (tello_msgs) StdoutLine: {'line': b'[ 23%] Built target tello_msgs__rosidl_typesupport_cpp\n'}
+[0.893250] (tello_msgs) StdoutLine: {'line': b'[ 34%] Built target tello_msgs__rosidl_typesupport_introspection_cpp\n'}
+[0.894666] (tello_msgs) StdoutLine: {'line': b'[ 44%] Built target tello_msgs__rosidl_typesupport_introspection_c\n'}
+[0.894856] (tello_msgs) StdoutLine: {'line': b'[ 55%] Built target tello_msgs__rosidl_typesupport_c\n'}
+[0.896933] (tello_msgs) StdoutLine: {'line': b'[ 65%] Built target tello_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[0.900533] (-) TimerEvent: {}
+[0.919897] (tello_msgs) StdoutLine: {'line': b'[ 76%] Built target tello_msgs__rosidl_typesupport_fastrtps_c\n'}
+[0.937069] (tello_msgs) StdoutLine: {'line': b'[ 76%] Built target tello_msgs\n'}
+[0.953223] (tello_msgs) StdoutLine: {'line': b'[ 78%] Built target tello_msgs__py\n'}
+[0.974328] (tello_msgs) StdoutLine: {'line': b'[ 87%] Built target tello_msgs__python\n'}
+[0.994781] (tello_msgs) StdoutLine: {'line': b'[100%] Built target tello_msgs__rosidl_typesupport_c__pyext\n'}
+[0.994991] (tello_msgs) StdoutLine: {'line': b'[100%] Built target tello_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.995059] (tello_msgs) StdoutLine: {'line': b'[100%] Built target tello_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[1.000645] (-) TimerEvent: {}
+[1.003298] (tello_msgs) CommandEnded: {'returncode': 0}
+[1.003888] (tello_msgs) JobProgress: {'identifier': 'tello_msgs', 'progress': 'install'}
+[1.004058] (tello_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/eeavir/tellocontrol/build/tello_msgs'], 'cwd': '/home/eeavir/tellocontrol/build/tello_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/home/eeavir/tellocontrol/install/tello_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/tello_msgs'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[1.012441] (tello_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.012694] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/ament_index/resource_index/rosidl_interfaces/tello_msgs\n'}
+[1.012746] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs\n'}
+[1.012786] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg\n'}
+[1.012828] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail\n'}
+[1.012870] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__functions.h\n'}
+[1.012913] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__struct.h\n'}
+[1.012953] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__struct.h\n'}
+[1.013008] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__functions.c\n'}
+[1.013051] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__functions.c\n'}
+[1.013092] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__type_support.h\n'}
+[1.013132] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__type_support.h\n'}
+[1.013174] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__functions.h\n'}
+[1.013214] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/flight_data.h\n'}
+[1.013255] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/tello_response.h\n'}
+[1.013294] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[1.013335] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv\n'}
+[1.013385] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail\n'}
+[1.013591] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__functions.c\n'}
+[1.013679] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__struct.h\n'}
+[1.013724] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__functions.h\n'}
+[1.013766] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__type_support.h\n'}
+[1.013807] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/tello_action.h\n'}
+[1.013847] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/environment/library_path.sh\n'}
+[1.013886] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/environment/library_path.dsv\n'}
+[1.013926] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_generator_c.so\n'}
+[1.013967] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs\n'}
+[1.014008] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg\n'}
+[1.014048] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail\n'}
+[1.014087] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__rosidl_typesupport_fastrtps_c.h\n'}
+[1.014129] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__rosidl_typesupport_fastrtps_c.h\n'}
+[1.014171] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[1.014211] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv\n'}
+[1.014266] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail\n'}
+[1.014307] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__rosidl_typesupport_fastrtps_c.h\n'}
+[1.014347] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[1.014387] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs\n'}
+[1.014426] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg\n'}
+[1.014466] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail\n'}
+[1.014506] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.014546] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/dds_fastrtps\n'}
+[1.014587] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.014629] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[1.014719] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv\n'}
+[1.014763] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail\n'}
+[1.014885] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/dds_fastrtps\n'}
+[1.014926] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.014967] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[1.015008] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs\n'}
+[1.015049] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg\n'}
+[1.015090] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail\n'}
+[1.015130] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__rosidl_typesupport_introspection_c.h\n'}
+[1.015171] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__type_support.c\n'}
+[1.015211] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__rosidl_typesupport_introspection_c.h\n'}
+[1.015251] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__type_support.c\n'}
+[1.015291] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[1.015381] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv\n'}
+[1.015421] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail\n'}
+[1.015459] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__rosidl_typesupport_introspection_c.h\n'}
+[1.015497] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__type_support.c\n'}
+[1.015535] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_introspection_c.so\n'}
+[1.015574] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_c.so\n'}
+[1.015612] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs\n'}
+[1.015650] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg\n'}
+[1.015689] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/tello_response.hpp\n'}
+[1.015728] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail\n'}
+[1.015766] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__struct.hpp\n'}
+[1.015804] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__traits.hpp\n'}
+[1.015841] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__builder.hpp\n'}
+[1.015879] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__struct.hpp\n'}
+[1.015918] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__builder.hpp\n'}
+[1.015958] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__traits.hpp\n'}
+[1.015996] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/flight_data.hpp\n'}
+[1.016034] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv\n'}
+[1.016073] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail\n'}
+[1.016111] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__struct.hpp\n'}
+[1.016150] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__traits.hpp\n'}
+[1.016188] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__builder.hpp\n'}
+[1.016228] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/tello_action.hpp\n'}
+[1.016266] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs\n'}
+[1.016304] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg\n'}
+[1.016342] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail\n'}
+[1.016381] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__type_support.cpp\n'}
+[1.016420] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/flight_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.016459] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__type_support.cpp\n'}
+[1.016497] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/msg/detail/tello_response__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.016535] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv\n'}
+[1.016574] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail\n'}
+[1.016612] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.016651] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/include/tello_msgs/srv/detail/tello_action__type_support.cpp\n'}
+[1.016690] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[1.016728] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__rosidl_typesupport_cpp.so\n'}
+[1.016767] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/environment/pythonpath.sh\n'}
+[1.016805] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/environment/pythonpath.dsv\n'}
+[1.016849] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/__init__.py\n'}
+[1.037223] (tello_msgs) StdoutLine: {'line': b"Compiling '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/__init__.py'...\n"}
+[1.040492] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/msg\n'}
+[1.040639] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/msg/__init__.py\n'}
+[1.040692] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/msg/_flight_data_s.c\n'}
+[1.040737] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/msg/_tello_response.py\n'}
+[1.040780] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/msg/_flight_data.py\n'}
+[1.040822] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/msg/_tello_response_s.c\n'}
+[1.040864] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/srv\n'}
+[1.040906] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/srv/__init__.py\n'}
+[1.040948] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/srv/_tello_action_s.c\n'}
+[1.040990] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/srv/_tello_action.py\n'}
+[1.041082] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/tello_msgs_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\n'}
+[1.041923] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/tello_msgs_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\n'}
+[1.042204] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages/tello_msgs/tello_msgs_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\n'}
+[1.042489] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/lib/libtello_msgs__python.so\n'}
+[1.042720] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/msg/FlightData.idl\n'}
+[1.042827] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/msg/TelloResponse.idl\n'}
+[1.042893] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/srv/TelloAction.idl\n'}
+[1.042964] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/msg/FlightData.msg\n'}
+[1.043036] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/msg/TelloResponse.msg\n'}
+[1.043096] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/srv/TelloAction.srv\n'}
+[1.043164] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/srv/TelloAction_Request.msg\n'}
+[1.043214] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/srv/TelloAction_Response.msg\n'}
+[1.043296] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/ament_index/resource_index/package_run_dependencies/tello_msgs\n'}
+[1.043356] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/ament_index/resource_index/parent_prefix_path/tello_msgs\n'}
+[1.043412] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/environment/ament_prefix_path.sh\n'}
+[1.043458] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/environment/ament_prefix_path.dsv\n'}
+[1.043509] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/environment/path.sh\n'}
+[1.043551] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/environment/path.dsv\n'}
+[1.043603] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/local_setup.bash\n'}
+[1.043655] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/local_setup.sh\n'}
+[1.043703] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/local_setup.zsh\n'}
+[1.043753] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/local_setup.dsv\n'}
+[1.043796] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/package.dsv\n'}
+[1.043839] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/ament_index/resource_index/packages/tello_msgs\n'}
+[1.043898] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_generator_cExport.cmake\n'}
+[1.043939] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[1.043995] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[1.044039] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[1.044079] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_typesupport_cExport.cmake\n'}
+[1.044137] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[1.044189] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_generator_cppExport.cmake\n'}
+[1.044237] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[1.044295] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[1.044399] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[1.044457] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[1.044512] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[1.044575] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[1.044639] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[1.044703] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[1.044768] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[1.044809] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[1.044848] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[1.044887] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgsConfig.cmake\n'}
+[1.044925] (tello_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake/tello_msgsConfig-version.cmake\n'}
+[1.044965] (tello_msgs) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/package.xml\n'}
+[1.046588] (tello_msgs) CommandEnded: {'returncode': 0}
+[1.059526] (tello_msgs) JobEnded: {'identifier': 'tello_msgs', 'rc': 0}
+[1.060206] (tello_driver) JobStarted: {'identifier': 'tello_driver'}
+[1.063887] (tello_gazebo) JobStarted: {'identifier': 'tello_gazebo'}
+[1.069183] (tello_driver) JobProgress: {'identifier': 'tello_driver', 'progress': 'cmake'}
+[1.069722] (tello_driver) JobProgress: {'identifier': 'tello_driver', 'progress': 'build'}
+[1.069924] (tello_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/eeavir/tellocontrol/build/tello_driver', '--', '-j8', '-l8'], 'cwd': '/home/eeavir/tellocontrol/build/tello_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/tello_driver'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[1.073471] (tello_gazebo) JobProgress: {'identifier': 'tello_gazebo', 'progress': 'cmake'}
+[1.074127] (tello_gazebo) JobProgress: {'identifier': 'tello_gazebo', 'progress': 'build'}
+[1.074399] (tello_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/eeavir/tellocontrol/build/tello_gazebo', '--', '-j8', '-l8'], 'cwd': '/home/eeavir/tellocontrol/build/tello_gazebo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/tello_gazebo'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[1.095411] (tello_driver) StdoutLine: {'line': b'-- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)\n'}
+[1.100744] (-) TimerEvent: {}
+[1.101920] (tello_gazebo) StdoutLine: {'line': b'-- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)\n'}
+[1.110798] (tello_driver) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.117397] (tello_gazebo) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.155140] (tello_driver) StdoutLine: {'line': b'-- Found camera_calibration_parsers: 2.5.1 (/opt/ros/galactic/share/camera_calibration_parsers/cmake)\n'}
+[1.195635] (tello_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.197017] (tello_gazebo) StdoutLine: {'line': b'-- Found DART: /usr/include (Required is at least version "6.6") found components: dart \n'}
+[1.198859] (tello_driver) StdoutLine: {'line': b'-- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)\n'}
+[1.200833] (-) TimerEvent: {}
+[1.228463] (tello_gazebo) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread (found version "3.6.1") \n'}
+[1.230084] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.234960] (tello_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6\n'}
+[1.236797] (tello_gazebo) StdoutLine: {'line': b'-- Looking for OGRE...\n'}
+[1.241310] (tello_gazebo) StdoutLine: {'line': b'-- Found Ogre Ghadamon (1.9.0)\n'}
+[1.241685] (tello_gazebo) StdoutLine: {'line': b'-- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so\n'}
+[1.252906] (tello_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Paging...\n'}
+[1.253598] (tello_gazebo) StdoutLine: {'line': b'-- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so\n'}
+[1.253893] (tello_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Terrain...\n'}
+[1.253971] (tello_gazebo) StdoutLine: {'line': b'-- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so\n'}
+[1.254042] (tello_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Property...\n'}
+[1.254111] (tello_gazebo) StdoutLine: {'line': b'-- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so\n'}
+[1.254180] (tello_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_RTShaderSystem...\n'}
+[1.254249] (tello_gazebo) StdoutLine: {'line': b'-- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so\n'}
+[1.254311] (tello_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Volume...\n'}
+[1.254375] (tello_gazebo) StdoutLine: {'line': b'-- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so\n'}
+[1.254447] (tello_gazebo) StdoutLine: {'line': b'-- Looking for OGRE_Overlay...\n'}
+[1.254513] (tello_gazebo) StdoutLine: {'line': b'-- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so\n'}
+[1.300972] (-) TimerEvent: {}
+[1.311349] (tello_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.372034] (tello_driver) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 3.3.1 (/opt/ros/galactic/share/rmw_implementation_cmake/cmake)\n'}
+[1.374924] (tello_driver) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 0.22.6 (/opt/ros/galactic/share/rmw_cyclonedds_cpp/cmake)\n'}
+[1.399546] (tello_driver) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[1.401046] (-) TimerEvent: {}
+[1.440831] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.441377] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-transport8 -- found version 8.3.0\n'}
+[1.441907] (tello_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport8\n'}
+[1.457520] (tello_gazebo) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread (found suitable version "3.6.1", minimum required is "3") \n'}
+[1.468083] (tello_gazebo) StdoutLine: {'line': b'-- Config-file not installed for ZeroMQ -- checking for pkg-config\n'}
+[1.472244] (tello_gazebo) StdoutLine: {'line': b"-- Checking for module 'libzmq >= 4'\n"}
+[1.489534] (tello_gazebo) StdoutLine: {'line': b'--   Found libzmq , version 4.3.2\n'}
+[1.501172] (-) TimerEvent: {}
+[1.533772] (tello_gazebo) StdoutLine: {'line': b"-- Checking for module 'uuid'\n"}
+[1.547796] (tello_gazebo) StdoutLine: {'line': b'--   Found uuid, version 2.34.0\n'}
+[1.579718] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.10.0\n'}
+[1.580104] (tello_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-msgs5\n'}
+[1.601268] (-) TimerEvent: {}
+[1.603519] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.609219] (tello_gazebo) StdoutLine: {'line': b"-- Checking for module 'tinyxml2'\n"}
+[1.625547] (tello_gazebo) StdoutLine: {'line': b'--   Found tinyxml2, version 6.2.0\n'}
+[1.668127] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.10.0\n'}
+[1.668561] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-common3 -- found version 3.14.2\n'}
+[1.669318] (tello_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common3\n'}
+[1.669759] (tello_gazebo) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[1.669879] (tello_gazebo) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[1.681039] (tello_gazebo) StdoutLine: {'line': b'-- Searching for <ignition-common3> component [graphics]\n'}
+[1.681456] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-common3-graphics -- found version 3.14.2\n'}
+[1.681885] (tello_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common3-graphics\n'}
+[1.682587] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.684202] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-fuel_tools4 -- found version 4.6.0\n'}
+[1.684596] (tello_gazebo) StdoutLine: {'line': b'-- Searching for dependencies of ignition-fuel_tools4\n'}
+[1.693610] (tello_driver) StdoutLine: {'line': b"-- Setting yaml-cpp_DIR to: '/opt/ros/galactic/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/lib/cmake/yaml-cpp'\n"}
+[1.697801] (tello_driver) StdoutLine: {'line': b'-- Found class_loader: 2.1.2 (/opt/ros/galactic/share/class_loader/cmake)\n'}
+[1.701399] (-) TimerEvent: {}
+[1.703053] (tello_driver) StdoutLine: {'line': b'-- Found cv_bridge: 3.1.3 (/opt/ros/galactic/share/cv_bridge/cmake)\n'}
+[1.720085] (tello_gazebo) StdoutLine: {'line': b"-- Checking for module 'jsoncpp'\n"}
+[1.737138] (tello_driver) StdoutLine: {'line': b'-- Found rclcpp_components: 9.2.2 (/opt/ros/galactic/share/rclcpp_components/cmake)\n'}
+[1.739364] (tello_gazebo) StdoutLine: {'line': b'--   Found jsoncpp, version 1.7.4\n'}
+[1.787146] (tello_driver) StdoutLine: {'line': b'-- Found ros2_shared: 0.1.0 (/home/eeavir/tellocontrol/install/ros2_shared/share/ros2_shared/cmake)\n'}
+[1.788537] (tello_driver) StdoutLine: {'line': b'-- Found tello_msgs: 0.1.0 (/home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake)\n'}
+[1.789586] (tello_gazebo) StdoutLine: {'line': b"-- Checking for module 'libzip'\n"}
+[1.801601] (-) TimerEvent: {}
+[1.805458] (tello_gazebo) StdoutLine: {'line': b'--   Found libzip, version 1.5.1\n'}
+[1.855012] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-common3 -- found version 3.14.2\n'}
+[1.855295] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.855621] (tello_gazebo) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.10.0\n'}
+[1.858333] (tello_gazebo) StdoutLine: {'line': b'-- Found gazebo_dev: 3.5.2 (/opt/ros/galactic/share/gazebo_dev/cmake)\n'}
+[1.858917] (tello_gazebo) StdoutLine: {'line': b'-- Gazebo version: 11.11\n'}
+[1.859655] (tello_gazebo) StdoutLine: {'line': b'-- Found gazebo_ros: 3.5.2 (/opt/ros/galactic/share/gazebo_ros/cmake)\n'}
+[1.897804] (tello_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.901694] (-) TimerEvent: {}
+[1.902204] (tello_gazebo) StdoutLine: {'line': b'-- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)\n'}
+[2.001828] (-) TimerEvent: {}
+[2.021686] (tello_driver) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.027002] (tello_gazebo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.075012] (tello_gazebo) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 3.3.1 (/opt/ros/galactic/share/rmw_implementation_cmake/cmake)\n'}
+[2.076718] (tello_gazebo) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 0.22.6 (/opt/ros/galactic/share/rmw_cyclonedds_cpp/cmake)\n'}
+[2.077727] (tello_driver) StdoutLine: {'line': b'-- Generating done\n'}
+[2.092822] (tello_gazebo) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[2.102113] (-) TimerEvent: {}
+[2.102668] (tello_driver) StdoutLine: {'line': b'-- Build files have been written to: /home/eeavir/tellocontrol/build/tello_driver\n'}
+[2.133772] (tello_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tello_emulator\x1b[0m\n'}
+[2.138478] (tello_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tello_joy_node\x1b[0m\n'}
+[2.139349] (tello_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tello_joy_main\x1b[0m\n'}
+[2.149000] (tello_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tello_driver_node\x1b[0m\n'}
+[2.149319] (tello_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tello_driver_main\x1b[0m\n'}
+[2.154513] (tello_driver) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object CMakeFiles/tello_emulator.dir/src/tello_emulator.cpp.o\x1b[0m\n'}
+[2.189811] (tello_driver) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/tello_joy_node.dir/src/tello_joy_node.cpp.o\x1b[0m\n'}
+[2.199178] (tello_driver) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding CXX object CMakeFiles/tello_joy_main.dir/src/tello_joy_node.cpp.o\x1b[0m\n'}
+[2.202185] (-) TimerEvent: {}
+[2.206665] (tello_driver) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding CXX object CMakeFiles/tello_joy_main.dir/src/tello_joy_main.cpp.o\x1b[0m\n'}
+[2.257670] (tello_driver) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_node.dir/src/tello_socket.cpp.o\x1b[0m\n'}
+[2.257976] (tello_driver) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_node.dir/src/command_socket.cpp.o\x1b[0m\n'}
+[2.269411] (tello_driver) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_node.dir/src/tello_driver_node.cpp.o\x1b[0m\n'}
+[2.286074] (tello_gazebo) StdoutLine: {'line': b'-- Found geometry_msgs: 2.2.4 (/opt/ros/galactic/share/geometry_msgs/cmake)\n'}
+[2.291509] (tello_driver) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_main.dir/src/tello_driver_main.cpp.o\x1b[0m\n'}
+[2.302300] (-) TimerEvent: {}
+[2.357842] (tello_gazebo) StdoutLine: {'line': b'-- Found sensor_msgs: 2.2.4 (/opt/ros/galactic/share/sensor_msgs/cmake)\n'}
+[2.402468] (-) TimerEvent: {}
+[2.482386] (tello_gazebo) StdoutLine: {'line': b'-- Found tello_msgs: 0.1.0 (/home/eeavir/tellocontrol/install/tello_msgs/share/tello_msgs/cmake)\n'}
+[2.502647] (-) TimerEvent: {}
+[2.603423] (-) TimerEvent: {}
+[2.704035] (-) TimerEvent: {}
+[2.748383] (tello_gazebo) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.804585] (-) TimerEvent: {}
+[2.825943] (tello_gazebo) StdoutLine: {'line': b'-- Generating done\n'}
+[2.845588] (tello_gazebo) StdoutLine: {'line': b'-- Build files have been written to: /home/eeavir/tellocontrol/build/tello_gazebo\n'}
+[2.904707] (-) TimerEvent: {}
+[3.005321] (-) TimerEvent: {}
+[3.012288] (tello_gazebo) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target TelloPlugin\x1b[0m\n'}
+[3.105470] (-) TimerEvent: {}
+[3.206027] (-) TimerEvent: {}
+[3.254605] (tello_gazebo) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/TelloPlugin.dir/src/tello_plugin.cpp.o\x1b[0m\n'}
+[3.306146] (-) TimerEvent: {}
+[3.406499] (-) TimerEvent: {}
+[3.506860] (-) TimerEvent: {}
+[3.607386] (-) TimerEvent: {}
+[3.707738] (-) TimerEvent: {}
+[3.808111] (-) TimerEvent: {}
+[3.908559] (-) TimerEvent: {}
+[4.009019] (-) TimerEvent: {}
+[4.109473] (-) TimerEvent: {}
+[4.209910] (-) TimerEvent: {}
+[4.310364] (-) TimerEvent: {}
+[4.399140] (tello_driver) StdoutLine: {'line': b'[ 40%] \x1b[32m\x1b[1mLinking CXX executable tello_emulator\x1b[0m\n'}
+[4.410490] (-) TimerEvent: {}
+[4.510974] (-) TimerEvent: {}
+[4.611394] (-) TimerEvent: {}
+[4.696815] (tello_driver) StdoutLine: {'line': b'[ 40%] Built target tello_emulator\n'}
+[4.711511] (-) TimerEvent: {}
+[4.716090] (tello_driver) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_node.dir/src/state_socket.cpp.o\x1b[0m\n'}
+[4.811647] (-) TimerEvent: {}
+[4.912023] (-) TimerEvent: {}
+[5.012419] (-) TimerEvent: {}
+[5.112953] (-) TimerEvent: {}
+[5.213508] (-) TimerEvent: {}
+[5.314032] (-) TimerEvent: {}
+[5.414582] (-) TimerEvent: {}
+[5.515114] (-) TimerEvent: {}
+[5.615646] (-) TimerEvent: {}
+[5.716176] (-) TimerEvent: {}
+[5.816792] (-) TimerEvent: {}
+[5.917309] (-) TimerEvent: {}
+[6.017841] (-) TimerEvent: {}
+[6.118352] (-) TimerEvent: {}
+[6.182323] (tello_driver) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_node.dir/src/video_socket.cpp.o\x1b[0m\n'}
+[6.218476] (-) TimerEvent: {}
+[6.318864] (-) TimerEvent: {}
+[6.419237] (-) TimerEvent: {}
+[6.519635] (-) TimerEvent: {}
+[6.620201] (-) TimerEvent: {}
+[6.720778] (-) TimerEvent: {}
+[6.821319] (-) TimerEvent: {}
+[6.921853] (-) TimerEvent: {}
+[6.937169] (tello_driver) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_main.dir/src/tello_driver_node.cpp.o\x1b[0m\n'}
+[7.021975] (-) TimerEvent: {}
+[7.122507] (-) TimerEvent: {}
+[7.223047] (-) TimerEvent: {}
+[7.323569] (-) TimerEvent: {}
+[7.421558] (tello_driver) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_node.dir/h264decoder/h264decoder.cpp.o\x1b[0m\n'}
+[7.423683] (-) TimerEvent: {}
+[7.524191] (-) TimerEvent: {}
+[7.624717] (-) TimerEvent: {}
+[7.725416] (-) TimerEvent: {}
+[7.825954] (-) TimerEvent: {}
+[7.898496] (tello_driver) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_main.dir/src/tello_socket.cpp.o\x1b[0m\n'}
+[7.926070] (-) TimerEvent: {}
+[8.026426] (-) TimerEvent: {}
+[8.078465] (tello_driver) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_main.dir/src/command_socket.cpp.o\x1b[0m\n'}
+[8.126549] (-) TimerEvent: {}
+[8.226929] (-) TimerEvent: {}
+[8.327306] (-) TimerEvent: {}
+[8.427698] (-) TimerEvent: {}
+[8.528091] (-) TimerEvent: {}
+[8.628537] (-) TimerEvent: {}
+[8.729120] (-) TimerEvent: {}
+[8.829821] (-) TimerEvent: {}
+[8.930328] (-) TimerEvent: {}
+[9.030883] (-) TimerEvent: {}
+[9.131424] (-) TimerEvent: {}
+[9.231955] (-) TimerEvent: {}
+[9.332504] (-) TimerEvent: {}
+[9.433078] (-) TimerEvent: {}
+[9.533662] (-) TimerEvent: {}
+[9.634196] (-) TimerEvent: {}
+[9.734725] (-) TimerEvent: {}
+[9.835247] (-) TimerEvent: {}
+[9.935778] (-) TimerEvent: {}
+[10.036349] (-) TimerEvent: {}
+[10.136865] (-) TimerEvent: {}
+[10.237401] (-) TimerEvent: {}
+[10.337914] (-) TimerEvent: {}
+[10.438428] (-) TimerEvent: {}
+[10.538945] (-) TimerEvent: {}
+[10.639454] (-) TimerEvent: {}
+[10.741461] (-) TimerEvent: {}
+[10.841822] (-) TimerEvent: {}
+[10.942316] (-) TimerEvent: {}
+[11.043650] (-) TimerEvent: {}
+[11.153600] (-) TimerEvent: {}
+[11.254161] (-) TimerEvent: {}
+[11.354847] (-) TimerEvent: {}
+[11.456765] (-) TimerEvent: {}
+[11.508214] (tello_driver) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_main.dir/src/state_socket.cpp.o\x1b[0m\n'}
+[11.556919] (-) TimerEvent: {}
+[11.657689] (-) TimerEvent: {}
+[11.758322] (-) TimerEvent: {}
+[11.859870] (-) TimerEvent: {}
+[11.960472] (-) TimerEvent: {}
+[12.060987] (-) TimerEvent: {}
+[12.161509] (-) TimerEvent: {}
+[12.262028] (-) TimerEvent: {}
+[12.362572] (-) TimerEvent: {}
+[12.463085] (-) TimerEvent: {}
+[12.563624] (-) TimerEvent: {}
+[12.664140] (-) TimerEvent: {}
+[12.764693] (-) TimerEvent: {}
+[12.865668] (-) TimerEvent: {}
+[12.966245] (-) TimerEvent: {}
+[13.066868] (-) TimerEvent: {}
+[13.167642] (-) TimerEvent: {}
+[13.268369] (-) TimerEvent: {}
+[13.369019] (-) TimerEvent: {}
+[13.469742] (-) TimerEvent: {}
+[13.570719] (-) TimerEvent: {}
+[13.671400] (-) TimerEvent: {}
+[13.701606] (tello_driver) StdoutLine: {'line': b'[ 77%] \x1b[32m\x1b[1mLinking CXX executable tello_joy_main\x1b[0m\n'}
+[13.736257] (tello_driver) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_main.dir/src/video_socket.cpp.o\x1b[0m\n'}
+[13.771542] (-) TimerEvent: {}
+[13.872168] (-) TimerEvent: {}
+[13.959046] (tello_driver) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding CXX object CMakeFiles/tello_driver_main.dir/h264decoder/h264decoder.cpp.o\x1b[0m\n'}
+[13.972313] (-) TimerEvent: {}
+[14.072853] (-) TimerEvent: {}
+[14.173403] (-) TimerEvent: {}
+[14.263545] (tello_driver) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking CXX shared library libtello_joy_node.so\x1b[0m\n'}
+[14.273519] (-) TimerEvent: {}
+[14.373928] (-) TimerEvent: {}
+[14.474437] (-) TimerEvent: {}
+[14.542975] (tello_driver) StdoutLine: {'line': b'[ 90%] Built target tello_joy_main\n'}
+[14.574585] (-) TimerEvent: {}
+[14.675821] (-) TimerEvent: {}
+[14.777447] (-) TimerEvent: {}
+[14.818292] (tello_driver) StdoutLine: {'line': b'[ 90%] Built target tello_joy_node\n'}
+[14.881588] (-) TimerEvent: {}
+[14.982988] (-) TimerEvent: {}
+[15.083617] (-) TimerEvent: {}
+[15.184573] (-) TimerEvent: {}
+[15.285546] (-) TimerEvent: {}
+[15.387148] (-) TimerEvent: {}
+[15.487739] (-) TimerEvent: {}
+[15.588395] (-) TimerEvent: {}
+[15.689135] (-) TimerEvent: {}
+[15.789534] (-) TimerEvent: {}
+[15.893913] (-) TimerEvent: {}
+[15.997885] (-) TimerEvent: {}
+[16.098278] (-) TimerEvent: {}
+[16.199799] (-) TimerEvent: {}
+[16.300448] (-) TimerEvent: {}
+[16.401078] (-) TimerEvent: {}
+[16.501483] (-) TimerEvent: {}
+[16.601996] (-) TimerEvent: {}
+[16.703034] (-) TimerEvent: {}
+[16.803437] (-) TimerEvent: {}
+[16.903867] (-) TimerEvent: {}
+[17.004616] (-) TimerEvent: {}
+[17.042648] (tello_driver) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking CXX shared library libtello_driver_node.so\x1b[0m\n'}
+[17.104745] (-) TimerEvent: {}
+[17.205291] (-) TimerEvent: {}
+[17.305725] (-) TimerEvent: {}
+[17.406081] (-) TimerEvent: {}
+[17.506821] (-) TimerEvent: {}
+[17.607198] (-) TimerEvent: {}
+[17.707554] (-) TimerEvent: {}
+[17.807912] (-) TimerEvent: {}
+[17.841310] (tello_driver) StdoutLine: {'line': b'[ 95%] Built target tello_driver_node\n'}
+[17.908020] (-) TimerEvent: {}
+[18.008404] (-) TimerEvent: {}
+[18.108735] (-) TimerEvent: {}
+[18.209042] (-) TimerEvent: {}
+[18.309344] (-) TimerEvent: {}
+[18.409741] (-) TimerEvent: {}
+[18.510228] (-) TimerEvent: {}
+[18.610594] (-) TimerEvent: {}
+[18.710945] (-) TimerEvent: {}
+[18.811433] (-) TimerEvent: {}
+[18.912902] (-) TimerEvent: {}
+[19.013255] (-) TimerEvent: {}
+[19.113596] (-) TimerEvent: {}
+[19.213864] (-) TimerEvent: {}
+[19.314149] (-) TimerEvent: {}
+[19.414521] (-) TimerEvent: {}
+[19.514919] (-) TimerEvent: {}
+[19.615311] (-) TimerEvent: {}
+[19.715734] (-) TimerEvent: {}
+[19.732683] (tello_driver) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable tello_driver_main\x1b[0m\n'}
+[19.815936] (-) TimerEvent: {}
+[19.916404] (-) TimerEvent: {}
+[20.016932] (-) TimerEvent: {}
+[20.117469] (-) TimerEvent: {}
+[20.217930] (-) TimerEvent: {}
+[20.318558] (-) TimerEvent: {}
+[20.419227] (-) TimerEvent: {}
+[20.519700] (-) TimerEvent: {}
+[20.619993] (-) TimerEvent: {}
+[20.720311] (-) TimerEvent: {}
+[20.820642] (-) TimerEvent: {}
+[20.920962] (-) TimerEvent: {}
+[20.936379] (tello_driver) StdoutLine: {'line': b'[100%] Built target tello_driver_main\n'}
+[20.944592] (tello_driver) CommandEnded: {'returncode': 0}
+[20.945188] (tello_driver) JobProgress: {'identifier': 'tello_driver', 'progress': 'install'}
+[20.946576] (tello_driver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/eeavir/tellocontrol/build/tello_driver'], 'cwd': '/home/eeavir/tellocontrol/build/tello_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/tello_driver'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[20.953807] (tello_driver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[20.954007] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/environment/library_path.sh\n'}
+[20.954057] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/environment/library_path.dsv\n'}
+[20.954649] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/lib/libtello_driver_node.so\n'}
+[20.962143] (tello_driver) StdoutLine: {'line': b'-- Set runtime path of "/home/eeavir/tellocontrol/install/tello_driver/lib/libtello_driver_node.so" to ""\n'}
+[20.962601] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/lib/libtello_joy_node.so\n'}
+[20.967889] (tello_driver) StdoutLine: {'line': b'-- Set runtime path of "/home/eeavir/tellocontrol/install/tello_driver/lib/libtello_joy_node.so" to ""\n'}
+[20.968015] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/lib/tello_driver/tello_driver_main\n'}
+[20.972563] (tello_driver) StdoutLine: {'line': b'-- Set runtime path of "/home/eeavir/tellocontrol/install/tello_driver/lib/tello_driver/tello_driver_main" to ""\n'}
+[20.972694] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/lib/tello_driver/tello_joy_main\n'}
+[20.975247] (tello_driver) StdoutLine: {'line': b'-- Set runtime path of "/home/eeavir/tellocontrol/install/tello_driver/lib/tello_driver/tello_joy_main" to ""\n'}
+[20.975383] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/lib/tello_driver/tello_emulator\n'}
+[20.975502] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/cfg\n'}
+[20.975599] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/cfg/camera_info.yaml\n'}
+[20.975675] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/launch\n'}
+[20.975767] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/launch/emulators_launch.py\n'}
+[20.975839] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/launch/emulator_launch.py\n'}
+[20.975913] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/launch/teleop_launch.py\n'}
+[20.976003] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/ament_index/resource_index/package_run_dependencies/tello_driver\n'}
+[20.976079] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/ament_index/resource_index/parent_prefix_path/tello_driver\n'}
+[20.976155] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/environment/ament_prefix_path.sh\n'}
+[20.976252] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/environment/ament_prefix_path.dsv\n'}
+[20.976326] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/environment/path.sh\n'}
+[20.976390] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/environment/path.dsv\n'}
+[20.976454] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/local_setup.bash\n'}
+[20.976515] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/local_setup.sh\n'}
+[20.976577] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/local_setup.zsh\n'}
+[20.976642] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/local_setup.dsv\n'}
+[20.976708] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/package.dsv\n'}
+[20.976772] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/ament_index/resource_index/packages/tello_driver\n'}
+[20.976836] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/ament_index/resource_index/rclcpp_components/tello_driver\n'}
+[20.976904] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/cmake/tello_driverConfig.cmake\n'}
+[20.976971] (tello_driver) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/cmake/tello_driverConfig-version.cmake\n'}
+[20.977044] (tello_driver) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_driver/share/tello_driver/package.xml\n'}
+[20.977755] (tello_driver) CommandEnded: {'returncode': 0}
+[20.988296] (tello_driver) JobEnded: {'identifier': 'tello_driver', 'rc': 0}
+[21.021152] (-) TimerEvent: {}
+[21.121500] (-) TimerEvent: {}
+[21.221831] (-) TimerEvent: {}
+[21.322169] (-) TimerEvent: {}
+[21.422497] (-) TimerEvent: {}
+[21.522888] (-) TimerEvent: {}
+[21.623229] (-) TimerEvent: {}
+[21.723502] (-) TimerEvent: {}
+[21.823771] (-) TimerEvent: {}
+[21.924041] (-) TimerEvent: {}
+[22.024350] (-) TimerEvent: {}
+[22.124674] (-) TimerEvent: {}
+[22.225008] (-) TimerEvent: {}
+[22.325284] (-) TimerEvent: {}
+[22.425595] (-) TimerEvent: {}
+[22.525892] (-) TimerEvent: {}
+[22.626220] (-) TimerEvent: {}
+[22.726495] (-) TimerEvent: {}
+[22.826813] (-) TimerEvent: {}
+[22.927133] (-) TimerEvent: {}
+[23.027457] (-) TimerEvent: {}
+[23.127814] (-) TimerEvent: {}
+[23.228120] (-) TimerEvent: {}
+[23.328411] (-) TimerEvent: {}
+[23.428681] (-) TimerEvent: {}
+[23.528981] (-) TimerEvent: {}
+[23.629271] (-) TimerEvent: {}
+[23.729569] (-) TimerEvent: {}
+[23.829836] (-) TimerEvent: {}
+[23.930218] (-) TimerEvent: {}
+[24.030610] (-) TimerEvent: {}
+[24.130942] (-) TimerEvent: {}
+[24.231301] (-) TimerEvent: {}
+[24.331730] (-) TimerEvent: {}
+[24.432423] (-) TimerEvent: {}
+[24.532881] (-) TimerEvent: {}
+[24.633228] (-) TimerEvent: {}
+[24.733543] (-) TimerEvent: {}
+[24.833833] (-) TimerEvent: {}
+[24.848770] (tello_gazebo) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libTelloPlugin.so\x1b[0m\n'}
+[24.934014] (-) TimerEvent: {}
+[25.034400] (-) TimerEvent: {}
+[25.134743] (-) TimerEvent: {}
+[25.235074] (-) TimerEvent: {}
+[25.335386] (-) TimerEvent: {}
+[25.435683] (-) TimerEvent: {}
+[25.463093] (tello_gazebo) StdoutLine: {'line': b'[100%] Built target TelloPlugin\n'}
+[25.471471] (tello_gazebo) CommandEnded: {'returncode': 0}
+[25.472012] (tello_gazebo) JobProgress: {'identifier': 'tello_gazebo', 'progress': 'install'}
+[25.472346] (tello_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/eeavir/tellocontrol/build/tello_gazebo'], 'cwd': '/home/eeavir/tellocontrol/build/tello_gazebo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'eeavir'), ('LC_TIME', 'fi_FI.UTF-8'), ('SSH_AGENT_PID', '1510'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib:/home/eeavir/tellocontrol/install/tello_gazebo/lib:/home/eeavir/tellocontrol/install/tello_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/eeavir'), ('OLDPWD', '/home/eeavir'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'fi_FI.UTF-8'), ('MANAGERPID', '1365'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/eeavir/tellocontrol/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'eeavir'), ('JOURNAL_STREAM', '8:42724'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'eeavir'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/home/eeavir/install/tello_gazebo/share/tello_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/galactic/bin:/home/eeavir/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eeavir/.local/bin'), ('SESSION_MANAGER', 'local/FX516PM:@/tmp/.ICE-unix/1548,unix/FX516PM:/tmp/.ICE-unix/1548'), ('INVOCATION_ID', 'a17f27862ccd4778b78fadca0cd8ac0b'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'fi_FI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6f7d4567_bef2_4a9c_a4ca_781b24c47f3b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'fi_FI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'fi_FI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'fi_FI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'fi_FI.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/eeavir/tellocontrol/build/tello_gazebo'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/eeavir/tellocontrol/install/tello_msgs/lib/python3.8/site-packages:/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'fi_FI.UTF-8'), ('LC_PAPER', 'fi_FI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/eeavir/tellocontrol/install/tello_msgs:/home/eeavir/tellocontrol/install/tello_gazebo:/home/eeavir/tellocontrol/install/tello_driver:/home/eeavir/tellocontrol/install/tello_description:/home/eeavir/tellocontrol/install/ros2_shared:/home/eeavir/tellocontrol/install/own_package:/opt/ros/galactic')]), 'shell': False}
+[25.480097] (tello_gazebo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[25.480703] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/lib/libTelloPlugin.so\n'}
+[25.485036] (tello_gazebo) StdoutLine: {'line': b'-- Set runtime path of "/home/eeavir/tellocontrol/install/tello_gazebo/lib/libTelloPlugin.so" to ""\n'}
+[25.485176] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models\n'}
+[25.485234] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_red\n'}
+[25.485287] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_red/model.sdf\n'}
+[25.485363] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_red/square_gate.dae\n'}
+[25.485413] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_red/model.config\n'}
+[25.485455] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_blue\n'}
+[25.485496] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_blue/model.sdf\n'}
+[25.485537] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_blue/circle_gate.dae\n'}
+[25.485596] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_blue/model.config\n'}
+[25.485679] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_red\n'}
+[25.485729] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_red/model.sdf\n'}
+[25.485769] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_red/circle_gate.dae\n'}
+[25.485809] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_red/model.config\n'}
+[25.485849] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green\n'}
+[25.485890] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green/model.sdf\n'}
+[25.485930] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green/square_gate.dae\n'}
+[25.485987] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green/model.config\n'}
+[25.486071] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green\n'}
+[25.486113] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green/model.sdf\n'}
+[25.486154] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green/circle_gate.dae\n'}
+[25.486194] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green/model.config\n'}
+[25.486235] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_tall\n'}
+[25.486275] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_tall/model.sdf\n'}
+[25.486315] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_tall/square_gate_tall.dae\n'}
+[25.486386] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_tall/model.config\n'}
+[25.486426] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign\n'}
+[25.486466] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials\n'}
+[25.486507] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/textures\n'}
+[25.486547] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/textures/StopSign_Diffuse.png\n'}
+[25.486603] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/textures/StopSign_Spec.png\n'}
+[25.486692] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/scripts\n'}
+[25.486748] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/materials/scripts/stopsign.material\n'}
+[25.486805] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/meshes\n'}
+[25.486863] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/meshes/stop_sign.dae\n'}
+[25.486920] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/model.sdf\n'}
+[25.486990] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/model-1_3.sdf\n'}
+[25.487041] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/model.config\n'}
+[25.487082] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/stop_sign/model-1_4.sdf\n'}
+[25.487123] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_blue\n'}
+[25.487179] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_blue/model.sdf\n'}
+[25.487253] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_blue/square_gate.dae\n'}
+[25.487303] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_blue/model.config\n'}
+[25.487346] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_short\n'}
+[25.487386] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_short/circle_gate_short.dae\n'}
+[25.487427] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_short/model.sdf\n'}
+[25.487483] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_short/model.config\n'}
+[25.487563] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_short\n'}
+[25.487603] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_short/square_gate_short.dae\n'}
+[25.487656] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_short/model.sdf\n'}
+[25.487697] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/square_gate_green_short/model.config\n'}
+[25.487738] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_tall\n'}
+[25.487804] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_tall/circle_gate_tall.dae\n'}
+[25.487845] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_tall/model.sdf\n'}
+[25.487886] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/circle_gate_green_tall/model.config\n'}
+[25.487926] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet\n'}
+[25.487967] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet/meshes\n'}
+[25.488008] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet/meshes/pallet.dae\n'}
+[25.488064] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet/model.sdf\n'}
+[25.488139] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/euro_pallet/model.config\n'}
+[25.488179] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane\n'}
+[25.488217] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials\n'}
+[25.488256] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials/textures\n'}
+[25.488293] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials/textures/tarmac.png\n'}
+[25.489794] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials/scripts\n'}
+[25.489841] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/materials/scripts/asphalt.material\n'}
+[25.489898] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/model.sdf\n'}
+[25.489961] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/model.config\n'}
+[25.490021] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/models/asphalt_plane/model-1_4.sdf\n'}
+[25.490061] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/worlds\n'}
+[25.490102] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/worlds/simple.world\n'}
+[25.490159] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/worlds/demo_track.world\n'}
+[25.490234] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch\n'}
+[25.490277] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch/__pycache__\n'}
+[25.490327] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch/__pycache__/vlam_launch.cpython-38.pyc\n'}
+[25.490367] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch/simple_launch.py\n'}
+[25.490406] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/launch/demo_track_launch.py\n'}
+[25.490446] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/lib/tello_gazebo/inject_entity.py\n'}
+[25.490501] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/ament_index/resource_index/package_run_dependencies/tello_gazebo\n'}
+[25.490571] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/ament_index/resource_index/parent_prefix_path/tello_gazebo\n'}
+[25.490612] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/environment/ament_prefix_path.sh\n'}
+[25.490653] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/environment/ament_prefix_path.dsv\n'}
+[25.490709] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/environment/path.sh\n'}
+[25.490785] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/environment/path.dsv\n'}
+[25.490827] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/local_setup.bash\n'}
+[25.490866] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/local_setup.sh\n'}
+[25.490906] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/local_setup.zsh\n'}
+[25.490946] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/local_setup.dsv\n'}
+[25.491001] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/package.dsv\n'}
+[25.491070] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/ament_index/resource_index/packages/tello_gazebo\n'}
+[25.491110] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/cmake/tello_gazeboConfig.cmake\n'}
+[25.491153] (tello_gazebo) StdoutLine: {'line': b'-- Up-to-date: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/cmake/tello_gazeboConfig-version.cmake\n'}
+[25.491191] (tello_gazebo) StdoutLine: {'line': b'-- Installing: /home/eeavir/tellocontrol/install/tello_gazebo/share/tello_gazebo/package.xml\n'}
+[25.492334] (tello_gazebo) CommandEnded: {'returncode': 0}
+[25.502725] (tello_gazebo) JobEnded: {'identifier': 'tello_gazebo', 'rc': 0}
+[25.503356] (-) EventReactorShutdown: {}

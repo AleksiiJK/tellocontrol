@@ -1,7 +1,9 @@
 /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package/__init__.py
 /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package/image_subscriber.py
+/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package/hoop_detection.py
 /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package/__pycache__/__init__.cpython-38.pyc
 /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package/__pycache__/image_subscriber.cpython-38.pyc
+/home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package/__pycache__/hoop_detection.cpython-38.pyc
 /home/eeavir/tellocontrol/install/own_package/share/ament_index/resource_index/packages/own_package
 /home/eeavir/tellocontrol/install/own_package/share/own_package/package.xml
 /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info/top_level.txt
@@ -11,4 +13,5 @@
 /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info/entry_points.txt
 /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info/SOURCES.txt
 /home/eeavir/tellocontrol/install/own_package/lib/python3.8/site-packages/own_package-0.0.0-py3.8.egg-info/dependency_links.txt
+/home/eeavir/tellocontrol/install/own_package/lib/own_package/hoop_detection
 /home/eeavir/tellocontrol/install/own_package/lib/own_package/image_subscriber

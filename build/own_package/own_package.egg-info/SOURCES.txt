@@ -9,6 +9,7 @@ setup.py
 ../../build/own_package/own_package.egg-info/top_level.txt
 ../../build/own_package/own_package.egg-info/zip-safe
 own_package/__init__.py
+own_package/hoop_detection.py
 own_package/image_subscriber.py
 resource/own_package
 test/test_copyright.py

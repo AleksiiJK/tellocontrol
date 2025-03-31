@@ -1,3 +1,4 @@
 [console_scripts]
+hoop_detection = own_package.hoop_detection:main
 image_subscriber = own_package.image_subscriber:main
 
