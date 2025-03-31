@@ -1,6 +1,7 @@
-# Ignore everything
-*
+# Ignore directories except src
+build/
+install/
+log/
 
-# Except the src directory
-!src/
-!src/**/*
+
+
