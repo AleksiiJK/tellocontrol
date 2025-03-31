@@ -64,7 +64,7 @@ class HoopDetector(Node):
     def __init__(self):
         super().__init__('hoop_detection')
         self.subscription = self.create_subscription(
-            Image, '/image_raw', self.image_callback, 1)
+            Image, '/image_raw', self.image_callback, 1) #Notice no profile
         self.camera_info_sub = self.create_subscription(
             CameraInfo, '/camera_info', self.camera_info_callback, qos_profile)
         self.bridge = CvBridge()
