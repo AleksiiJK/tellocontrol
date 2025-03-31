@@ -12,7 +12,7 @@ public:
         qos_profile.best_effort(); // Set QoS to BEST_EFFORT
 
         subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
-            "/drone1/image_raw", qos_profile,
+            "/image_raw", qos_profile,
             std::bind(&ImageSubscriber::image_callback, this, std::placeholders::_1));
     }
 
