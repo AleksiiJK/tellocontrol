@@ -1,6 +1,0 @@
-Invoking command in '/home/atte/drone_ws/build/ros2_shared': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/atte/drone_ws/src/drone_racing_ros2/ros2_shared -DCMAKE_INSTALL_PREFIX=/home/atte/drone_ws/install/ros2_shared
-Invoked command in '/home/atte/drone_ws/build/ros2_shared' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/atte/drone_ws/src/drone_racing_ros2/ros2_shared -DCMAKE_INSTALL_PREFIX=/home/atte/drone_ws/install/ros2_shared
-Invoking command in '/home/atte/drone_ws/build/ros2_shared': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/atte/drone_ws/build/ros2_shared -- -j4 -l4
-Invoked command in '/home/atte/drone_ws/build/ros2_shared' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/atte/drone_ws/build/ros2_shared -- -j4 -l4
-Invoking command in '/home/atte/drone_ws/build/ros2_shared': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/atte/drone_ws/build/ros2_shared
-Invoked command in '/home/atte/drone_ws/build/ros2_shared' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/atte/drone_ws/build/ros2_shared
