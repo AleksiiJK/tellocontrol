@@ -1,0 +1,3 @@
+/home/atte/drone_ws/build/tello_msgs/rosidl_adapter/tello_msgs:msg/FlightData.idl
+/home/atte/drone_ws/build/tello_msgs/rosidl_adapter/tello_msgs:msg/TelloResponse.idl
+/home/atte/drone_ws/build/tello_msgs/rosidl_adapter/tello_msgs:srv/TelloAction.idl
