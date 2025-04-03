@@ -22,6 +22,8 @@ setup(
         'console_scripts': [
             'image_subscriber = own_package.image_subscriber:main',
             'hoop_detection = own_package.hoop_detection:main',
+            'edge_detection = own_package.edge_detection:main',
+            'coordinate_controller = own_package.coordinate_controller:main'
         ],
     },
 )
