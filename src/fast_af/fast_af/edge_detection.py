@@ -10,7 +10,6 @@ from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 # Setting the QoS profile
 qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=1)
 
-
 # Function to detect sharp edges, find areas, and return the largest centroid
 def detect_edges_and_boundaries(image):
 
