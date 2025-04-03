@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'own_package'
+package_name = 'fast_af'
 
 setup(
     name=package_name,
@@ -20,10 +20,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'image_subscriber = own_package.image_subscriber:main',
-            'hoop_detection = own_package.hoop_detection:main',
-            'edge_detection = own_package.edge_detection:main',
-            'coordinate_controller = own_package.coordinate_controller:main'
+            'image_subscriber = fast_af.image_subscriber:main',
+            'hoop_detection = fast_af.hoop_detection:main',
+            'edge_detection = fast_af.edge_detection:main',
+            'coordinate_controller = fast_af.coordinate_controller:main'
         ],
     },
 )
