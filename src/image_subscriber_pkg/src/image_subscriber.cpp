@@ -6,7 +6,6 @@
 class ImageSubscriber : public rclcpp::Node {
 public:
     ImageSubscriber() : Node("image_subscriber") {
-        // Try both QoS policies (Reliable & Best Effort)
         rclcpp::QoS qos_profile = rclcpp::QoS(rclcpp::KeepLast(10));
 
         qos_profile.best_effort(); // Set QoS to BEST_EFFORT
