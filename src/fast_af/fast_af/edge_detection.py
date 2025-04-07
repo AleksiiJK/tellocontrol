@@ -8,7 +8,7 @@ import numpy as np
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 
 # Setting the QoS profile 
-qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=10)
+qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=1)
 
 # Function to detect sharp edges, find areas, and return the centroid of a largest area
 def detect_edges_and_boundaries(image):
@@ -93,7 +93,7 @@ class EdgeDetector(Node):
         
         # ROS2 Subscriber for camera feed
         self.subscription = self.create_subscription(
-            Image, '/image_raw', self.image_callback, 1)
+            Image, '/image_raw', self.image_callback, qos_profile)
         self.camera_info_sub = self.create_subscription(
             CameraInfo, '/camera_info', self.camera_info_callback, qos_profile)
         

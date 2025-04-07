@@ -23,7 +23,7 @@ setup(
             'centroid_pid_sim = fast_af.centroid_pid_sim:main',
             'centroid_pid = fast_af.centroid_pid:main',
             'coordinate_controller = fast_af.coordinate_controller:main',
-            'edge_detection_sim = fast.af.edge_detection_sim:main',
+            'edge_detection_sim = fast_af.edge_detection_sim:main',
             'edge_detection = fast_af.edge_detection:main',
         ],
     },
