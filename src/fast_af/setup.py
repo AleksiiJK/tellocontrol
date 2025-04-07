@@ -20,10 +20,11 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'image_subscriber = fast_af.image_subscriber:main',
-            'hoop_detection = fast_af.hoop_detection:main',
             'edge_detection = fast_af.edge_detection:main',
-            'coordinate_controller = fast_af.coordinate_controller:main'
+            'edge_detection_sim = fast.af.edge_detection_sim:main',
+            'coordinate_controller = fast_af.coordinate_controller:main',
+            'centroid_pid = fast_af.centroid_pid:main',
+            'centroid_pid_sim = fast_af.centroid_pid_sim:main',
         ],
     },
 )

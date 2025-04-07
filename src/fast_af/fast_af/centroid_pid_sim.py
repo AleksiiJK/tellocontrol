@@ -16,7 +16,7 @@ qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=Q
 class CoordinateController(Node):
 
     def __init__(self):
-        super().__init__('coordinate_controller')
+        super().__init__('centroid_pid_sim')
 
         # Camera dimensions define center points
         self.center_y = 720 / 2

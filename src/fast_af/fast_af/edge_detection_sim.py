@@ -71,7 +71,7 @@ def detect_edges_and_boundaries(image):
 
 class EdgeDetector(Node):
     def __init__(self):
-        super().__init__('edge_detection')
+        super().__init__('edge_detection_sim')
 
         # Params for smoothing the centroid
         self.alpha = 0.5  # Smoothing factor (adjustable)
