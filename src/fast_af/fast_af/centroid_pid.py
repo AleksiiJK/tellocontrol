@@ -1,3 +1,5 @@
+
+
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -5,6 +7,7 @@ from std_msgs.msg import Float64MultiArray
 from geometry_msgs.msg import Point
 import numpy as np
 import time
+
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 
 # Setting the QoS profile
@@ -24,7 +27,7 @@ class CoordinateController(Node):
         self.X_BAND = 40
 
         # Velocity parameters and recovery timeout
-        self.FORWARD_VELOCITY = 1.5
+        self.FORWARD_VELOCITY = 1 #NOTE: anything over 1 will stop the drone
         """Angular and z-velocity parameters are made obsolete by PID-control"""
         #self.ANGULAR_VELOCITY = 0.2 
         #self.Z_VELOCITY = 0.3   
@@ -89,6 +92,8 @@ class CoordinateController(Node):
         self.last_time = current_time
 
         linear_z = Kp * ey + Ki * self.integral_ey + Kd * derivative_ey
+        if linear_z > 0:
+            linear_z = min(linear_z, 0.3)
         return -linear_z  # Negative to go down when target is above
 
         
@@ -107,7 +112,12 @@ class CoordinateController(Node):
         # Move forward only if target is centered
         if abs(ex) < self.X_BAND and abs(ey) < self.Y_BAND:
             cmd_vel.linear.x = self.FORWARD_VELOCITY
-
+        #limit all max commands
+        for vel in cmd_vel:
+            if vel > 1:
+                vel = 1
+            elif vel < -1:
+                vel = -1
         # Publish the velocity
         self.cmd_vel_pub.publish(cmd_vel)
 
