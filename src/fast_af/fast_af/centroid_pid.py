@@ -1,5 +1,3 @@
-
-
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -32,7 +30,7 @@ class CoordinateController(Node):
         #self.ANGULAR_VELOCITY = 0.2 
         #self.Z_VELOCITY = 0.3   
         self.SEARCH_ROTATION_SPEED = 0.2
-        self.SEARCH_TIMEOUT = 5.0
+        self.SEARCH_TIMEOUT = 1.0
 
         # PID error variables 
         self.integral_ex = 0
@@ -93,8 +91,6 @@ class CoordinateController(Node):
         self.last_time = current_time
 
         linear_z = Kp * ey + Ki * self.integral_ey + Kd * derivative_ey
-        if linear_z > 0:
-            linear_z = min(linear_z, 0.3)
         return -linear_z  # Negative to go down when target is above
 
         
@@ -108,8 +104,8 @@ class CoordinateController(Node):
 
         # Apply the PID control to center the centroid
         #limit velocities tbetween
-        cmd_vel.linear.z = max(min(self.PID_y(ey),1),-1)
-        cmd_vel.angular.z = max(min(self.PID_x(ex),1),-1)
+        cmd_vel.linear.z = max(min(self.PID_y(ey),1.0),-1.0)
+        cmd_vel.angular.z = max(min(self.PID_x(ex),1.0),-1.0)
 
         # Move forward only if target is centered
         if abs(ex) < self.X_BAND and abs(ey) < self.Y_BAND:
