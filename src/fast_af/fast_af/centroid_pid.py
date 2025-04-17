@@ -17,7 +17,7 @@ class CoordinateController(Node):
         super().__init__('centroid_pid')
 
         # Camera dimensions define center points
-        self.center_y = 720 / 2
+        self.center_y = 720 / 2 - 125
         self.center_x = 960 / 2
 
         # Band to define whether forward move is acceptable
@@ -25,7 +25,7 @@ class CoordinateController(Node):
         self.X_BAND = 40
 
         # Velocity parameters and recovery timeout
-        self.FORWARD_VELOCITY = 1.0 #NOTE: anything over 1 will stop the drone
+        self.FORWARD_VELOCITY = 0.3 #NOTE: anything over 1 will stop the drone
         """Angular and z-velocity parameters are made obsolete by PID-control"""
         #self.ANGULAR_VELOCITY = 0.2 
         #self.Z_VELOCITY = 0.3   
@@ -61,7 +61,7 @@ class CoordinateController(Node):
         # Separate PID-controller functions for x and y directions, start out with small gains
     def PID_x(self, ex):
         #Kp, Ki, Kd = 0, 0, 0
-        Kp, Ki, Kd = 0.001, 0.003, 0
+        Kp, Ki, Kd = 0.001, 0.005, 0
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0
@@ -77,8 +77,8 @@ class CoordinateController(Node):
         return -angular_z  # Negative to correct direction
 
     def PID_y(self, ey):
-        Kp, Ki, Kd = 0.0006, 0.00015, 0
-        #Kp, Ki, Kd = 0.000, 0.000, 0.0000
+        #Kp, Ki, Kd = 0.0006, 0.00015, 0
+        Kp, Ki, Kd = 0.003, 0.00015, 0.0
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0
@@ -109,7 +109,11 @@ class CoordinateController(Node):
 
         # Move forward only if target is centered
         if abs(ex) < self.X_BAND and abs(ey) < self.Y_BAND:
-            cmd_vel.linear.x = self.FORWARD_VELOCITY
+            #cmd_vel.linear.x = self.FORWARD_VELOCITY
+            forward = Twist()
+            forward.linear.x = self.FORWARD_VELOCITY
+            self.cmd_vel_pub.publish(forward)    
+            time.sleep(6)
         
         # Publish the velocity
         self.cmd_vel_pub.publish(cmd_vel)
