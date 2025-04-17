@@ -1,5 +1,3 @@
-
-
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -7,7 +5,6 @@ from std_msgs.msg import Float64MultiArray
 from geometry_msgs.msg import Point
 import numpy as np
 import time
-
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 
 # Setting the QoS profile
