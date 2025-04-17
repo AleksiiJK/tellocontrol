@@ -106,18 +106,14 @@ class CoordinateController(Node):
         ey = self.current_y - self.center_y
 
         # Apply the PID control to center the centroid
-        cmd_vel.linear.z = self.PID_y(ey)
-        cmd_vel.angular.z = self.PID_x(ex)
+        #limit velocities tbetween
+        cmd_vel.linear.z = max(min(self.PID_y(ey),1),-1)
+        cmd_vel.angular.z = max(min(self.PID_x(ex),1)-1)
 
         # Move forward only if target is centered
         if abs(ex) < self.X_BAND and abs(ey) < self.Y_BAND:
             cmd_vel.linear.x = self.FORWARD_VELOCITY
-        #limit all max commands
-        for vel in cmd_vel:
-            if vel > 1:
-                vel = 1
-            elif vel < -1:
-                vel = -1
+        
         # Publish the velocity
         self.cmd_vel_pub.publish(cmd_vel)
 
