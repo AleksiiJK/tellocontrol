@@ -27,7 +27,7 @@ class CoordinateController(Node):
         self.X_BAND = 40
 
         # Velocity parameters and recovery timeout
-        self.FORWARD_VELOCITY = 1 #NOTE: anything over 1 will stop the drone
+        self.FORWARD_VELOCITY = 1.0 #NOTE: anything over 1 will stop the drone
         """Angular and z-velocity parameters are made obsolete by PID-control"""
         #self.ANGULAR_VELOCITY = 0.2 
         #self.Z_VELOCITY = 0.3   
@@ -57,6 +57,7 @@ class CoordinateController(Node):
     def coordinate_callback(self, msg):
         self.current_x, self.current_y = msg.x, msg.y
         self.get_logger().info(f'Received coordinates: X={self.current_x}, Y={self.current_y}')
+        self.last_seen_time = time.time()
         self.control_movement()
 
         # Separate PID-controller functions for x and y directions, start out with small gains
@@ -108,7 +109,7 @@ class CoordinateController(Node):
         # Apply the PID control to center the centroid
         #limit velocities tbetween
         cmd_vel.linear.z = max(min(self.PID_y(ey),1),-1)
-        cmd_vel.angular.z = max(min(self.PID_x(ex),1)-1)
+        cmd_vel.angular.z = max(min(self.PID_x(ex),1),-1)
 
         # Move forward only if target is centered
         if abs(ex) < self.X_BAND and abs(ey) < self.Y_BAND:
