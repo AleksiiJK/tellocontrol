@@ -122,10 +122,16 @@ class CoordinateController(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    controller = CoordinateController()
-    rclpy.spin(controller)
-    controller.destroy_node()
-    rclpy.shutdown()
+    node = CoordinateController()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.cmd_vel_pub.publish(Twist())
+        node.destroy_node()
+        rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()
