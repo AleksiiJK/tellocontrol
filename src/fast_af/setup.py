@@ -25,6 +25,7 @@ setup(
             'coordinate_controller = fast_af.coordinate_controller:main',
             'edge_detection_sim = fast_af.edge_detection_sim:main',
             'edge_detection = fast_af.edge_detection:main',
+            'hsv_filter_node = fast_af.hsv_filter_node:main',
         ],
     },
 )
