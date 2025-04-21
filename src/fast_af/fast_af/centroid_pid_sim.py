@@ -19,7 +19,7 @@ class CoordinateController(Node):
         super().__init__('centroid_pid_sim')
 
         # Camera dimensions define center points
-        self.center_y = 720 / 2
+        self.center_y = 720 / 2 - 125
         self.center_x = 960 / 2
 
         # Band to define whether forward move is acceptable
@@ -27,12 +27,12 @@ class CoordinateController(Node):
         self.X_BAND = 40
 
         # Velocity parameters and recovery timeout
-        self.FORWARD_VELOCITY = 1.5
+        self.FORWARD_VELOCITY = 0.3 #NOTE: anything over 1 will stop the drone
         """Angular and z-velocity parameters are made obsolete by PID-control"""
         #self.ANGULAR_VELOCITY = 0.2 
         #self.Z_VELOCITY = 0.3   
         self.SEARCH_ROTATION_SPEED = 0.2
-        self.SEARCH_TIMEOUT = 5.0
+        self.SEARCH_TIMEOUT = 1.0
 
         # PID error variables 
         self.integral_ex = 0
@@ -50,19 +50,20 @@ class CoordinateController(Node):
         self.last_seen_time = time.time()
 
         self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
-        self.cmd_vel_pub = self.create_publisher(Twist, '/drone1/cmd_vel', 10)
+        self.cmd_vel_pub = self.create_publisher(Twist, 'drone1/cmd_vel', 10)
         self.create_timer(1.0, self.check_centroid_visibility)
 
         # Main callback function 
     def coordinate_callback(self, msg):
         self.current_x, self.current_y = msg.x, msg.y
         self.get_logger().info(f'Received coordinates: X={self.current_x}, Y={self.current_y}')
+        self.last_seen_time = time.time()
         self.control_movement()
 
         # Separate PID-controller functions for x and y directions, start out with small gains
     def PID_x(self, ex):
         #Kp, Ki, Kd = 0, 0, 0
-        Kp, Ki, Kd = 0.001, 0.003, 0
+        Kp, Ki, Kd = 0.001, 0.005, 0
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0
@@ -78,8 +79,8 @@ class CoordinateController(Node):
         return -angular_z  # Negative to correct direction
 
     def PID_y(self, ey):
-        Kp, Ki, Kd = 0.0006, 0.00015, 0
-        #Kp, Ki, Kd = 0.000, 0.000, 0.0000
+        #Kp, Ki, Kd = 0.0006, 0.00015, 0
+        Kp, Ki, Kd = 0.003, 0.00015, 0.0
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0
@@ -104,13 +105,18 @@ class CoordinateController(Node):
         ey = self.current_y - self.center_y
 
         # Apply the PID control to center the centroid
-        cmd_vel.linear.z = self.PID_y(ey)
-        cmd_vel.angular.z = self.PID_x(ex)
+        #limit velocities tbetween
+        cmd_vel.linear.z = max(min(self.PID_y(ey),1.0),-1.0)
+        cmd_vel.angular.z = max(min(self.PID_x(ex),1.0),-1.0)
 
         # Move forward only if target is centered
         if abs(ex) < self.X_BAND and abs(ey) < self.Y_BAND:
-            cmd_vel.linear.x = self.FORWARD_VELOCITY
-
+            #cmd_vel.linear.x = self.FORWARD_VELOCITY
+            forward = Twist()
+            forward.linear.x = self.FORWARD_VELOCITY
+            self.cmd_vel_pub.publish(forward)    
+            time.sleep(6)
+        
         # Publish the velocity
         self.cmd_vel_pub.publish(cmd_vel)
 
@@ -125,10 +131,16 @@ class CoordinateController(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    controller = CoordinateController()
-    rclpy.spin(controller)
-    controller.destroy_node()
-    rclpy.shutdown()
+    node = CoordinateController()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.cmd_vel_pub.publish(Twist())
+        node.destroy_node()
+        rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()
