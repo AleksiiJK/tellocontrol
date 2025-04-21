@@ -7,6 +7,8 @@ from std_msgs.msg import Float64MultiArray
 from geometry_msgs.msg import Point
 import numpy as np
 import time
+from std_msgs.msg import Int32
+import threading
 
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 
@@ -19,7 +21,7 @@ class CoordinateController(Node):
         super().__init__('centroid_pid_sim')
 
         # Camera dimensions define center points
-        self.center_y = 720 / 2 - 125
+        self.center_y = 720 / 2 
         self.center_x = 960 / 2
 
         # Band to define whether forward move is acceptable
@@ -27,7 +29,7 @@ class CoordinateController(Node):
         self.X_BAND = 40
 
         # Velocity parameters and recovery timeout
-        self.FORWARD_VELOCITY = 0.3 #NOTE: anything over 1 will stop the drone
+        self.FORWARD_VELOCITY = 0.15 #NOTE: anything over 1 will stop the drone
         """Angular and z-velocity parameters are made obsolete by PID-control"""
         #self.ANGULAR_VELOCITY = 0.2 
         #self.Z_VELOCITY = 0.3   
@@ -37,33 +39,72 @@ class CoordinateController(Node):
         # PID error variables 
         self.integral_ex = 0
         self.last_ex = 0
-
         self.integral_ey = 0
         self.last_ey = 0
+
+        # Parameters to check whether there is enough masked area near the edges, meaning that the drone can "Sprint" through the gate
+        # Additional variables to enable overriding the velocities are also added
+        self.percentage_treshold = 4
+        self.override_duration = 0.2 # This is how long the drone will sprint
+        self.override_active = False
 
         # Time variable for calculating the derivatives
         self.last_time = time.time()
 
-        # Initializing the variables, creating the timer, subscriber and publisher
+        # Initializing the variables, creating the timer, subscribers and publishers
         self.current_x = 0.0
         self.current_y = 0.0
         self.last_seen_time = time.time()
 
+        # Creating the publishers and subscribers
+
         self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
         self.cmd_vel_pub = self.create_publisher(Twist, 'drone1/cmd_vel', 10)
         self.create_timer(1.0, self.check_centroid_visibility)
+        self.create_subscription(Int32,'/masked_area',self.masked_area_callback,qos_profile)
 
-        # Main callback function 
+        # Main callback functions
     def coordinate_callback(self, msg):
         self.current_x, self.current_y = msg.x, msg.y
         self.get_logger().info(f'Received coordinates: X={self.current_x}, Y={self.current_y}')
         self.last_seen_time = time.time()
         self.control_movement()
 
+    def masked_area_callback(self,msg):
+        self.area = msg.data
+        self.percentage = (float((msg.data))/(720*960))*100
+        self.get_logger().info(f'The area percentage is {self.percentage}')
+        self.check_for_area()
+
+        # Area check and override functions
+    def check_for_area(self):
+        if self.percentage > self.percentage_treshold and self.override_active == False:
+            self.get_logger().info("Locking velocity")
+            self.override_active = True
+            self.activate_override()
+        else:
+            pass           
+
+    def activate_override(self):
+        if self.override_active:
+            twist = Twist()
+            twist.linear.x = 0.3  # Fixed forward speed
+            twist.linear.y = 0.0
+            twist.linear.z = 0.0
+            twist.angular.x = 0.0
+            twist.angular.y = 0.0
+            twist.angular.z = 0.0
+            self.cmd_vel_pub.publish(twist)
+            time.sleep(self.override_duration)
+
+        self.override_active = False
+        self.get_logger().info("Override done. Control returned.")
+
+
         # Separate PID-controller functions for x and y directions, start out with small gains
     def PID_x(self, ex):
         #Kp, Ki, Kd = 0, 0, 0
-        Kp, Ki, Kd = 0.001, 0.005, 0
+        Kp, Ki, Kd = 0.001, 0.0005, 0
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0
@@ -80,7 +121,7 @@ class CoordinateController(Node):
 
     def PID_y(self, ey):
         #Kp, Ki, Kd = 0.0006, 0.00015, 0
-        Kp, Ki, Kd = 0.003, 0.00015, 0.0
+        Kp, Ki, Kd = 0.0015, 0.00015, 0.0
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0
@@ -112,10 +153,11 @@ class CoordinateController(Node):
         # Move forward only if target is centered
         if abs(ex) < self.X_BAND and abs(ey) < self.Y_BAND:
             #cmd_vel.linear.x = self.FORWARD_VELOCITY
-            forward = Twist()
-            forward.linear.x = self.FORWARD_VELOCITY
-            self.cmd_vel_pub.publish(forward)    
-            time.sleep(6)
+            cmd_vel.linear.x = self.FORWARD_VELOCITY
+        else: 
+            cmd_vel.linear.x = 0.0
+            #self.cmd_vel_pub.publish(forward)    
+            #time.sleep(0.5)
         
         # Publish the velocity
         self.cmd_vel_pub.publish(cmd_vel)

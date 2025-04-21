@@ -68,6 +68,8 @@ def average_green(image):
     upper_green = np.array([85, 255, 200])
     mask = cv2.inRange(hsv, lower_green, upper_green)
 
+    # Calculate the centroid
+
     moments = cv2.moments(mask)
 
     if moments["m00"] != 0:
@@ -77,6 +79,7 @@ def average_green(image):
         cv2.circle(image, centroid, 5, (0, 0, 255), -1)
     else:
         centroid = None
+
 
     return centroid, image
 
@@ -139,7 +142,7 @@ class EdgeDetector(Node):
             delta_x = abs(new_x - self.prev_x)
             delta_y = abs(new_y - self.prev_y)
 
-            # Dealint with large changes, which might indicate noise disturbance
+            # Dealing with large changes, which might indicate noise disturbance
             if delta_x > self.max_change or delta_y > self.max_change:
                 
             # Reject if change is too large, unless the values repeat, which indicates that new relevant area has been detected
@@ -183,7 +186,13 @@ class EdgeDetector(Node):
                 pass
 
         # Show the processed image
-
+        """Added masked frame visualization"""
+        # Mask and contour finding parameters
+        hsv = cv2.cvtColor(processed_frame, cv2.COLOR_BGR2HSV)
+        lower_green = np.array([45, 70, 0])
+        upper_green = np.array([85, 255, 200])
+        mask = cv2.inRange(hsv, lower_green, upper_green)
+        cv2.imshow('Masked frame',mask)
         cv2.imshow('Edge and Area Detection', processed_frame)
         cv2.waitKey(1)
 
