@@ -51,12 +51,12 @@ class CoordinateController(Node):
         self.current_y = 0.0
         self.last_seen_time = time.time()
 
-        self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
-        self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         self.create_timer(1.0, self.check_centroid_visibility)
-        self.create_subscription(Int32,'/masked_area',self.masked_area_callback,qos_profile)
+        self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
+        self.create_subscription(Int32, '/masked_area',self.masked_area_callback, qos_profile)
+        self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         self.sprint_pub = self.create_publisher(Int32, '/sprints', 10)
-
+        
         # Main callback functions 
     def coordinate_callback(self, msg):
         self.current_x, self.current_y = msg.x, msg.y
@@ -64,7 +64,7 @@ class CoordinateController(Node):
         self.last_seen_time = time.time()
         self.control_movement()
 
-    def masked_area_callback(self,msg):
+    def masked_area_callback(self, msg):
         self.area = msg.data
         self.percentage = (float((msg.data))/(720*960))*100
         self.get_logger().info(f'The area percentage is {self.percentage}')

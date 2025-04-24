@@ -105,8 +105,8 @@ class MaskedAreaCalculator(Node):
         frame_vis_red = frame.copy()
         cv2.rectangle(frame_vis_red, (xr, yr), (x_end_red, y_end_red), (0, 255, 0), 2)
         #mask_vis = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
-        cv2.imshow('Frame with BBox', frame_vis)
-        cv2.imshow('Frame with RedBBox', frame_vis_red)
+        #cv2.imshow('Frame with BBox', frame_vis)
+        #cv2.imshow('Frame with RedBBox', frame_vis_red)
         cv2.waitKey(1)
 
 

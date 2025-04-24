@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image, CameraInfo
 from geometry_msgs.msg import Point
+from std_msgs.msg import Int32
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
@@ -58,11 +59,10 @@ class EdgeDetector(Node):
         # ROS2 Publisher for centroid locations
         self.centroid_publisher = self.create_publisher(Point, 'centroid_locations', qos_profile)
         
-        # ROS2 Subscriber for camera feed
-        self.subscription = self.create_subscription(
-            Image, '/image_raw', self.image_callback, qos_profile)
-        self.camera_info_sub = self.create_subscription(
-            CameraInfo, '/camera_info', self.camera_info_callback, qos_profile)
+        # ROS2 Subscriber for camera feed and sprints
+        self.subscription = self.create_subscription(Image, '/image_raw', self.image_callback, qos_profile)
+        self.camera_info_sub = self.create_subscription(CameraInfo, '/camera_info', self.camera_info_callback, qos_profile)
+        self.sprint_sub = self.create_subscription(Int32, '/sprints',self.sprint_callback, qos_profile)
         
         self.bridge = CvBridge()
         self.camera_info = None
@@ -71,16 +71,27 @@ class EdgeDetector(Node):
     def camera_info_callback(self, msg):
         self.camera_info = msg
 
+    def sprint_callback(self, msg):
+        self.n_sprints = msg.data
+
     def image_callback(self, msg):
         # Convert the ROS image to OpenCV format
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
-        #processed_frame, centroid = detect_edges_and_boundaries(frame)
-        centroid, processed_frame = average_green(frame)
-        
+        # Sprint counting logic:
+        if self.n_sprints < 3:
+            # Green
+            centroid, processed_frame = average_green(frame)
+        elif self.n_sprints >= 3:
+            # QR
+            pass
+        else:
+            # Red
+            pass
+
+
         # If a centroid was found, publish its location
         # Filter out the sudden changes and other noise
-
         if centroid: 
             new_x = float(centroid[0])
             new_y = float(centroid[1])
