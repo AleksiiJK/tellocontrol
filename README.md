@@ -21,10 +21,13 @@ TO DO:
 Atte:
 Laske läpäistyt portit DONE
 Muuta käyttäytymistä porttien mukaan DONE
+Oleta, että kytiksen funktio publishaa centroidia ja implementoi et se publishataan
+Tee simppeli scripti joka tulee stop-merkin lähelle ja ländää
 
 Kytis:
 Tunnista QR-koodi edge detectionissa, punainen a vihreä  DONE
-Luo centroidi markkerien avulla 
+Luo centroidi markkerien avulla ilman että muokkaat originaaliframea.
+
 
 
 Eero:
