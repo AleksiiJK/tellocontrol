@@ -87,6 +87,13 @@ class EdgeDetector(Node):
         self.iterations = 0
         self.iteration_limit = 8
 
+        # Parameters for tag detection:
+        
+        # A predefined dictionary
+        self.aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
+        # 3. Create detector parameters
+        self.parameters = cv2.aruco.DetectorParameters()
+
 
         # ROS2 Publisher for centroid locations
         self.centroid_publisher = self.create_publisher(Point, 'centroid_locations', qos_profile)
@@ -104,9 +111,26 @@ class EdgeDetector(Node):
     def camera_info_callback(self, msg):
         self.camera_info = msg
 
+    def detectTags(self,frame):
+
+        # Convert the video frame to grayscale
+         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+         # Detect the markers
+         corners, ids, rejected = cv2.aruco.detectMarkers(gray, self.aruco_dict, parameters=self.parameters)
+         # Draw the detected markers on the frame
+         cv2.aruco.drawDetectedMarkers(frame, corners, ids)
+         return frame,corners
+
+
+
+
+
     def image_callback(self, msg):
         # Convert the ROS image to OpenCV format
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
+
+        """A function to detect the fiducial markers"""
+        tagFrame,tagCoords = self.detectTags(frame)
     
         # Convert to HSV and create a mask
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -119,10 +143,15 @@ class EdgeDetector(Node):
         #cv2.imshow('Masked Frame', mask)  # Black and white mask
         #cv2.imshow('Masked Frame (Colored)', cv2.bitwise_and(frame, frame, mask=mask))  # Mask applied to the original frame
         # Process the frame to detect edges and boundaries
+        cv2.imshow(tagFrame) # Visualize the tags
+        print(tagCoords)
         processed_frame, centroid = detect_edges_and_boundaries(frame)
         
         # If a centroid was found, publish its location
         # Filter out the sudden changes and other noise
+
+
+
 
         if centroid: 
             new_x = float(centroid[0])
