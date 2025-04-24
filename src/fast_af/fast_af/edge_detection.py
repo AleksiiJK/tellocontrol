@@ -56,6 +56,12 @@ class EdgeDetector(Node):
         self.iteration_limit = 8
         self.n_sprints = 0
 
+        # Parameters for tag detection:
+        # A predefined dictionary
+        self.aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
+        # 3. Create detector parameters
+        self.parameters = cv2.aruco.DetectorParameters()
+
 
         # ROS2 Publisher for centroid locations
         self.centroid_publisher = self.create_publisher(Point, 'centroid_locations', qos_profile)
@@ -69,6 +75,17 @@ class EdgeDetector(Node):
         self.camera_info = None
         self.get_logger().info("Edge detection node started")
 
+    
+    def detectTags(self,frame):
+
+        # Convert the video frame to grayscale
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        # Detect the markers
+        corners, ids, rejected = cv2.aruco.detectMarkers(gray, self.aruco_dict, parameters=self.parameters)
+        # Draw the detected markers on the frame
+        cv2.aruco.drawDetectedMarkers(frame, corners, ids)
+        return frame,corners
+
     def camera_info_callback(self, msg):
         self.camera_info = msg
 
@@ -78,6 +95,9 @@ class EdgeDetector(Node):
     def image_callback(self, msg):
         # Convert the ROS image to OpenCV format
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
+
+        """A function to detect the fiducial markers"""
+        tagFrame,tagCoords = self.detectTags(frame)
 
         # Sprint counting logic:
         if self.n_sprints < 5:
@@ -93,6 +113,7 @@ class EdgeDetector(Node):
 
         # If a centroid was found, publish its location
         # Filter out the sudden changes and other noise
+
         if centroid: 
             new_x = float(centroid[0])
             new_y = float(centroid[1])
@@ -152,6 +173,9 @@ class EdgeDetector(Node):
         # Show the processed image
 
         cv2.imshow('Edge and Area Detection', processed_frame)
+        cv2.imshow(tagFrame) # Visualize the tags
+        print(tagCoords)
+
         cv2.waitKey(1)
 
 def main(args=None):
