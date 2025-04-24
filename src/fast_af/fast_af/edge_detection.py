@@ -55,7 +55,6 @@ class EdgeDetector(Node):
         self.iterations = 0
         self.iteration_limit = 8
 
-
         # ROS2 Publisher for centroid locations
         self.centroid_publisher = self.create_publisher(Point, 'centroid_locations', qos_profile)
         
