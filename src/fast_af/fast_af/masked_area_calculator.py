@@ -23,7 +23,6 @@ class MaskedAreaCalculator(Node):
         self.bridge = CvBridge()
     
     # Parameter for bounding box (x,y,width,heigth), the x and y coordinates represent how much area from the edge we want to use
-
         slice_x = 100
         slice_y = 80
         self.bbox = (slice_x,slice_y,960-2*slice_x,720-2*slice_y)
@@ -42,7 +41,6 @@ class MaskedAreaCalculator(Node):
         mask = cv2.inRange(hsv, lower_green, upper_green)
 
         # Bounding box region:
-
         x, y, w, h = self.bbox
         height, width = mask.shape
         x_end = min(x + w, width)
@@ -57,7 +55,6 @@ class MaskedAreaCalculator(Node):
         visible_area = int(cv2.countNonZero(roi))
         edge_pixels = int(int(cv2.countNonZero(mask))-visible_area)
 
-
         # Publish result
         area_msg = Int32(data=edge_pixels)
         self.publisher_.publish(area_msg)
@@ -71,15 +68,12 @@ class MaskedAreaCalculator(Node):
         cv2.imshow('Frame with BBox', frame_vis)
         cv2.waitKey(1)
 
-
-
 def main(args=None):
     rclpy.init(args=args)
     node = MaskedAreaCalculator()
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()
