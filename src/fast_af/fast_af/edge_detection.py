@@ -79,10 +79,11 @@ class EdgeDetector(Node):
         # Convert the video frame to grayscale
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         # Detect the markers
-        corners, ids, rejected = cv2.aruco.detectMarkers(gray, self.aruco_dict, parameters=self.parameters)
+        detector = cv2.aruco.ArucoDetector(self.aruco_dict, self.parameters)
+        corners, ids, rejected = detector.detectMarkers(gray)
         # Draw the detected markers on the frame
         cv2.aruco.drawDetectedMarkers(frame, corners, ids)
-        return frame,corners
+        return frame, corners
 
     def camera_info_callback(self, msg):
         self.camera_info = msg
@@ -171,7 +172,7 @@ class EdgeDetector(Node):
         # Show the processed image
 
         cv2.imshow('Edge and Area Detection', processed_frame)
-        cv2.imshow(tagFrame) # Visualize the tags
+        cv2.imshow('nimi', tagFrame) # Visualize the tags
         print(tagCoords)
 
         cv2.waitKey(1)
