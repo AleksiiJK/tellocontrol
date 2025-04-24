@@ -17,3 +17,21 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1
 Kontrolli-idea:
 Tsekkaa neliötä keskellä, jos keskellä ei oo yhtään vihreetä ja ulkopuolella on vihreetä, mene x määrä sokkona eteenpäin.
 
+TO DO:
+Atte:
+Laske läpäistyt portit
+
+Kytis:
+Tunnista QR-koodi edge detectionissa, punainen a vihreä  
+
+Eero:
+Hallitse kokonaisuutta ja suunnitelmaa kommunikoi + Gameplant
+
+
+KILPAILUPÄIVÄN SUUNNITELMA
+setup:
+-Konfiguroi värit: hsv_filter_node ja rqf_reconfigure rqf_reconfigure
+-Lisää oikea järjestys porteille, jotta homma toimii. (jos implementoitu)
+-Rukoile
+launch:
+TO DO
