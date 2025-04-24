@@ -96,7 +96,7 @@ class MaskedAreaCalculator(Node):
         area_msg = Int32(data=edge_pixels)
         red_area_msg = Int32(data=bbox_red_pixels)
         self.publisher_.publish(area_msg)
-        self.get_logger().info(f'Visible green pixels:{edge_pixels}, red {bbox_red_pixels} ')
+        #self.get_logger().info(f'Visible green pixels:{edge_pixels}, red {bbox_red_pixels} ')
         self.publisher_red.publish(red_area_msg)
 
         # Visualize the bounding box and masked frame
