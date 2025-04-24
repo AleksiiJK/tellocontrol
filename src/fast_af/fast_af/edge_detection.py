@@ -75,9 +75,7 @@ class EdgeDetector(Node):
         self.camera_info = None
         self.get_logger().info("Edge detection node started")
 
-    
     def detectTags(self,frame):
-
         # Convert the video frame to grayscale
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         # Detect the markers
