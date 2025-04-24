@@ -39,7 +39,7 @@ class CoordinateController(Node):
         # Parameters to check whether there is enough masked area near the edges, meaning that the drone can "Sprint" through the gate
         # Additional variables to enable overriding the velocities are also added
         self.percentage_treshold = 4
-        self.override_duration = 3 # This is how long the drone will sprint
+        self.override_duration = 2 # This is how long the drone will sprint
         self.override_active = False
         self.override_counter = 0
 

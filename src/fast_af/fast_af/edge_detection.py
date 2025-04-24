@@ -54,6 +54,7 @@ class EdgeDetector(Node):
         self.previous_centroid.x,self.previous_centroid.y,self.previous_centroid.z = 0.0,0.0,0.0
         self.iterations = 0
         self.iteration_limit = 8
+        self.n_sprints = 0
 
         # ROS2 Publisher for centroid locations
         self.centroid_publisher = self.create_publisher(Point, 'centroid_locations', qos_profile)
@@ -78,10 +79,10 @@ class EdgeDetector(Node):
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
         # Sprint counting logic:
-        if self.n_sprints < 3:
+        if self.n_sprints < 5:
             # Green
             centroid, processed_frame = average_green(frame)
-        elif self.n_sprints >= 3:
+        elif self.n_sprints >= 5:
             # QR
             pass
         else:
