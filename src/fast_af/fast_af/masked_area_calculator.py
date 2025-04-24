@@ -37,7 +37,7 @@ class MaskedAreaCalculator(Node):
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
         # Mask and contour finding parameters
-        lower_green = np.array([45, 70, 0])
+        lower_green = np.array([45, 70, 50])
         upper_green = np.array([85, 255, 200])
         mask = cv2.inRange(hsv, lower_green, upper_green)
 
@@ -62,6 +62,7 @@ class MaskedAreaCalculator(Node):
         area_msg = Int32(data=edge_pixels)
         self.publisher_.publish(area_msg)
         self.get_logger().info(f'Visible pixels in bbox: {edge_pixels}')
+        #self.get_logger().info(f'Visible pixels: {int(cv2.countNonZero(mask))}')
 
         # Visualize the bounding box and masked frame
         frame_vis = frame.copy()

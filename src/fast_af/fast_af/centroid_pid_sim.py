@@ -78,7 +78,7 @@ class CoordinateController(Node):
         return -angular_z  # Negative to correct direction
 
     def PID_y(self, ey):
-        Kp, Ki, Kd = 0.0006, 0.00015, 0
+        Kp, Ki, Kd = 0.0006, 0.00001, 0
         #Kp, Ki, Kd = 0.000, 0.000, 0.0000
 
         current_time = time.time()

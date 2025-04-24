@@ -26,7 +26,7 @@ class CoordinateController(Node):
 
         # Velocity parameters and recovery timeout
         self.FORWARD_VELOCITY = 0.3 #NOTE: anything over 1 will stop the drone
-        self.fixed_spd = 0.3 #forward speed
+        self.fixed_spd = 0.4 #forward speed
            
         self.SEARCH_ROTATION_SPEED = 0.2
         self.SEARCH_TIMEOUT = 1.0
@@ -40,7 +40,7 @@ class CoordinateController(Node):
         # Parameters to check whether there is enough masked area near the edges, meaning that the drone can "Sprint" through the gate
         # Additional variables to enable overriding the velocities are also added
         self.percentage_treshold = 4
-        self.override_duration = 1 # This is how long the drone will sprint
+        self.override_duration = 3 # This is how long the drone will sprint
         self.override_active = False
 
         # Time variable for calculating the derivatives

@@ -17,7 +17,7 @@ def detect_edges_and_boundaries(image):
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     
     # Mask and contour finding parameters
-    lower_green = np.array([45, 70, 0])
+    lower_green = np.array([45, 70, 50])
     upper_green = np.array([85, 255, 200])
     mask_green = cv2.inRange(hsv, lower_green, upper_green)
 
@@ -64,13 +64,16 @@ def average_green(image):
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     
     # Mask and contour finding parameters
-    lower_green = np.array([45, 70, 0])
+    lower_green = np.array([45, 70, 50])
     upper_green = np.array([85, 255, 200])
     mask = cv2.inRange(hsv, lower_green, upper_green)
 
     moments = cv2.moments(mask)
+    visible_pixels = int(cv2.countNonZero(mask))
 
-    if moments["m00"] != 0:
+    if visible_pixels < 500:
+        centroid = None
+    elif moments["m00"] != 0:
         cx = int(moments["m10"] / moments["m00"])
         cy = int(moments["m01"] / moments["m00"])
         centroid = (cx, cy)
