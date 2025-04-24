@@ -91,12 +91,17 @@ class EdgeDetector(Node):
     def sprint_callback(self, msg):
         self.n_sprints = msg.data
 
+    def qr_centroid(self, frame):
+        tag_frame, tag_coords = self.detectTags(frame)
+        centroid = 0
+        return centroid, tag_frame
+
     def image_callback(self, msg):
         # Convert the ROS image to OpenCV format
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
         """A function to detect the fiducial markers"""
-        tagFrame,tagCoords = self.detectTags(frame)
+        
 
         # Sprint counting logic:
         if self.n_sprints < 5:
@@ -104,6 +109,7 @@ class EdgeDetector(Node):
             centroid, processed_frame = average_green(frame)
         elif self.n_sprints >= 5:
             # QR
+            centroid, processed_frame = self.qr_centroid(frame)
             pass
         else:
             # Red
@@ -172,9 +178,6 @@ class EdgeDetector(Node):
         # Show the processed image
 
         cv2.imshow('Edge and Area Detection', processed_frame)
-        cv2.imshow('nimi', tagFrame) # Visualize the tags
-        print(tagCoords)
-
         cv2.waitKey(1)
 
 def main(args=None):
