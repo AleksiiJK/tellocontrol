@@ -19,10 +19,16 @@ Tsekkaa neliötä keskellä, jos keskellä ei oo yhtään vihreetä ja ulkopuole
 
 TO DO:
 Atte:
-Laske läpäistyt portit
+Laske läpäistyt portit DONE
+Muuta käyttäytymistä porttien mukaan DONE
+Oleta, että kytiksen funktio publishaa centroidia ja implementoi et se publishataan
+Tee simppeli scripti joka tulee stop-merkin lähelle ja ländää
 
 Kytis:
-Tunnista QR-koodi edge detectionissa, punainen a vihreä  
+Tunnista QR-koodi edge detectionissa, punainen a vihreä  DONE
+Luo centroidi markkerien avulla ilman että muokkaat originaaliframea.
+
+
 
 Eero:
 Hallitse kokonaisuutta ja suunnitelmaa kommunikoi + Gameplant
@@ -34,4 +40,7 @@ setup:
 -Lisää oikea järjestys porteille, jotta homma toimii. (jos implementoitu)
 -Rukoile
 launch:
-TO DO
+aja detect.launch.py 
+aja takeoff
+aja pid
+-Rukoile
