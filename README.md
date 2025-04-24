@@ -22,10 +22,16 @@ Atte:
 Laske läpäistyt portit
 
 Kytis:
-Tunnista QR
+Tunnista QR-koodi edge detectionissa, punainen a vihreä  
 
 Eero:
 Hallitse kokonaisuutta ja suunnitelmaa kommunikoi + Gameplant
 
 
 KILPAILUPÄIVÄN SUUNNITELMA
+setup:
+-Konfiguroi värit: hsv_filter_node ja rqf_reconfigure rqf_reconfigure
+-Lisää oikea järjestys porteille, jotta homma toimii. (jos implementoitu)
+-Rukoile
+launch:
+TO DO
