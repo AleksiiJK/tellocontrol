@@ -16,3 +16,4 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1
 
 Kontrolli-idea:
 Tsekkaa neliötä keskellä, jos keskellä ei oo yhtään vihreetä ja ulkopuolella on vihreetä, mene x määrä sokkona eteenpäin.
+
