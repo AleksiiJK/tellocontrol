@@ -12,7 +12,6 @@ from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=10)
 
 class CoordinateController(Node):
-
     def __init__(self):
         super().__init__('centroid_pid')
 
@@ -42,6 +41,7 @@ class CoordinateController(Node):
         self.percentage_treshold = 4
         self.override_duration = 3 # This is how long the drone will sprint
         self.override_active = False
+        self.override_counter = 0
 
         # Time variable for calculating the derivatives
         self.last_time = time.time()
@@ -55,6 +55,7 @@ class CoordinateController(Node):
         self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         self.create_timer(1.0, self.check_centroid_visibility)
         self.create_subscription(Int32,'/masked_area',self.masked_area_callback,qos_profile)
+        self.sprint_pub = self.create_publisher(Int32, '/sprints', 10)
 
         # Main callback functions 
     def coordinate_callback(self, msg):
@@ -68,6 +69,9 @@ class CoordinateController(Node):
         self.percentage = (float((msg.data))/(720*960))*100
         self.get_logger().info(f'The area percentage is {self.percentage}')
         self.check_for_area()
+        sprints = Int32()
+        sprints.data = self.override_counter
+        self.sprint_pub.publish(sprints)
 
         # Area check and override functions
     def check_for_area(self):
@@ -79,16 +83,16 @@ class CoordinateController(Node):
             pass   
         
     def activate_override(self):
-        if self.override_active:
-            twist = Twist()
-            twist.linear.x = self.fixed_spd  # Fixed forward speed
-            twist.linear.y = 0.0
-            twist.linear.z = 0.0
-            twist.angular.x = 0.0
-            twist.angular.y = 0.0
-            twist.angular.z = 0.0
-            self.cmd_vel_pub.publish(twist)
-            time.sleep(self.override_duration)
+        self.override_counter += 1
+        twist = Twist()
+        twist.linear.x = self.fixed_spd  # Fixed forward speed
+        twist.linear.y = 0.0
+        twist.linear.z = 0.0
+        twist.angular.x = 0.0
+        twist.angular.y = 0.0
+        twist.angular.z = 0.0
+        self.cmd_vel_pub.publish(twist)
+        time.sleep(self.override_duration)
 
         self.override_active = False
         self.get_logger().info("Override done. Control returned.")
