@@ -114,7 +114,7 @@ class CoordinateController(Node):
 
     def PID_y(self, ey):
         #Kp, Ki, Kd = 0.0006, 0.00015, 0
-        Kp, Ki, Kd = 0.003, 0.00015, 0.0
+        Kp, Ki, Kd = 0.003, 0.0, 0.0
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0

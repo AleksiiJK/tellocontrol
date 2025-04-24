@@ -37,7 +37,7 @@ class MaskedAreaCalculator(Node):
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
         # Mask and contour finding parameters
-        lower_green = np.array([45, 70, 50])
+        lower_green = np.array([45, 70, 20])
         upper_green = np.array([85, 255, 200])
         mask = cv2.inRange(hsv, lower_green, upper_green)
 

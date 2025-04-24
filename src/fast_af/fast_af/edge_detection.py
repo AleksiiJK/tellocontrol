@@ -10,61 +10,13 @@ from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 # Setting the QoS profile 
 qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=1)
 
-# Function to detect sharp edges, find areas, and return the centroid of a largest area
-def detect_edges_and_boundaries(image):
-
-    # Convert to hsv
-    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-    
-    # Mask and contour finding parameters
-    lower_green = np.array([45, 70, 50])
-    upper_green = np.array([85, 255, 200])
-    mask_green = cv2.inRange(hsv, lower_green, upper_green)
-
-    # Contour finding process
-    gray = cv2.cvtColor(cv2.bitwise_and(image, image, mask=mask_green), cv2.COLOR_BGR2GRAY)
-    #blurred = cv2.GaussianBlur(gray, (5, 5), 1)
-    edges = cv2.Canny(gray, 50, 150)
-    contours, _ = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-
-    # Filter out the Largest area
-    largest_contour = None
-    largest_area = 0
-
-    for contour in contours:
-        if cv2.contourArea(contour) > 300:  # Filter out small areas
-            # Calculate the area of the contour
-            area = cv2.contourArea(contour)
-
-            # Keep track of the largest area
-            if area > largest_area:
-                largest_area = area
-                largest_contour = contour
-
-            # Draw the contour
-            cv2.drawContours(image, [contour], 0, (0, 255, 0), 2)  # Green contour lines
-            
-            # Fill the area
-            cv2.drawContours(image, [contour], 0, (0, 255, 255), -1)  # Yellow fill inside the area
-    
-    # If the largest contour exists, find its centroid   
-    centroid = None
-    if largest_contour is not None:
-        M = cv2.moments(largest_contour)
-        if M["m00"] != 0:
-            cx = int(M["m10"] / M["m00"])
-            cy = int(M["m01"] / M["m00"])
-            centroid = (cx, cy)
-            cv2.circle(image, centroid, 5, (0, 0, 255), -1)  # Red dot at the centroid
-
-    return image, centroid
 
 def average_green(image):
     # Convert to hsv
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     
     # Mask and contour finding parameters
-    lower_green = np.array([45, 70, 50])
+    lower_green = np.array([45, 70, 20])
     upper_green = np.array([85, 255, 200])
     mask = cv2.inRange(hsv, lower_green, upper_green)
 
