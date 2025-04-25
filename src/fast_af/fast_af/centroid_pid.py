@@ -30,7 +30,8 @@ class CoordinateController(Node):
         self.FORWARD_VELOCITY = 0.15 #NOTE: anything over 1 will stop the drone
         self.fixed_spd = 0.4 #forward speed
            
-        self.SEARCH_ROTATION_SPEED = 0.2
+        self.SEARCH_ROTATION_SPEED = 0.3
+        self.SEARCH_RISING_SPEED = 0.02
         self.SEARCH_TIMEOUT = 1.0
 
         # PID error variables 
@@ -220,6 +221,7 @@ class CoordinateController(Node):
         if time.time() - self.last_seen_time > self.SEARCH_TIMEOUT:
             cmd_vel = Twist()
             cmd_vel.angular.z = self.SEARCH_ROTATION_SPEED
+            cmd_vel.linear.z = self.SEARCH_RISING_SPEED
             self.get_logger().warn("Centroid lost! Searching...")
             self.cmd_vel_pub.publish(cmd_vel)
 
