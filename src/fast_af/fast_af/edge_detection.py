@@ -92,16 +92,24 @@ class EdgeDetector(Node):
         self.n_sprints = msg.data
 
     def qr_centroid(self, frame):
-        tag_frame, tag_coords = self.detectTags(frame)
-        centroid = 0
+        tag_frame, tag_coords = self.detectTags(frame) # Use the previously defined tag-detection function to
+        if tag_coords:
+            all_points = np.concatenate(tag_coords,axis = 1) # Combine the points
+            meanpoint = np.mean(all_points) # Calculate the average of all points
+            cx, cy = int(meanpoint[0]),int(meanpoint[1]) # Separate the x-and y-coords so that message formatting stays consistent
+            centroid = (cx,cy)
+        else:
+            centroid = None # If no markers are detected, return no centroid
+            
         return centroid, tag_frame
 
     def image_callback(self, msg):
         # Convert the ROS image to OpenCV format
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
-        """A function to detect the fiducial markers"""
-        
+        # Copy the frame for tag detection
+        copied_frame = frame.copy()
+
 
         # Sprint counting logic:
         if self.n_sprints < 5:
@@ -109,7 +117,7 @@ class EdgeDetector(Node):
             centroid, processed_frame = average_green(frame)
         elif self.n_sprints >= 5:
             # QR
-            centroid, processed_frame = self.qr_centroid(frame)
+            centroid, processed_frame = self.qr_centroid(copied_frame) # Use the copied frame to avoid modifying original
             pass
         else:
             # Red
