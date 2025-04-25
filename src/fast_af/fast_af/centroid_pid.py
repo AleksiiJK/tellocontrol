@@ -10,6 +10,7 @@ from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 
 # Setting the QoS profile
 qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=10)
+qos_0 = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=1)
 
 class CoordinateController(Node):
     def __init__(self):
@@ -24,7 +25,7 @@ class CoordinateController(Node):
         self.X_BAND = 40
 
         # Velocity parameters and recovery timeout
-        self.FORWARD_VELOCITY = 0.3 #NOTE: anything over 1 will stop the drone
+        self.FORWARD_VELOCITY = 0.2 #NOTE: anything over 1 will stop the drone
         self.fixed_spd = 0.4 #forward speed
            
         self.SEARCH_ROTATION_SPEED = 0.2
@@ -39,10 +40,10 @@ class CoordinateController(Node):
         # Parameters to check whether there is enough masked area near the edges, meaning that the drone can "Sprint" through the gate
         # Additional variables to enable overriding the velocities are also added
         self.percentage_treshold = 4
-        self.override_duration = 2 # This is how long the drone will sprint
+        self.override_duration = 3 # This is how long the drone will sprint
         self.override_active = False
         self.override_counter = 0
-        self.mode = 2 # Default 1
+        self.mode = 1 # Default 1
 
         # Time variable for calculating the derivatives
         self.last_time = time.time()
@@ -54,7 +55,7 @@ class CoordinateController(Node):
 
         self.create_timer(1.0, self.check_centroid_visibility)
         self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
-        self.create_subscription(Int32, '/masked_area', self.masked_area_callback, qos_profile)
+        self.create_subscription(Int32, '/masked_area', self.masked_area_callback, qos_0)
         self.create_subscription(Int32, '/qr_min_dist', self.qr_sprint_callback, qos_profile)
         self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         self.mode_pub = self.create_publisher(Int32, '/mode', 10)
@@ -76,16 +77,16 @@ class CoordinateController(Node):
         self.check_for_area()
 
         # Set mode based on the override counter
-        #if self.override_counter < 3:
-        #    self.mode = 1
-        #elif self.override_counter >= 3:
-        #    self.mode = 2
-        #else:
-        #    self.mode = 3
+        if self.override_counter < 4:
+            self.mode = 1
+        elif self.override_counter == 4:
+            self.mode = 2
+        else:
+            self.mode = 3
         
         mode = Int32()
         mode.data = self.mode
-        #self.mode_pub.publish(mode)
+        self.mode_pub.publish(mode)
 
         # Area check and override functions
     def check_for_area(self):
@@ -99,6 +100,7 @@ class CoordinateController(Node):
         
     def activate_override(self):
         self.override_counter += 1
+        self.get_logger().info(f"Sprint {self.override_counter}")
         twist = Twist()
         twist.linear.x = self.fixed_spd  # Fixed forward speed
         twist.linear.y = 0.0
@@ -188,11 +190,12 @@ class CoordinateController(Node):
 
         # Recovery function in case centroid is lost
     def check_centroid_visibility(self):
-        if time.time() - self.last_seen_time > self.SEARCH_TIMEOUT:
-            cmd_vel = Twist()
-            cmd_vel.angular.z = self.SEARCH_ROTATION_SPEED
-            self.get_logger().warn("Centroid lost! Searching...")
-            self.cmd_vel_pub.publish(cmd_vel)
+        pass
+        #if time.time() - self.last_seen_time > self.SEARCH_TIMEOUT:
+        #    cmd_vel = Twist()
+        #    cmd_vel.angular.z = self.SEARCH_ROTATION_SPEED
+        #    self.get_logger().warn("Centroid lost! Searching...")
+        #    self.cmd_vel_pub.publish(cmd_vel)
 
 
 def main(args=None):

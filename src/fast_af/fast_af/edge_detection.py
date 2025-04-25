@@ -54,7 +54,7 @@ class EdgeDetector(Node):
         self.previous_centroid.x,self.previous_centroid.y,self.previous_centroid.z = 0.0,0.0,0.0
         self.iterations = 0
         self.iteration_limit = 8
-        self.mode = 2 # Default 1
+        self.mode = 1 # Default 1
 
         # Parameters for tag detection:
         # A predefined dictionary
