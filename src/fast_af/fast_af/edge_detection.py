@@ -118,7 +118,6 @@ class EdgeDetector(Node):
         elif self.n_sprints >= 5:
             # QR
             centroid, processed_frame = self.qr_centroid(copied_frame) # Use the copied frame to avoid modifying original
-            pass
         else:
             # Red
             pass
