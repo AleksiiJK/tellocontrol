@@ -114,7 +114,7 @@ class EdgeDetector(Node):
         else:
             centroid = None # If no markers are detected, return no centroid
             
-        return centroid, tag_frame, min_dist
+        return centroid, tag_frame
 
     def image_callback(self, msg):
         # Convert the ROS image to OpenCV format
@@ -130,7 +130,7 @@ class EdgeDetector(Node):
             centroid, processed_frame = average_green(frame)
         elif self.mode == 2:
             # QR
-            centroid, processed_frame, min_dist = self.qr_centroid(copied_frame) # Use the copied frame to avoid modifying original
+            centroid, processed_frame = self.qr_centroid(copied_frame) # Use the copied frame to avoid modifying original
             pass
         elif self.mode == 3:
             # Red

@@ -42,7 +42,7 @@ class CoordinateController(Node):
         self.override_duration = 2 # This is how long the drone will sprint
         self.override_active = False
         self.override_counter = 0
-        self.mode = 0
+        self.mode = 2 # Default 1
 
         # Time variable for calculating the derivatives
         self.last_time = time.time()
@@ -82,6 +82,9 @@ class CoordinateController(Node):
             self.mode = 2
         else:
             self.mode = 3
+
+        # Ota tää vituunn ku ei testata
+        self.mode = 2
         
         mode = Int32()
         mode.data
