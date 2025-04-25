@@ -37,6 +37,38 @@ def average_green(image):
     return centroid, image
 
 
+def average_red(image):
+    # Convert to hsv
+    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    
+    # Mask and controur finding parameter (Red)
+    # Lower red range
+    lower_red1 = np.array([0, 70, 50])
+    upper_red1 = np.array([10, 255, 255])
+    # Upper red range
+    lower_red2 = np.array([170, 70, 50])
+    upper_red2 = np.array([180, 255, 255])
+    red_mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
+    red_mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
+    # Combine the masks 
+    red_mask = cv2.bitwise_or(red_mask1, red_mask2)
+
+    moments = cv2.moments(red_mask)
+    visible_pixels = int(cv2.countNonZero(red_mask))
+
+    if visible_pixels < 500:
+        centroid = None
+    elif moments["m00"] != 0:
+        cx = int(moments["m10"] / moments["m00"])
+        cy = int(moments["m01"] / moments["m00"])
+        centroid = (cx, cy)
+        cv2.circle(image, centroid, 5, (0, 0, 255), -1)
+    else:
+        centroid = None
+
+    return centroid, image
+
+
 class EdgeDetector(Node):
     def __init__(self):
         super().__init__('edge_detection')
@@ -134,6 +166,7 @@ class EdgeDetector(Node):
             pass
         elif self.mode == 3:
             # Red
+            centroid, processed_frame = average_red(frame)
             pass
 
 

@@ -44,6 +44,9 @@ class CoordinateController(Node):
         self.override_counter = 0
         self.mode = 2 # Default 1
 
+        # Parameter for red
+        self.percentage_treshold_red = 60
+
         # Time variable for calculating the derivatives
         self.last_time = time.time()
 
@@ -55,6 +58,7 @@ class CoordinateController(Node):
         self.create_timer(1.0, self.check_centroid_visibility)
         self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
         self.create_subscription(Int32, '/masked_area', self.masked_area_callback, qos_profile)
+        self.create_subscription(Int32, '/masked_area_red', self.masked_area_red_callback, qos_profile)
         self.create_subscription(Int32, '/qr_min_dist', self.qr_sprint_callback, qos_profile)
         self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         self.mode_pub = self.create_publisher(Int32, '/mode', 10)
@@ -90,6 +94,12 @@ class CoordinateController(Node):
         mode.data
         self.mode_pub.publish(mode)
 
+    def masked_area_red_callback(self, msg):
+        self.area_red = msg.data
+        self.percentage_red = (float((msg.data))/(720*960))*100
+        #self.get_logger().info(f'The area percentage is {self.percentage}')
+        self.check_for_area_red()
+
         # Area check and override functions
     def check_for_area(self):
         if self.mode == 1:
@@ -99,6 +109,13 @@ class CoordinateController(Node):
                 self.activate_override()
             else:
                 pass   
+
+    def check_for_area_red(self):
+        if self.mode == 3 and self.percentage_red > self.percentage_treshold_red:
+            print("Landed") # Replace with landing service call
+            self.get_logger().info(f'The area percentage is {self.percentage_red}')
+        else:
+            pass
         
     def activate_override(self):
         self.override_counter += 1
