@@ -54,7 +54,7 @@ class EdgeDetector(Node):
         self.previous_centroid.x,self.previous_centroid.y,self.previous_centroid.z = 0.0,0.0,0.0
         self.iterations = 0
         self.iteration_limit = 8
-        self.n_sprints = 0
+        self.mode = 0
 
         # Parameters for tag detection:
         # A predefined dictionary
@@ -69,7 +69,7 @@ class EdgeDetector(Node):
         # ROS2 Subscriber for camera feed and sprints
         self.subscription = self.create_subscription(Image, '/image_raw', self.image_callback, qos_profile)
         self.camera_info_sub = self.create_subscription(CameraInfo, '/camera_info', self.camera_info_callback, qos_profile)
-        self.sprint_sub = self.create_subscription(Int32, '/sprints',self.sprint_callback, qos_profile)
+        self.mode_sub = self.create_subscription(Int32, '/mode',self.mode_callback, qos_profile)
         
         self.bridge = CvBridge()
         self.camera_info = None
@@ -88,8 +88,8 @@ class EdgeDetector(Node):
     def camera_info_callback(self, msg):
         self.camera_info = msg
 
-    def sprint_callback(self, msg):
-        self.n_sprints = msg.data
+    def mode_callback(self, msg):
+        self.mode = msg.data
 
     def qr_centroid(self, frame):
         tag_frame, tag_coords = self.detectTags(frame) # Use the previously defined tag-detection function to
@@ -119,14 +119,14 @@ class EdgeDetector(Node):
 
 
         # Sprint counting logic:
-        if self.n_sprints < 5:
+        if self.mode == 1:
             # Green
             centroid, processed_frame = average_green(frame)
-        elif self.n_sprints >= 5:
+        elif self.mode == 2:
             # QR
             centroid, processed_frame, min_dist = self.qr_centroid(copied_frame) # Use the copied frame to avoid modifying original
             pass
-        else:
+        elif self.mode == 3:
             # Red
             pass
 
