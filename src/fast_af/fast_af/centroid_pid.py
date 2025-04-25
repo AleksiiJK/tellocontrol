@@ -5,6 +5,8 @@ from std_msgs.msg import Int32
 from geometry_msgs.msg import Point
 import numpy as np
 import time
+from tello_msgs.srv import TelloAction
+
 
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 
@@ -64,8 +66,10 @@ class CoordinateController(Node):
         self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         self.mode_pub = self.create_publisher(Int32, '/mode', 10)
 
-        self.get_logger().info("Centroid pid node started")
+        self.client = self.create_client(TelloAction, '/tello_action')
 
+        self.get_logger().info("Centroid pid node started")
+        
         
         # Main callback functions 
     def coordinate_callback(self, msg):
@@ -81,9 +85,9 @@ class CoordinateController(Node):
         self.check_for_area()
 
         # Set mode based on the override counter
-        if self.override_counter < 2:
+        if self.override_counter < 1:
             self.mode = 1
-        elif self.override_counter == 2:
+        elif self.override_counter == 1:
             self.mode = 2
         else:
             self.mode = 3
@@ -112,6 +116,11 @@ class CoordinateController(Node):
         if self.mode == 3 and self.percentage_red > self.percentage_treshold_red:
             print("Landed") # Replace with landing service call
             self.get_logger().info(f'The area percentage is {self.percentage_red}')
+            self.request = TelloAction.Request()
+            self.request.cmd = 'land'
+            self.client.call_async(self.request)
+            
+            
         else:
             pass
         
