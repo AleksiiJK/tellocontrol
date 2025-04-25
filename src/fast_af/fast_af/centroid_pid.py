@@ -46,7 +46,7 @@ class CoordinateController(Node):
         self.mode = 1 # Default 1
 
         # Parameter for red
-        self.percentage_treshold_red = 60
+        self.percentage_treshold_red = 3 #veri good determination basis for this value
 
         # Time variable for calculating the derivatives
         self.last_time = time.time()
