@@ -139,7 +139,7 @@ class EdgeDetector(Node):
                     dist = np.linalg.norm(corner - meanpoint)
                     min_dist = min(min_dist, dist)
             self.get_logger().info(f"Min dist: {min_dist}")
-            if len(tag_coords) == 3:
+            if len(tag_coords) >= 2: #Changed this to 2
                 dist = Int32()
                 dist.data = int(min_dist)
                 self.qr_min_dist_pub.publish(dist) 

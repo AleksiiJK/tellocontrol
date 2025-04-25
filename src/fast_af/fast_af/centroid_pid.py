@@ -144,7 +144,7 @@ class CoordinateController(Node):
     def qr_sprint_callback(self, msg):
         if self.mode == 2:
             self.get_logger().info(f"Vittu: {msg.data}")
-            if msg.data > 380:
+            if msg.data > 400: #Used to be 380
                 mode = Int32()
                 mode.data = 1
                 self.mode = 1
