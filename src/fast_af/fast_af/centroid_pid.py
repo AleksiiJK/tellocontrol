@@ -87,7 +87,7 @@ class CoordinateController(Node):
         self.mode = 2
         
         mode = Int32()
-        mode.data
+        mode.data = self.mode
         self.mode_pub.publish(mode)
 
         # Area check and override functions
@@ -117,7 +117,8 @@ class CoordinateController(Node):
 
     def qr_sprint_callback(self, msg):
         if self.mode == 2:
-            self.activate_override()
+            if msg.data > 400:
+                self.activate_override()
 
         # Separate PID-controller functions for x and y directions, start out with small gains
     def PID_x(self, ex):
