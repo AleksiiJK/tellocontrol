@@ -86,7 +86,7 @@ class EdgeDetector(Node):
         self.previous_centroid.x,self.previous_centroid.y,self.previous_centroid.z = 0.0,0.0,0.0
         self.iterations = 0
         self.iteration_limit = 8
-        self.mode = 0
+        self.mode = 1 # Default 1
 
         # Parameters for tag detection:
         # A predefined dictionary
@@ -127,42 +127,40 @@ class EdgeDetector(Node):
 
     def qr_centroid(self, frame):
         tag_frame, tag_coords = self.detectTags(frame) # Use the previously defined tag-detection function to
+        centroid = None 
         if tag_coords:
-            all_points = np.concatenate(tag_coords,axis = 1) # Combine the points
-            meanpoint = np.mean(all_points) # Calculate the average of all points
-            min_dist = 0
+            all_points = np.concatenate(tag_coords).reshape(-1,2) # Combine the points
+            meanpoint = np.mean(all_points, axis = 0).astype(int) # Calculate the average of all points
+            min_dist = 10000
+
             #Calculate min distance between points from the mean
             for corner_set in tag_coords:
                 for corner in corner_set:
                     dist = np.linalg.norm(corner - meanpoint)
-                    min_dist = min(min, dist)
-            self.get_logger().info(f"Len tags: {len(tag_coords)}")
+                    min_dist = min(min_dist, dist)
+            self.get_logger().info(f"Min dist: {min_dist}")
             if len(tag_coords) == 3:
                 dist = Int32()
-                dist.data = min_dist
-                self.qr_min_dist_pub.publish(dist)
-            cx, cy = int(meanpoint[0]),int(meanpoint[1]) # Separate the x-and y-coords so that message formatting stays consistent
-            centroid = (cx,cy)
-        else:
-            centroid = None # If no markers are detected, return no centroid
+                dist.data = int(min_dist)
+                self.qr_min_dist_pub.publish(dist) 
             
+            cx, cy = meanpoint[0], meanpoint[1] # Separate the x-and y-coords so that message formatting stays consistent
+            centroid = (cx, cy)
+
         return centroid, tag_frame
 
     def image_callback(self, msg):
         # Convert the ROS image to OpenCV format
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
-        # Copy the frame for tag detection
-        copied_frame = frame.copy()
-
-
+        centroid = None
         # Sprint counting logic:
         if self.mode == 1:
             # Green
             centroid, processed_frame = average_green(frame)
         elif self.mode == 2:
             # QR
-            centroid, processed_frame = self.qr_centroid(copied_frame) # Use the copied frame to avoid modifying original
+            centroid, processed_frame = self.qr_centroid(frame) # Use the copied frame to avoid modifying original
             pass
         elif self.mode == 3:
             # Red

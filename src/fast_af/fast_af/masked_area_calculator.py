@@ -9,6 +9,7 @@ import numpy as np
 
 # Setting the QoS profile 
 qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=1)
+qos_0 = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=1)
 
 
 class MaskedAreaCalculator(Node):
@@ -19,8 +20,8 @@ class MaskedAreaCalculator(Node):
         self.subscription = self.create_subscription(Image,'/image_raw',self.listener_callback,qos_profile)
     
     # Create the publishers
-        self.publisher_ = self.create_publisher(Int32, 'masked_area', qos_profile)
-        self.publisher_red = self.create_publisher(Int32, 'masked_area_red',qos_profile)
+        self.publisher_ = self.create_publisher(Int32, 'masked_area', qos_0)
+        self.publisher_red = self.create_publisher(Int32, 'masked_area_red',qos_0)
         self.bridge = CvBridge()
 
     
@@ -28,7 +29,7 @@ class MaskedAreaCalculator(Node):
 
     # Bounding box for green:
         slice_x = 100
-        slice_y = 80
+        slice_y = 60  #original 80
         self.bbox = (slice_x,slice_y,960-2*slice_x,720-2*slice_y)
 
     # Bounding box for red

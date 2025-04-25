@@ -17,5 +17,11 @@ def generate_launch_description():
             name='masked_area_calculator_node',
             output='screen',
         ),
+        Node(
+            package='fast_af',
+            executable='centroid_pid',
+            name='centroid_pid_node',
+            output='screen',
+        ),
 
     ])
