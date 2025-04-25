@@ -65,6 +65,8 @@ class EdgeDetector(Node):
 
         # ROS2 Publisher for centroid locations
         self.centroid_publisher = self.create_publisher(Point, 'centroid_locations', qos_profile)
+        # Publisher for the minimum distance between the tag corner and the centroid defined by the tags
+        self.centroid_distance_publisher = self.create_publisher(Int32, "tag_centroid_distance", qos_profile)
         
         # ROS2 Subscriber for camera feed and sprints
         self.subscription = self.create_subscription(Image, '/image_raw', self.image_callback, qos_profile)
