@@ -25,7 +25,7 @@ class CoordinateController(Node):
         self.X_BAND = 40
 
         # Velocity parameters and recovery timeout
-        self.FORWARD_VELOCITY = 0.2 #NOTE: anything over 1 will stop the drone
+        self.FORWARD_VELOCITY = 0.15 #NOTE: anything over 1 will stop the drone
         self.fixed_spd = 0.4 #forward speed
            
         self.SEARCH_ROTATION_SPEED = 0.2
@@ -77,9 +77,9 @@ class CoordinateController(Node):
         self.check_for_area()
 
         # Set mode based on the override counter
-        if self.override_counter < 4:
+        if self.override_counter < 2:
             self.mode = 1
-        elif self.override_counter == 4:
+        elif self.override_counter == 2:
             self.mode = 2
         else:
             self.mode = 3
@@ -147,7 +147,7 @@ class CoordinateController(Node):
         Kp, Ki, Kd = 0.003, 0.0, 0.0
 
         if self.mode == 2:
-            ey -= 15
+            ey -= 17.5   #isompi siirtää ylöspäin
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0
@@ -190,12 +190,12 @@ class CoordinateController(Node):
 
         # Recovery function in case centroid is lost
     def check_centroid_visibility(self):
-        pass
-        #if time.time() - self.last_seen_time > self.SEARCH_TIMEOUT:
-        #    cmd_vel = Twist()
-        #    cmd_vel.angular.z = self.SEARCH_ROTATION_SPEED
-        #    self.get_logger().warn("Centroid lost! Searching...")
-        #    self.cmd_vel_pub.publish(cmd_vel)
+        #pass
+        if time.time() - self.last_seen_time > self.SEARCH_TIMEOUT:
+            cmd_vel = Twist()
+            cmd_vel.angular.z = self.SEARCH_ROTATION_SPEED
+            self.get_logger().warn("Centroid lost! Searching...")
+            self.cmd_vel_pub.publish(cmd_vel)
 
 
 def main(args=None):

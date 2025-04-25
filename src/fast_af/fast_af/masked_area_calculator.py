@@ -29,7 +29,7 @@ class MaskedAreaCalculator(Node):
 
     # Bounding box for green:
         slice_x = 100
-        slice_y = 80
+        slice_y = 60  #original 80
         self.bbox = (slice_x,slice_y,960-2*slice_x,720-2*slice_y)
 
     # Bounding box for red

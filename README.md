@@ -12,6 +12,9 @@ Drone commands
 ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"
 ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'land'}"
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1
+ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'up 30'}"
+ros2 launch tello_driver teleop_launch.py 
+
 
 
 Kontrolli-idea:
@@ -41,6 +44,6 @@ setup:
 -Rukoile
 launch:
 aja detect.launch.py 
-aja takeoff
-aja pid
+aja takeoff + ehkä up
+
 -Rukoile
