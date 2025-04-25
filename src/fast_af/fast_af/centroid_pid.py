@@ -42,6 +42,7 @@ class CoordinateController(Node):
         self.override_duration = 2 # This is how long the drone will sprint
         self.override_active = False
         self.override_counter = 0
+        self.mode = 0
 
         # Time variable for calculating the derivatives
         self.last_time = time.time()
@@ -54,8 +55,9 @@ class CoordinateController(Node):
         self.create_timer(1.0, self.check_centroid_visibility)
         self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
         self.create_subscription(Int32, '/masked_area',self.masked_area_callback, qos_profile)
+        self.create_subscription(Int32, '/qr_sprint',self.qr_sprint_callback, qos_profile)
         self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
-        self.sprint_pub = self.create_publisher(Int32, '/sprints', 10)
+        self.mode_pub = self.create_publisher(Int32, '/mode', 10)
         
         # Main callback functions 
     def coordinate_callback(self, msg):
@@ -69,18 +71,28 @@ class CoordinateController(Node):
         self.percentage = (float((msg.data))/(720*960))*100
         self.get_logger().info(f'The area percentage is {self.percentage}')
         self.check_for_area()
-        sprints = Int32()
-        sprints.data = self.override_counter
-        self.sprint_pub.publish(sprints)
+
+        # Set mode based on the override counter
+        if self.override_counter < 3:
+            self.mode = 1
+        elif self.override_counter >= 3:
+            self.mode = 2
+        else:
+            self.mode = 3
+        
+        mode = Int32()
+        mode.data
+        self.mode_pub.publish(mode)
 
         # Area check and override functions
     def check_for_area(self):
-        if self.percentage > self.percentage_treshold and self.override_active == False:
-            self.get_logger().info("Locking velocity")
-            self.override_active = True
-            self.activate_override()
-        else:
-            pass   
+        if self.mode == 1:
+            if self.percentage > self.percentage_treshold and self.override_active == False:
+                self.get_logger().info("Locking velocity")
+                self.override_active = True
+                self.activate_override()
+            else:
+                pass   
         
     def activate_override(self):
         self.override_counter += 1
@@ -97,6 +109,9 @@ class CoordinateController(Node):
         self.override_active = False
         self.get_logger().info("Override done. Control returned.")
 
+    def qr_sprint_callback(self, msg):
+        if self.mode == 2:
+            self.activate_override()
 
         # Separate PID-controller functions for x and y directions, start out with small gains
     def PID_x(self, ex):
