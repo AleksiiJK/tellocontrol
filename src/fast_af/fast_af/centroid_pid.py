@@ -54,22 +54,25 @@ class CoordinateController(Node):
 
         self.create_timer(1.0, self.check_centroid_visibility)
         self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
-        self.create_subscription(Int32, '/masked_area',self.masked_area_callback, qos_profile)
-        self.create_subscription(Int32, '/qr_sprint',self.qr_sprint_callback, qos_profile)
+        self.create_subscription(Int32, '/masked_area', self.masked_area_callback, qos_profile)
+        self.create_subscription(Int32, '/qr_min_dist', self.qr_sprint_callback, qos_profile)
         self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         self.mode_pub = self.create_publisher(Int32, '/mode', 10)
+
+        self.get_logger().info("Centroid pid node started")
+
         
         # Main callback functions 
     def coordinate_callback(self, msg):
         self.current_x, self.current_y = msg.x, msg.y
-        self.get_logger().info(f'Received coordinates: X={self.current_x}, Y={self.current_y}')
+        #self.get_logger().info(f'Received coordinates: X={self.current_x}, Y={self.current_y}')
         self.last_seen_time = time.time()
         self.control_movement()
 
     def masked_area_callback(self, msg):
         self.area = msg.data
         self.percentage = (float((msg.data))/(720*960))*100
-        self.get_logger().info(f'The area percentage is {self.percentage}')
+        #self.get_logger().info(f'The area percentage is {self.percentage}')
         self.check_for_area()
 
         # Set mode based on the override counter

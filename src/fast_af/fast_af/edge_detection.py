@@ -64,10 +64,10 @@ class EdgeDetector(Node):
 
 
         # ROS2 Publisher for centroid locations
-        self.centroid_publisher = self.create_publisher(Point, 'centroid_locations', qos_profile)
+        self.centroid_publisher = self.create_publisher(Point, '/centroid_locations', qos_profile)
         # Publisher for the minimum distance between the tag corner and the centroid defined by the tags
-        self.centroid_distance_publisher = self.create_publisher(Int32, "tag_centroid_distance", qos_profile)
-        
+        self.qr_min_dist_pub = self.create_publisher(Int32, '/qr_min_dist', qos_profile)
+
         # ROS2 Subscriber for camera feed and sprints
         self.subscription = self.create_subscription(Image, '/image_raw', self.image_callback, qos_profile)
         self.camera_info_sub = self.create_subscription(CameraInfo, '/camera_info', self.camera_info_callback, qos_profile)
@@ -104,7 +104,11 @@ class EdgeDetector(Node):
                 for corner in corner_set:
                     dist = np.linalg.norm(corner - meanpoint)
                     min_dist = min(min, dist)
-            
+            self.get_logger().info(f"Len tags: {len(tag_coords)}")
+            if len(tag_coords) == 3:
+                dist = Int32()
+                dist.data = min_dist
+                self.qr_min_dist_pub.publish(dist)
             cx, cy = int(meanpoint[0]),int(meanpoint[1]) # Separate the x-and y-coords so that message formatting stays consistent
             centroid = (cx,cy)
         else:
