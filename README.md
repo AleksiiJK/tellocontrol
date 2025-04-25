@@ -40,10 +40,13 @@ Hallitse kokonaisuutta ja suunnitelmaa kommunikoi + Gameplant
 KILPAILUPÄIVÄN SUUNNITELMA
 setup:
 -Konfiguroi värit: hsv_filter_node ja rqf_reconfigure rqf_reconfigure
--Lisää oikea järjestys porteille, jotta homma toimii. (jos implementoitu)
+-Lisää oikea järjestys porteille, jotta homma toimii. (jos implementoitu) 
+HUOM eTTÄ qr_sprint_callback(self, msg):
+VIE TÄLLÄ HETKELLÄ AINA MODE 1: TARKISTA, ETTÄ TÄMÄ ON OK
 -Rukoile
 launch:
 aja detect.launch.py 
+ ./startup.sh sisältää takeoff + up
 aja takeoff + ehkä up
 
 -Rukoile
