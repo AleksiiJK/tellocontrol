@@ -100,12 +100,13 @@ class EdgeDetector(Node):
             all_points = np.concatenate(tag_coords).reshape(-1,2) # Combine the points
             meanpoint = np.mean(all_points, axis = 0).astype(int) # Calculate the average of all points
             min_dist = 10000
+
             #Calculate min distance between points from the mean
             for corner_set in tag_coords:
                 for corner in corner_set:
                     dist = np.linalg.norm(corner - meanpoint)
                     min_dist = min(min_dist, dist)
-            self.get_logger().info(f"Len tags: {len(tag_coords)}")
+            self.get_logger().info(f"Min dist: {min_dist}")
             if len(tag_coords) == 3:
                 dist = Int32()
                 dist.data = int(min_dist)

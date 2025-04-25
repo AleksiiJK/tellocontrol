@@ -76,19 +76,16 @@ class CoordinateController(Node):
         self.check_for_area()
 
         # Set mode based on the override counter
-        if self.override_counter < 3:
-            self.mode = 1
-        elif self.override_counter >= 3:
-            self.mode = 2
-        else:
-            self.mode = 3
-
-        # Ota tää vituunn ku ei testata
-        self.mode = 2
+        #if self.override_counter < 3:
+        #    self.mode = 1
+        #elif self.override_counter >= 3:
+        #    self.mode = 2
+        #else:
+        #    self.mode = 3
         
         mode = Int32()
         mode.data = self.mode
-        self.mode_pub.publish(mode)
+        #self.mode_pub.publish(mode)
 
         # Area check and override functions
     def check_for_area(self):
@@ -117,7 +114,12 @@ class CoordinateController(Node):
 
     def qr_sprint_callback(self, msg):
         if self.mode == 2:
-            if msg.data > 400:
+            self.get_logger().info(f"Vittu: {msg.data}")
+            if msg.data > 380:
+                mode = Int32()
+                mode.data = 1
+                self.mode = 1
+                self.mode_pub.publish(mode)
                 self.activate_override()
 
         # Separate PID-controller functions for x and y directions, start out with small gains
@@ -141,6 +143,9 @@ class CoordinateController(Node):
     def PID_y(self, ey):
         #Kp, Ki, Kd = 0.0006, 0.00015, 0
         Kp, Ki, Kd = 0.003, 0.0, 0.0
+
+        if self.mode == 2:
+            ey -= 15
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0
