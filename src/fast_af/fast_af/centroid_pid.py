@@ -19,7 +19,7 @@ class CoordinateController(Node):
         super().__init__('centroid_pid')
 
         # Camera dimensions define center points
-        self.center_y = 720 / 2 - 125
+        self.center_y = 720 / 2 - 122 #125 stable, up go brr
         self.center_x = 960 / 2
 
         # Band to define whether forward move is acceptable
@@ -30,9 +30,9 @@ class CoordinateController(Node):
         self.FORWARD_VELOCITY = 0.15 #NOTE: anything over 1 will stop the drone
         self.fixed_spd = 0.4 #forward speed
            
-        self.SEARCH_ROTATION_SPEED = 0.3
-        self.SEARCH_RISING_SPEED = 0.02
-        self.SEARCH_TIMEOUT = 1.0
+        self.SEARCH_ROTATION_SPEED = -0.3
+        self.SEARCH_RISING_SPEED = 0.04
+        self.SEARCH_TIMEOUT = 3.0
 
         # PID error variables 
         self.integral_ex = 0
@@ -43,13 +43,14 @@ class CoordinateController(Node):
         # Parameters to check whether there is enough masked area near the edges, meaning that the drone can "Sprint" through the gate
         # Additional variables to enable overriding the velocities are also added
         self.percentage_treshold = 4
-        self.override_duration = 3 # This is how long the drone will sprint
+        self.override_duration = 3.5 # This is how long the drone will sprint 3->3.5
         self.override_active = False
         self.override_counter = 0
         self.mode = 1 # Default 1
+        self.brute_force = True #turns right to find stop sign for this course
 
         # Parameter for red
-        self.percentage_treshold_red = 3 #veri good determination basis for this value
+        self.percentage_treshold_red = 3 #veri good determination basis forSEARC this value
 
         # Time variable for calculating the derivatives
         self.last_time = time.time()
@@ -86,9 +87,9 @@ class CoordinateController(Node):
         self.check_for_area()
 
         # Set mode based on the override counter
-        if self.override_counter < 1:
+        if self.override_counter < 3:
             self.mode = 1
-        elif self.override_counter == 1:
+        elif self.override_counter == 3:
             self.mode = 2
         else:
             self.mode = 3
@@ -114,17 +115,26 @@ class CoordinateController(Node):
                 pass   
 
     def check_for_area_red(self):
-        if self.mode == 3 and self.percentage_red > self.percentage_treshold_red:
-            print("Landed") # Replace with landing service call
-            self.get_logger().info(f'The area percentage is {self.percentage_red}')
-            self.request = TelloAction.Request()
-            self.request.cmd = 'land'
-            self.client.call_async(self.request)
-            
-            
-        else:
-            pass
-        
+        if self.mode == 3:
+            if self.brute_force == True:
+                twist = Twist()
+                twist.linear.x = 0.0
+                twist.linear.y = 0.0
+                twist.linear.z = 0.2
+                twist.angular.x = 0.0
+                twist.angular.y = 0.0
+                twist.angular.z = -0.3
+                self.cmd_vel_pub.publish(twist)
+                self.brute_force = False
+                time.sleep(1)
+
+            if self.percentage_red > self.percentage_treshold_red:
+                print("Landed") # Replace with landing service call
+                self.get_logger().info(f'The area percentage is {self.percentage_red}')
+                self.request = TelloAction.Request()
+                self.request.cmd = 'land'
+                self.client.call_async(self.request)
+                       
     def activate_override(self):
         self.override_counter += 1
         self.get_logger().info(f"Sprint {self.override_counter}")
@@ -174,7 +184,7 @@ class CoordinateController(Node):
         Kp, Ki, Kd = 0.003, 0.0, 0.0
 
         if self.mode == 2:
-            ey -= 17.5   #isompi siirtää ylöspäin
+            ey -= 19   #isompi siirtää ylöspäin, 17.5 on sellane et menee just ja just kahella koodilla.
 
         current_time = time.time()
         dt = current_time - self.last_time if self.last_time else 1.0

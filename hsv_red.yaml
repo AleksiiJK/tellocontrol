@@ -1,7 +1,7 @@
-h_max: 85
-h_min: 45
+h_max: 4
+h_min: 0
 s_max: 255
-s_min: 70
+s_min: 170
 use_sim_time: false
 v_max: 200
 v_min: 20

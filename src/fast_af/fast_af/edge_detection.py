@@ -41,20 +41,13 @@ def average_red(image):
     # Convert to hsv
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     
-    # Mask and controur finding parameter (Red)
-    # Lower red range
-    lower_red1 = np.array([0, 70, 50])
-    upper_red1 = np.array([10, 255, 255])
-    # Upper red range
-    lower_red2 = np.array([170, 70, 50])
-    upper_red2 = np.array([180, 255, 255])
-    red_mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
-    red_mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
-    # Combine the masks 
-    red_mask = cv2.bitwise_or(red_mask1, red_mask2)
+    # Mask and contour finding parameters
+    lower_red = np.array([0, 170, 20])
+    upper_red = np.array([4, 255, 200])
+    mask = cv2.inRange(hsv, lower_red, upper_red)
 
-    moments = cv2.moments(red_mask)
-    visible_pixels = int(cv2.countNonZero(red_mask))
+    moments = cv2.moments(mask)
+    visible_pixels = int(cv2.countNonZero(mask))
 
     if visible_pixels < 500:
         centroid = None
