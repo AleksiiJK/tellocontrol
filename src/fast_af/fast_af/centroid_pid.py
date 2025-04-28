@@ -43,14 +43,14 @@ class CoordinateController(Node):
         # Parameters to check whether there is enough masked area near the edges, meaning that the drone can "Sprint" through the gate
         # Additional variables to enable overriding the velocities are also added
         self.percentage_treshold = 4
-        self.override_duration = 3.5 # This is how long the drone will sprint 3->3.5
+        self.override_duration = 3.2 # This is how long the drone will sprint 3->3.5
         self.override_active = False
         self.override_counter = 0
         self.mode = 1 # Default 1
         self.brute_force = True #turns right to find stop sign for this course
 
         # Parameter for red
-        self.percentage_treshold_red = 3 #veri good determination basis forSEARC this value
+        self.percentage_treshold_red = 6 #veri good determination basis forSEARC this value
 
         # Time variable for calculating the derivatives
         self.last_time = time.time()
@@ -120,7 +120,7 @@ class CoordinateController(Node):
                 twist = Twist()
                 twist.linear.x = 0.0
                 twist.linear.y = 0.0
-                twist.linear.z = 0.2
+                twist.linear.z = 0.0
                 twist.angular.x = 0.0
                 twist.angular.y = 0.0
                 twist.angular.z = -0.3
