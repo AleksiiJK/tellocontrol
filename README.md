@@ -8,7 +8,6 @@ How to run the code:
 - Launch supporting nodes with command: ros2 launch fast_af detect.launch.py
 - Start the drone racing: ./startup.sh
 \
-\
 Useful commands:\
 \
 Simulator\
