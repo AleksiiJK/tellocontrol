@@ -1,3 +1,5 @@
+# Calculate number of pixels in certain area of the image to control the drone's sprint behaviour
+
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
@@ -53,17 +55,9 @@ class MaskedAreaCalculator(Node):
         mask = cv2.inRange(hsv, lower_green, upper_green)
 
         # Mask and controur finding parameter (Red)
-        # Lower red range
-        lower_red1 = np.array([0, 70, 50])
-        upper_red1 = np.array([10, 255, 255])
-        # Upper red range
-        lower_red2 = np.array([170, 70, 50])
-        upper_red2 = np.array([180, 255, 255])
-        red_mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
-        red_mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
-        # Combine the masks 
-        red_mask = cv2.bitwise_or(red_mask1, red_mask2)
-
+        lower_red = np.array([0, 170, 20])
+        upper_red = np.array([4, 255, 200])
+        red_mask = cv2.inRange(hsv, lower_red, upper_red)
 
         # Bounding box region (Green):
         x, y, w, h = self.bbox

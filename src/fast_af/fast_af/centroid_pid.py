@@ -1,3 +1,5 @@
+# Subscribe data from other nodes and send control messages to the drone
+
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -87,11 +89,15 @@ class CoordinateController(Node):
         self.check_for_area()
 
         # Set mode based on the override counter
+        # The values in this if statement are selected based on the racing track
         if self.override_counter < 3:
+            # Search green
             self.mode = 1
         elif self.override_counter == 3:
+            # Search qr codes
             self.mode = 2
         else:
+            # Search red
             self.mode = 3
         
         mode = Int32()
@@ -116,6 +122,7 @@ class CoordinateController(Node):
 
     def check_for_area_red(self):
         if self.mode == 3:
+            # Turn right when changing mode to find stop sign
             if self.brute_force == True:
                 twist = Twist()
                 twist.linear.x = 0.0

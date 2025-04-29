@@ -19,10 +19,3 @@ def generate_launch_description():
         )     
 
     ])
-
-"""Node( 
-            package='fast_af',
-            executable='centroid_pid',
-            name='centroid_pid_node',
-            output='screen',
-        ),"""
