@@ -1,12 +1,12 @@
 Täällä on sitten vain hyvät ja oikeat tiedostot\
 ("Here is only good and right files" :D)\
 \
-How to run the code:\
-- Clone src\
-- Build package\
-- Connect to drone\
-- Launch supporting nodes with command: ros2 launch fast_af detect.launch.py\
-- Start the drone racing: ./startup.sh\
+How to run the code:
+- Clone src
+- Build package
+- Connect to drone
+- Launch supporting nodes with command: ros2 launch fast_af detect.launch.py
+- Start the drone racing: ./startup.sh
 \
 \
 Useful commands:\
