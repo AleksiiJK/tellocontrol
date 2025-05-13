@@ -1,23 +1,21 @@
-# Täällä on sitten vain hyvät ja oikeat tiedostot  
-*("Here is only good and right files" :D)*
+# Hyvää multirobot systeemiä
+*("Here's some good multirobot system" :D)*
 
-## How to run the code
+## How to install the code
 
 - Clone `src`
 - Build package
-- Connect to drone
-- Launch supporting nodes with:  
-  `ros2 launch fast_af detect.launch.py`
-- Start the drone racing:  
-  `./startup.sh`
+- Source
+
+## Launching simulation
+
+### Simulator + Create 3
+`ros2 launch irobot_create_gazebo_bringup create3_gazebo.launch.py`
+
+### Insert tello to simulator (simulator running)
+`ros2 launch tello_gazebo tello_launch.py`
 
 ## Useful commands
-
-### Simulator  
-`ros2 launch tello_gazebo simple_launch.py`
-
-### Tello driver  
-`ros2 launch tello_driver teleop_launch.py`
 
 ### Drone commands  
 `ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"`  
