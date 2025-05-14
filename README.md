@@ -4,6 +4,14 @@
 ## How to install the code
 
 - Clone `src`
+- Install dependencies
+
+```bash
+cd ~/create3_ws
+sudo apt-get update
+rosdep install --from-path src -yi
+```
+
 - Build package
 - Source
 
