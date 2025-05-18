@@ -1,6 +1,10 @@
 # Hyvää multirobot systeemiä
 *("Here's some good multirobot system" :D)*
 
+## What kind of system are we building?
+- Drone follows ground robot and lands on the ground robot when instructed
+- Ground robot helps drone land as drone does not have a downward camera. 
+
 ## How to install the code
 
 - Clone `src`
