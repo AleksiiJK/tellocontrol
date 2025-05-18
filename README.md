@@ -9,6 +9,17 @@ Simulation version of tello has the camera facing straigt, whereas the real came
 Forward camera is hard to use for landings.
 The simulation allows for much better Tello control than is possible in real life.
 
+## TODO:
+- make create move in a square or smthng
+- add marker to create urdf
+- implement existing code for drone following marker
+- add communication from create to drone when create senses drone directly above
+- make drone land on create when commanded (create stops when drone trying to land) 
+- Simulation setup within one launch command
+- End result: one command to activate robots and launch the drone
+- Commands for either teleopping or moving the create on a predetermined path, while the drone follows and waits
+for an additional command to try and land onto the Create.
+
 ## How to install the code
 
 - Clone `src`
