@@ -4,6 +4,10 @@
 ## What kind of system are we building?
 - Drone follows ground robot and lands on the ground robot when instructed
 - Ground robot helps drone land as drone does not have a downward camera. 
+## Findings
+Simulation version of tello has the camera facing straigt, whereas the real camera is pointed slightly downwards
+Forward camera is hard to use for landings.
+The simulation allows for much better Tello control than is possible in real life.
 
 ## How to install the code
 
@@ -29,7 +33,14 @@ rosdep install --from-path src -yi
 ### Insert tello to simulator (simulator running)
 `ros2 launch tello_gazebo tello_launch.py`
 
-## Useful commands
+## Useful commands for Create 3
+Disabling Motion Control Safety
+
+This will allow you to drive the robot (also in reverse) with teleop
+
+ros2 param set /motion_control safety_override full
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 
 ### Drone commands  
 `ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"`  
