@@ -5,10 +5,12 @@
 
 - Clone `src`
 - Install dependencies
+- In case of errors with rosdep, try rosdep update --include-eol-distros
 
 ```bash
 cd ~/create3_ws
 sudo apt-get update
+
 rosdep install --from-path src -yi
 ```
 
