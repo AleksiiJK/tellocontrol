@@ -10,6 +10,9 @@
   <xacro:include filename="$(find irobot_create_description)/urdf/sensors/ir_opcode_receivers.urdf.xacro" />
   <xacro:include filename="$(find irobot_create_description)/urdf/sensors/optical_mouse.urdf.xacro"/>
   <xacro:include filename="$(find irobot_create_description)/urdf/wheel_with_wheeldrop.urdf.xacro" />
+  <!-- Adding a link for catching the drone -->
+  <xacro:include filename="$(find irobot_create_description)/urdf/catcher.urdf.xacro" />
+
 
   <!-- Gazebo version -->
   <xacro:arg name="gazebo"                       default="classic" />
@@ -73,6 +76,14 @@
       <origin xyz="${body_cog_x_offset} 0 ${body_collision_z_offset + base_link_z_offset}"/>
     </xacro:inertial_cylinder_with_pose>
   </link>
+
+ <!-- Adding the catcher sybassembly to the robot -->
+<xacro:catcher_subassembly 
+    parent_link="base_link" 
+    catcher_xyz="0 0 0.1" 
+    catcher_rpy="0 0 0" 
+    sphere_xyz="0 0.4 0" 
+    sphere_rpy="0 0 0"/>
 
   <xacro:if value="${'$(arg gazebo)' == 'ignition'}">
     <gazebo reference="base_link">

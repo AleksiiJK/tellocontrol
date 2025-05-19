@@ -75,10 +75,10 @@ class EdgeDetector(Node):
         self.get_logger().info("Edge detection node started")
 
         # Callback functions
-        def camera_info_callback(self, msg):
+    def camera_info_callback(self, msg):
             self.camera_info = msg
 
-        def image_callback(self, msg):
+    def image_callback(self, msg):
             # Convert the ROS image to OpenCV format
             frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
             # Initial centroid is None
@@ -171,6 +171,8 @@ class MaskedAreaCalculator(Node):
         slice_y = 60  #original 80
         self.bbox = (slice_x,slice_y,960-2*slice_x,720-2*slice_y)
 
+        self.get_logger().info("Calculator node started")
+
     def listener_callback(self,msg):
 
         # Convert the ROS image to OpenCV format
@@ -250,6 +252,8 @@ class CoordinateController(Node):
         self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
         self.cmd_vel_pub = self.create_publisher(Twist, '/drone1/cmd_vel', 10)
         self.create_timer(1.0, self.check_centroid_visibility)
+
+        self.get_logger().info("Controller node started")
 
         # Main callback function 
     def coordinate_callback(self, msg):
@@ -345,7 +349,4 @@ if __name__ == '__main__':
 
 
 
-
-
-#if name == __main__:
 

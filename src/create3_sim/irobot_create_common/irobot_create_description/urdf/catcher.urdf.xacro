@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<macro xmlns:xacro="http://ros.org/wiki/xacro" name="catcher_subassembly" params="parent_link catcher_xyz catcher_rpy sphere_xyz sphere_rpy">
+
+  <xacro:property name="catcher_mass" value="1.0"/>
+  <xacro:property name="sphere_mass" value="0.5"/>
+
+  <link name="catcher_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://irobot_create_description/meshes/catcher.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://irobot_create_description/meshes/catcher.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${catcher_mass}"/>
+      <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="catcher_joint" type="fixed">
+    <parent link="${parent_link}"/>
+    <child link="catcher_link"/>
+    <origin xyz="${catcher_xyz}" rpy="${catcher_rpy}"/>
+  </joint>
+
+  <link name="sphere_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://irobot_create_description/meshes/guidesphere.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://irobot_create_description/meshes/guidesphere.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${sphere_mass}"/>
+      <inertia ixx="0.01" ixy="0.01" ixz="0.01" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="sphere_joint" type="fixed">
+    <parent link="catcher_link"/>
+    <child link="sphere_link"/>
+    <origin xyz="${sphere_xyz}" rpy="${sphere_rpy}"/>
+  </joint>
+
+</macro>
+
