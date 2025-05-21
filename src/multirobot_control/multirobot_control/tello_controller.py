@@ -3,6 +3,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Float64MultiArray
+from std_msgs.msg import String
 from std_msgs.msg import Int32
 from geometry_msgs.msg import Point
 import numpy as np
@@ -11,6 +12,7 @@ from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 from sensor_msgs.msg import Image, CameraInfo
 from cv_bridge import CvBridge
 import cv2
+from tello_msgs.srv import TelloAction
 
 # Setting the QoS profile
 qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=10)
@@ -159,16 +161,15 @@ class MaskedAreaCalculator(Node):
     # Create the subscriber for raw_image feed
         self.subscription = self.create_subscription(Image,'/image_raw',self.listener_callback,qos_profile)
     
-    # Create the publishers
+    # Create the publisher
         self.publisher_ = self.create_publisher(Int32, 'masked_area', qos_0)
-        self.publisher_red = self.create_publisher(Int32, 'masked_area_red',qos_0)
         self.bridge = CvBridge()
 
     # Parameter for bounding box (x,y,width,heigth), the x and y coordinates represent how much area from the edge we want to use
 
     # Bounding box for green:
-        slice_x = 100
-        slice_y = 60  #original 80
+        slice_x = 200
+        slice_y = 100  #original 80
         self.bbox = (slice_x,slice_y,960-2*slice_x,720-2*slice_y)
 
         self.get_logger().info("Calculator node started")
@@ -197,11 +198,11 @@ class MaskedAreaCalculator(Node):
         # Defining the region of interest (ROI)
         roi = mask[y_start:y_end, x_start:x_end]
 
-        # Count non-zero pixels in ROI, then subtract them from the entire mask to receive pixels residing near the edges
+        # Count non-zero pixels in ROI
         visible_area = int(cv2.countNonZero(roi))
-        edge_pixels = int(int(cv2.countNonZero(mask))-visible_area)
+        area_percentage = (visible_area/(self.bbox[-1]*self.bbox[-2]))*100
         # Publish result
-        area_msg = Int32(data=edge_pixels)
+        area_msg = Int32(data=area_percentage)
         self.publisher_.publish(area_msg)
         # Visualize the bounding box and masked frame
         frame_vis = frame.copy()
@@ -218,10 +219,12 @@ class CoordinateController(Node):
     def __init__(self):
         super().__init__('centroid_pid_sim')
 
+        # Status attribute for multi-robot communication
+        self.status = None
+        self.percentage_threshold = 50
         # Camera dimensions define center points
         self.center_y = 720 / 2
         self.center_x = 960 / 2
-
         # Band to define whether forward move is acceptable
         self.Y_BAND = 40
         self.X_BAND = 40
@@ -237,7 +240,6 @@ class CoordinateController(Node):
         # PID error variables 
         self.integral_ex = 0
         self.last_ex = 0
-
         self.integral_ey = 0
         self.last_ey = 0
 
@@ -248,18 +250,51 @@ class CoordinateController(Node):
         self.current_x = 0.0
         self.current_y = 0.0
         self.last_seen_time = time.time()
-
-        self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
-        self.cmd_vel_pub = self.create_publisher(Twist, '/drone1/cmd_vel', 10)
+        # Timer to check if the drone has lost the centroid
         self.create_timer(1.0, self.check_centroid_visibility)
+
+        # Create the subscriptions
+        self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
+        self.create_subscription(String,'/create3_status',self.status_callback,qos_profile)
+        self.create_subscription(Int32,'/masked_area',self.masked_area_callback,qos_profile)
+        # Create the publishers
+        self.cmd_vel_pub = self.create_publisher(Twist, '/drone1/cmd_vel', 10)
+        self.status_pub = self.create_publisher(String,'/drone1/status',10)
+        self.create_timer(1.0, self.check_centroid_visibility)
+        self.client = self.create_client(TelloAction, '/tello_action')
 
         self.get_logger().info("Controller node started")
 
-        # Main callback function 
+        # Main callback functions 
     def coordinate_callback(self, msg):
-        self.current_x, self.current_y = msg.x, msg.y
-        self.get_logger().info(f'Received coordinates: X={self.current_x}, Y={self.current_y}')
-        self.control_movement()
+        if self.status == "create3 moving": # Only move if create3 is in motion
+            self.current_x, self.current_y = msg.x, msg.y
+            self.get_logger().info(f'Received coordinates: X={self.current_x}, Y={self.current_y}')
+            self.control_movement()
+        else:
+            pass
+        
+
+    def masked_area_callback(self,msg):
+        # Check if the target is close enough, if so stop the movement and publish status: 
+        if self.percentage_treshold >= msg:
+            velocity_command = Twist()
+            self.cmd_vel_pub.publish(velocity_command)
+            self.status_pub.publish("Drone is close")
+            time.sleep(5) # Wait for few seconds 
+
+    def status_callback(self,msg):
+        self.status = msg
+        if msg == "Create3 stopped":
+                self.request = TelloAction.Request()
+                self.request.cmd = 'land'
+                self.client.call_async(self.request)
+                time.sleep(2) # Wait a few seconds for the landing to comlete
+                self.status_pub.publish("Drone has landed")
+
+
+        
+        # Other utility functions used in callbacks:
 
         # Separate PID-controller functions for x and y directions, start out with small gains
     def PID_x(self, ex):
@@ -318,12 +353,14 @@ class CoordinateController(Node):
 
         # Recovery function in case centroid is lost
     def check_centroid_visibility(self):
-        if time.time() - self.last_seen_time > self.SEARCH_TIMEOUT:
-            cmd_vel = Twist()
-            cmd_vel.angular.z = self.SEARCH_ROTATION_SPEED
-            self.get_logger().warn("Centroid lost! Searching...")
-            self.cmd_vel_pub.publish(cmd_vel)
-
+        if self.status == "create3 moving":
+            if time.time() - self.last_seen_time > self.SEARCH_TIMEOUT:
+                cmd_vel = Twist()
+                cmd_vel.angular.z = self.SEARCH_ROTATION_SPEED
+                self.get_logger().warn("Centroid lost! Searching...")
+                self.cmd_vel_pub.publish(cmd_vel)
+        else: 
+            pass
 
 def main(args=None):
     rclpy.init(args=args)
@@ -339,6 +376,7 @@ def main(args=None):
     finally:
         controller.destroy_node()
         detector.destroy_node()
+        calculator.destroy_node()
         rclpy.shutdown()
 
 if __name__ == '__main__':
