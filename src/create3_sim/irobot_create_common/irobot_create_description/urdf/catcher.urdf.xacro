@@ -37,6 +37,9 @@
         <mesh filename="package://irobot_create_description/meshes/guidesphere.stl" scale="1 1 1"/>
       </geometry>
     </visual>
+    <material name="green color">
+      <color rgba="11 156 49 0.8"/>
+    </material>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
