@@ -11,7 +11,7 @@
   <xacro:include filename="$(find irobot_create_description)/urdf/sensors/optical_mouse.urdf.xacro"/>
   <xacro:include filename="$(find irobot_create_description)/urdf/wheel_with_wheeldrop.urdf.xacro" />
   <!-- Adding a link for catching the drone -->
-  <!-- <xacro:include filename="$(find irobot_create_description)/urdf/catcher.urdf.xacro" /> -->
+   <!--<xacro:include filename="$(find irobot_create_description)/urdf/catcher.urdf.xacro" /> -->
 
 
   <!-- Gazebo version -->
@@ -78,12 +78,50 @@
   </link>
 
  <!-- Adding the catcher sybassembly to the robot -->
-<!-- <xacro:catcher_subassembly 
+ <!--<xacro:catcher_subassembly 
     parent_link="base_link" 
     catcher_xyz="0 0 0.1" 
     catcher_rpy="0 0 0" 
-    sphere_xyz="0 0.4 0" 
-    sphere_rpy="0 0 0"/>  -->
+    sphere_xyz="0 0 0" 
+    sphere_rpy="0 0 0"/> -->
+
+   <!-- Add a green sphere for debugging -->
+
+   <link name="green_sphere_link">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <sphere radius="0.5"/>
+    </geometry>
+    <material name="green">
+      <color rgba="0 1 0 1"/> 
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <sphere radius="0.5"/>
+    </geometry>
+  </collision>
+
+  <inertial>
+    <mass value="1.0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <inertia
+      ixx="0.1" ixy="0.0" ixz="0.0"
+      iyy="0.1" iyz="0.0"
+      izz="0.1"/>
+  </inertial>
+</link>
+
+<joint name="green_sphere_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="green_sphere_link"/>
+  <origin xyz="0 0 1.5" rpy="0 0 0"/>
+</joint>
+
+
 
   <xacro:if value="${'$(arg gazebo)' == 'ignition'}">
     <gazebo reference="base_link">
