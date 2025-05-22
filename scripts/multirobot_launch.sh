@@ -11,5 +11,8 @@ sleep 1.5
 ros2 launch tello_gazebo tello_launch.py &
 # Another small delay
 sleep 1.5
-# Launch the controller 
+# Drone takeoff
+ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"
+sleep 1
+# Launch the controllers
 # ros2 launch.. 

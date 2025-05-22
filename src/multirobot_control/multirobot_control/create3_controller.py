@@ -20,14 +20,15 @@ class SquareMover(Node):
         super().__init__('square_mover')
         
         # Create the publisher for sending velocity commands
-        self.cmd_vel_publisher = self.create_publisher(Twist,'/cmd_vel',10)
+        self.cmd_vel_publisher = self.create_publisher(Twist,'/cmd_vel',5)
         # Create the subscriber that will subscribe to the communication channel 
-        self.status_subscriber = self.create_subscription(String,'drone1/status',self.cmd_vel_callback,10)
+        self.status_subscriber = self.create_subscription(String,'drone1/status',self.status_callback,5)
         # Create the publisher for publishing status messages
-        self.status_publisher = self.create_publisher(String,'/create3_status',10)
+        self.status_publisher = self.create_publisher(String,'/create3_status',5)
         # The initial velocity will be none
         self.velocity = None
         self.start_time = None
+        self.status = None
 
         # Parameters for the movement pattern
         # Linear movement
@@ -41,46 +42,57 @@ class SquareMover(Node):
         self.msg = Twist()
 
         # Timer to control the movement times
-        self.timer = self.create_timer(self.forward_duration+self.angular_duration,self.cmd_vel_callback)
+        self.timer = self.create_timer(0.1,self.cmd_vel_callback)
 
         self.get_logger().info("Square movement node started")
 
+    def status_callback(self,msg):
+        self.status = msg
     
 
     # Main callback function that contains a very simple move sequence 
-    def cmd_vel_callback(self,msg):
-        drone_status = msg
-        if drone_status == "Drone Following" or "Landed":
-            # Perform the movement sequence
-            # 1. Move forward
-            self.msg = Twist()
-            start_time = time.time()
-            while time.time() - start_time <= self.forward_duration:
-                self.msg.linear.x = self.forward_velocity
+    def cmd_vel_callback(self):
+        if self.status != None:
+            self.get_logger().info(self.status.data)
+            if self.status.data in ["Drone Following","Landed","Start"]:
+                # Publish that create3 is moving:
+                status_msg = String()
+                status_msg.data = "Create3 moving"
+                self.status_publisher.publish(status_msg)
+                # Perform the movement sequence
+                # 1. Move forward
+                self.msg = Twist()
+                start_time = time.time()
+                while time.time() - start_time <= self.forward_duration:
+                    self.msg.linear.x = self.forward_velocity
+                    self.cmd_vel_publisher.publish(self.msg)
+                    self.get_logger().info("Published velocity command")
+                    time.sleep(0.05)  # Add sleep to avoid flooding the topic
+
+                # Stop
+                self.msg = Twist()
                 self.cmd_vel_publisher.publish(self.msg)
-                time.sleep(0.05)  # Add sleep to avoid flooding the topic
 
-            # Stop
-            self.msg = Twist()
-            self.cmd_vel_publisher.publish(self.msg)
+                # 2. Rotate
+                self.msg = Twist()
+                start_time = time.time()
+                while time.time() - start_time <= self.angular_duration:
+                    self.msg.angular.z = self.angular_velocity
+                    self.cmd_vel_publisher.publish(self.msg)
+                    time.sleep(0.05)  # Add sleep here too
 
-            # 2. Rotate
-            self.msg = Twist()
-            start_time = time.time()
-            while time.time() - start_time <= self.angular_duration:
-                self.msg.angular.z = self.angular_velocity
+                # Stop
+                self.msg = Twist()
                 self.cmd_vel_publisher.publish(self.msg)
-                time.sleep(0.05)  # Add sleep here too
 
-            # Stop
-            self.msg = Twist()
-            self.cmd_vel_publisher.publish(self.msg)
-
-        elif drone_status == "Drone close":
-            # Stop the movement
-            self.msg = Twist()
-            self.cmd_vel_publisher.publish(self.msg)
-            self.status_publisher.publish("Create3 stopped")
+            elif self.status.data in ["Drone close"]:
+                # Stop the movement
+                self.msg = Twist()
+                self.cmd_vel_publisher.publish(self.msg)
+                status_msg = String()
+                status_msg.data = "Create3 stopped"
+                self.status_publisher.publish(status_msg)
+                time.sleep(3) 
 
 
 

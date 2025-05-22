@@ -13,6 +13,7 @@ from sensor_msgs.msg import Image, CameraInfo
 from cv_bridge import CvBridge
 import cv2
 from tello_msgs.srv import TelloAction
+from rclpy.executors import MultiThreadedExecutor
 
 # Setting the QoS profile
 qos_profile = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT, history=QoSHistoryPolicy.KEEP_LAST, depth=10)
@@ -220,7 +221,7 @@ class CoordinateController(Node):
         super().__init__('centroid_pid_sim')
 
         # Status attribute for multi-robot communication
-        self.status = None
+        self.status = String(data="")
         self.percentage_threshold = 50
         # Camera dimensions define center points
         self.center_y = 720 / 2
@@ -253,6 +254,7 @@ class CoordinateController(Node):
         # Timer to check if the drone has lost the centroid
         self.create_timer(1.0, self.check_centroid_visibility)
 
+
         # Create the subscriptions
         self.create_subscription(Point, '/centroid_locations', self.coordinate_callback, qos_profile)
         self.create_subscription(String,'/create3_status',self.status_callback,qos_profile)
@@ -261,36 +263,41 @@ class CoordinateController(Node):
         self.cmd_vel_pub = self.create_publisher(Twist, '/drone1/cmd_vel', 10)
         self.status_pub = self.create_publisher(String,'/drone1/status',10)
         self.create_timer(1.0, self.check_centroid_visibility)
-        self.client = self.create_client(TelloAction, '/tello_action')
+        self.client = self.create_client(TelloAction, '/drone1/tello_action')
 
         self.get_logger().info("Controller node started")
 
         # Main callback functions 
+        # Move the drone
     def coordinate_callback(self, msg):
-        if self.status == "create3 moving": # Only move if create3 is in motion
+        if self.status.data in ["Create3 moving"]: # Only move if create3 is in motion
             self.current_x, self.current_y = msg.x, msg.y
             self.get_logger().info(f'Received coordinates: X={self.current_x}, Y={self.current_y}')
             self.control_movement()
+            message = String(data = "Drone following")
+            self.status_pub.publish(message)
         else:
             pass
         
-
+        # Check for area
     def masked_area_callback(self,msg):
         # Check if the target is close enough, if so stop the movement and publish status: 
         if self.percentage_treshold >= msg:
             velocity_command = Twist()
             self.cmd_vel_pub.publish(velocity_command)
-            self.status_pub.publish("Drone is close")
-            time.sleep(5) # Wait for few seconds 
-
+            message = String(data = "Drone is close")
+            self.status_pub.publish(message)
+        
+        # Check the status
     def status_callback(self,msg):
         self.status = msg
-        if msg == "Create3 stopped":
+        self.get_logger().info(msg.data)
+        if msg.data == "Create3 stopped":
                 self.request = TelloAction.Request()
                 self.request.cmd = 'land'
                 self.client.call_async(self.request)
-                time.sleep(2) # Wait a few seconds for the landing to comlete
-                self.status_pub.publish("Drone has landed")
+                message = String(data="Drone has landed")
+                self.status_pub.publish(message)
 
 
         
@@ -353,7 +360,9 @@ class CoordinateController(Node):
 
         # Recovery function in case centroid is lost
     def check_centroid_visibility(self):
-        if self.status == "create3 moving":
+        print("Checking visbility")
+        if self.status.data in ["Create3 moving"]:
+            print(self.status.data)
             if time.time() - self.last_seen_time > self.SEARCH_TIMEOUT:
                 cmd_vel = Twist()
                 cmd_vel.angular.z = self.SEARCH_ROTATION_SPEED
@@ -362,15 +371,22 @@ class CoordinateController(Node):
         else: 
             pass
 
+
+# Since many nodes are packaged into this script, there is a need to use the Multi-thread executor 
 def main(args=None):
     rclpy.init(args=args)
+
     controller = CoordinateController()
     detector = EdgeDetector()
     calculator = MaskedAreaCalculator()
+
+    executor = MultiThreadedExecutor()
+    executor.add_node(controller)
+    executor.add_node(detector)
+    executor.add_node(calculator)
+
     try:
-        rclpy.spin(detector)
-        rclpy.spin(controller)
-        rclpy.spin(calculator)
+        executor.spin()
     except KeyboardInterrupt:
         pass
     finally:
