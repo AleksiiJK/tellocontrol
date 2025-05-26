@@ -12,7 +12,10 @@ ros2 launch tello_gazebo tello_launch.py &
 # Another small delay
 sleep 1.5
 # Drone takeoff
-ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"
+ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}" &
 sleep 1
 # Launch the controllers
-# ros2 launch.. 
+python3 src/multirobot_control/multirobot_control/create3_controller.py &
+python3 src/multirobot_control/multirobot_control/tello_controller.py &
+# Start the sequence by publishing the "Start" -status once
+ros2 topic pub /drone1/status std_msgs/msg/String "data: 'Start'" & 

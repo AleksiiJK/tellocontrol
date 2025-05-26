@@ -293,11 +293,11 @@ class CoordinateController(Node):
         self.status = msg
         self.get_logger().info(msg.data)
         if msg.data == "Create3 stopped":
-                self.request = TelloAction.Request()
-                self.request.cmd = 'land'
-                self.client.call_async(self.request)
-                message = String(data="Drone has landed")
-                self.status_pub.publish(message)
+            self.request = TelloAction.Request()
+            self.request.cmd = 'land'
+            self.client.call_async(self.request)
+            message = String(data="Drone has landed")
+            self.status_pub.publish(message)
 
 
         

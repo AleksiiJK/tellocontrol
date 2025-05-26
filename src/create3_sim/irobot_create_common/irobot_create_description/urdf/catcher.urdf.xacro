@@ -38,7 +38,7 @@
       </geometry>
     </visual>
     <material name="green color">
-      <color rgba="11 156 49 0.8"/>
+    <color rgba="0.043 0.612 0.192 0.8"/>
     </material>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
