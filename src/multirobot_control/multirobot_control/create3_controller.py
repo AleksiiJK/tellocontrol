@@ -22,7 +22,7 @@ class SquareMover(Node):
         # Create the publisher for sending velocity commands
         self.cmd_vel_publisher = self.create_publisher(Twist,'/cmd_vel',5)
         # Create the subscriber that will subscribe to the communication channel 
-        self.status_subscriber = self.create_subscription(String,'drone1/status',self.status_callback,5)
+        self.status_subscriber = self.create_subscription(String,'drone1/status',self.status_callback,qos_profile)
         # Create the publisher for publishing status messages
         self.status_publisher = self.create_publisher(String,'/create3_status',5)
         # The initial velocity will be none

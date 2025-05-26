@@ -160,10 +160,10 @@ class MaskedAreaCalculator(Node):
         super().__init__('masked_area_calculator')
     
     # Create the subscriber for raw_image feed
-        self.subscription = self.create_subscription(Image,'/image_raw',self.listener_callback,qos_profile)
+        self.subscription = self.create_subscription(Image,'drone1/image_raw',self.listener_callback,qos_profile)
     
     # Create the publisher
-        self.publisher_ = self.create_publisher(Int32, 'masked_area', qos_0)
+        self.publisher_ = self.create_publisher(Int32, 'masked_area', qos_profile)
         self.bridge = CvBridge()
 
     # Parameter for bounding box (x,y,width,heigth), the x and y coordinates represent how much area from the edge we want to use
@@ -252,7 +252,6 @@ class CoordinateController(Node):
         self.current_y = 0.0
         self.last_seen_time = time.time()
         # Timer to check if the drone has lost the centroid
-        self.create_timer(1.0, self.check_centroid_visibility)
 
 
         # Create the subscriptions
@@ -260,8 +259,8 @@ class CoordinateController(Node):
         self.create_subscription(String,'/create3_status',self.status_callback,qos_profile)
         self.create_subscription(Int32,'/masked_area',self.masked_area_callback,qos_profile)
         # Create the publishers
-        self.cmd_vel_pub = self.create_publisher(Twist, '/drone1/cmd_vel', 10)
-        self.status_pub = self.create_publisher(String,'/drone1/status',10)
+        self.cmd_vel_pub = self.create_publisher(Twist, '/drone1/cmd_vel', qos_profile)
+        self.status_pub = self.create_publisher(String,'/drone1/status',qos_profile)
         self.create_timer(1.0, self.check_centroid_visibility)
         self.client = self.create_client(TelloAction, '/drone1/tello_action')
 
@@ -274,6 +273,7 @@ class CoordinateController(Node):
             self.current_x, self.current_y = msg.x, msg.y
             self.get_logger().info(f'Received coordinates: X={self.current_x}, Y={self.current_y}')
             self.control_movement()
+            self.last_seen_time = time.time()
             message = String(data = "Drone following")
             self.status_pub.publish(message)
         else:
@@ -282,7 +282,7 @@ class CoordinateController(Node):
         # Check for area
     def masked_area_callback(self,msg):
         # Check if the target is close enough, if so stop the movement and publish status: 
-        if self.percentage_treshold >= msg:
+        if msg.data >= self.percentage_threshold:
             velocity_command = Twist()
             self.cmd_vel_pub.publish(velocity_command)
             message = String(data = "Drone is close")
