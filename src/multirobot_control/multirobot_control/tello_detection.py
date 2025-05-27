@@ -26,7 +26,7 @@ def average_green(image):
     moments = cv2.moments(mask)
     visible_pixels = int(cv2.countNonZero(mask))
 
-    if visible_pixels < 500:
+    if visible_pixels < 20:
         centroid = None
     elif moments["m00"] != 0:
         cx = int(moments["m10"] / moments["m00"])

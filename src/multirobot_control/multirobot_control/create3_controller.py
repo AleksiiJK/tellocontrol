@@ -42,19 +42,33 @@ class SquareMover(Node):
         self.msg = Twist()
 
         # Timer to control the movement times
-        self.timer = self.create_timer(0.1,self.cmd_vel_callback)
+        self.timer = self.create_timer(0.01,self.cmd_vel_callback)
 
         self.get_logger().info("Square movement node started")
 
     def status_callback(self,msg):
         self.status = msg
+        if self.status.data in ["Drone is close"]:
+                message = Twist()
+                self.cmd_vel_publisher.publish(message)
+                status_msg = String()
+                status_msg.data = "Create3 stopped"
+                self.status_publisher.publish(status_msg)
+        else:
+            status_msg = String()
+            status_msg.data = "Callback_check"
+            self.status_publisher.publish(status_msg)
+
     
 
     # Main callback function that contains a very simple move sequence 
     def cmd_vel_callback(self):
+        pass
+
+        """
         if self.status != None:
             self.get_logger().info(self.status.data)
-            if self.status.data in ["Drone Following","Landed","Start"]:
+            if self.status.data in ["Drone following","Landed","Start"]:
                 # Publish that create3 is moving:
                 status_msg = String()
                 status_msg.data = "Create3 moving"
@@ -92,7 +106,7 @@ class SquareMover(Node):
                 status_msg = String()
                 status_msg.data = "Create3 stopped"
                 self.status_publisher.publish(status_msg)
-                time.sleep(3) 
+                time.sleep(3) """
 
 
 
