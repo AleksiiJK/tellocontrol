@@ -93,7 +93,7 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <sphere radius="0.05"/>
+      <sphere radius="0.03"/>
     </geometry>
     <material name="green">
     <color rgba="0.043 0.612 0.192 0.8"/>
@@ -103,7 +103,7 @@
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <sphere radius="0.05"/>
+      <sphere radius="0.03"/>
     </geometry>
   </collision>
 
@@ -134,9 +134,9 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <box size="1 1 0.1"/>
+        <box size="0.75 0.75 0.05"/>
       </geometry>
-      <material>
+      <material name = "blue">
         <color rgba="0.2 0.2 1.0 1.0"/> <!-- Blueish for visibility -->
       </material>
     </visual>
@@ -144,7 +144,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <box size="1 1 0.1"/>
+        <box size="0.75 0.75 0.05"/>
       </geometry>
     </collision>
 
@@ -168,7 +168,7 @@
   <joint name="platform_joint" type="fixed">
     <parent link="base_link"/>
     <child link="square_platform_link"/>
-    <origin xyz="0 0 0.75" rpy="0 0 0"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
   </joint>
 
 

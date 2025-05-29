@@ -21,7 +21,7 @@ class CoordinateController(Node):
 
         # Status attribute for multi-robot communication
         self.status = String(data="")
-        self.percentage_threshold = 5
+        self.percentage_threshold = 8
         # Camera dimensions define center points
         self.center_y = 720 / 2
         self.center_x = 960 / 2
@@ -30,7 +30,7 @@ class CoordinateController(Node):
         self.X_BAND = 40
 
         # Velocity parameters and recovery timeout
-        self.FORWARD_VELOCITY = 0.1
+        self.FORWARD_VELOCITY = 0.08
         """Angular and z-velocity parameters are made obsolete by PID-control"""
         #self.ANGULAR_VELOCITY = 0.2 
         #self.Z_VELOCITY = 0.3   
