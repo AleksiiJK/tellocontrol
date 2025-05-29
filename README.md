@@ -55,10 +55,8 @@ We chose to use topics as the main communication channels. They are simple, clea
 2. When close enough, the drone will signal for Create3 to stop
 3. Once Create3 has stopped, it will publish this status
 4. When drone is informed that Create3 has stopped, it will do a server call to land
-5. ToDo - drone will permit create3 to move once it has landed
-6. Create3 will move
-7. Once drone is "charged" it will launch again *Maybe* 
-Communication topics and status messages are as follows:
+5. Drone will permit create3 to move once it has landed
+6. Create3 will move carrying the drone with it
 
 /drone1/status -> Create3 subscribes to this, messages are:
     - "Drone following" -> Drone is honing in on the targe¨
@@ -68,6 +66,7 @@ Communication topics and status messages are as follows:
 /create3_status  -> Drone subscribes to this, messages are: 
     - "Create3 moving" -> The robot is moving
     - "Create3 stopped" -> The robot has stopped 
+    - Waiting complete -> The robot is free to move again after the drone has landed 
 
 ## Other useful commands
 
