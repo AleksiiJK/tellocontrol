@@ -43,75 +43,66 @@ class SquareMover(Node):
 
         # Timer to control the movement times
         self.timer = self.create_timer(0.01,self.cmd_vel_callback)
+        # Initial movement phase starts from "stop"
+        self.movement_phase = "forward"
+        self.phase_start_time = self.get_clock().now().seconds_nanoseconds()[0]
+
 
         self.get_logger().info("Square movement node started")
 
+
     def status_callback(self,msg):
-        self.status = msg
-        if self.status.data in ["Drone is close"]:
-                message = Twist()
-                self.cmd_vel_publisher.publish(message)
-                status_msg = String()
-                status_msg.data = "Create3 stopped"
-                self.status_publisher.publish(status_msg)
-        else:
+        self.status = msg.data
+        if self.status in ["Drone is close"]:
+            self.movement_phase = "stop"
+            self.get_logger().info("Stopping due to drone proximity")
+        elif self.status in ["Drone following", "Start"]:
+            if self.movement_phase == "stop":
+                self.movement_phase = "forward"
+                self.phase_start_time = self.get_clock().now().seconds_nanoseconds()[0]
+                self.get_logger().info("Starting square movement")
+
+    def cmd_vel_callback(self):
+        # Take the time and set initial message
+        now = self.get_clock().now().seconds_nanoseconds()[0]
+        elapsed = now - self.phase_start_time
+        msg = Twist()
+
+        # If the movement phase is stopped, stop
+        if self.movement_phase == "stop":
+            msg = Twist()  # Zero velocities
+            self.cmd_vel_publisher.publish(msg)
             status_msg = String()
-            status_msg.data = "Callback_check"
+            status_msg.data = "Create3 stopped"
             self.status_publisher.publish(status_msg)
+            return
+        
+        # Othervise move
+        status_msg = String()
+        status_msg.data = "Create3 moving"
+        self.status_publisher.publish(status_msg)
+
+        # Movement phases control the square movement
+        if self.movement_phase == "forward":
+            if elapsed < self.forward_duration:
+                msg.linear.x = self.forward_velocity
+            else:
+                self.movement_phase = "turn"
+                self.phase_start_time = now
+                msg = Twist()  # Stop before turning
+        elif self.movement_phase == "turn":
+            if elapsed < self.angular_duration:
+                msg.angular.z = self.angular_velocity
+            else:
+                self.movement_phase = "forward"
+                self.phase_start_time = now
+                msg = Twist()  # Stop before moving forward
+        # Publish the velocity command
+        self.cmd_vel_publisher.publish(msg)
 
     
 
-    # Main callback function that contains a very simple move sequence 
-    def cmd_vel_callback(self):
-        pass
 
-        """
-        if self.status != None:
-            self.get_logger().info(self.status.data)
-            if self.status.data in ["Drone following","Landed","Start"]:
-                # Publish that create3 is moving:
-                status_msg = String()
-                status_msg.data = "Create3 moving"
-                self.status_publisher.publish(status_msg)
-                # Perform the movement sequence
-                # 1. Move forward
-                self.msg = Twist()
-                start_time = time.time()
-                while time.time() - start_time <= self.forward_duration:
-                    self.msg.linear.x = self.forward_velocity
-                    self.cmd_vel_publisher.publish(self.msg)
-                    self.get_logger().info("Published velocity command")
-                    time.sleep(0.05)  # Add sleep to avoid flooding the topic
-
-                # Stop
-                self.msg = Twist()
-                self.cmd_vel_publisher.publish(self.msg)
-
-                # 2. Rotate
-                self.msg = Twist()
-                start_time = time.time()
-                while time.time() - start_time <= self.angular_duration:
-                    self.msg.angular.z = self.angular_velocity
-                    self.cmd_vel_publisher.publish(self.msg)
-                    time.sleep(0.05)  # Add sleep here too
-
-                # Stop
-                self.msg = Twist()
-                self.cmd_vel_publisher.publish(self.msg)
-
-            elif self.status.data in ["Drone close"]:
-                # Stop the movement
-                self.msg = Twist()
-                self.cmd_vel_publisher.publish(self.msg)
-                status_msg = String()
-                status_msg.data = "Create3 stopped"
-                self.status_publisher.publish(status_msg)
-                time.sleep(3) """
-
-
-
-
-            
             
 def main(args=None):
     rclpy.init(args=args)

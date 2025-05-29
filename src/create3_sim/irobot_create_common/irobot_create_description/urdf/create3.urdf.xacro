@@ -86,8 +86,8 @@
     sphere_xyz="0 0 0.3" 
     sphere_rpy="0 0 0"/> -->
 
-   <!-- Add a green sphere for debugging -->
-   <!-- For some reason this works only at random...-->
+   <!-- Add a green sphere -->
+
 
    <link name="green_sphere_link">
   <visual>
@@ -103,7 +103,7 @@
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <sphere radius="0.5"/>
+      <sphere radius="0.05"/>
     </geometry>
   </collision>
 
@@ -126,6 +126,50 @@
   <child link="green_sphere_link"/>
   <origin xyz="0 0 1.5" rpy="0 0 0"/>
 </joint>
+
+<!-- Add a square platform for the drone to land onto -->
+
+  <!-- Square platform link -->
+  <link name="square_platform_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="1 1 0.1"/>
+      </geometry>
+      <material>
+        <color rgba="0.2 0.2 1.0 1.0"/> <!-- Blueish for visibility -->
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="1 1 0.1"/>
+      </geometry>
+    </collision>
+
+      <inertial>
+    <mass value="0.01"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <inertia
+      ixx="0.01" ixy="0.01" ixz="0.01"
+      iyy="0.01" iyz="0.01"
+      izz="0.01"/>
+  </inertial>
+
+  </link>
+
+  <gazebo reference="square_platform_link">
+  <cast_shadows>false</cast_shadows>
+  <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- Fixed joint to attach platform above base_link but below the sphere -->
+  <joint name="platform_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="square_platform_link"/>
+    <origin xyz="0 0 0.75" rpy="0 0 0"/>
+  </joint>
 
 
 

@@ -1,19 +1,81 @@
-# Hyvää multirobot systeemiä
-*("Here's some good multirobot system" :D)*
+# Introduction
 
-## What is happening here?
-The code is developed for a multi-robot system consisting of a land and aerial robot. It replicates a case where the arerial robot needs to "dock" onto the land robot. Use cases for this include battery conservation as well as charging
+### The main idea
 
- The communication logic is as follows: 
+The code is a concept for a two-robot system consisting of a land and aerial robot. It replicates a case where the aerial robot needs to "dock" onto the land robot. Use cases for this include battery conservation as well as drone recovery in case of interrupted teleoperation. Since the Tello-drone only has a single camera at the front, it is necessary to use a visual element that the main camera can see to guide the landing. For this we chose to add a massless, inertialess green sphere to the original Create3 description. This is meant to replicate a floating balloon, that is raised when the docking operation is to be initiated. 
+The simulation begins once the controllers are launched. To demonstrate the tracking and communication capabilities of the controllers, Create3 will move in a square pattern, altough any movement would suffice. The drone will then start closing in while using the guide sphere a a positional refernce. Once the drone is close enough, it will signal for Create3 to stop, and once Create3 stops it will give the drone permission to land. 
 
-1. When the simulation is launched, the drone will take off
-2. After user input, Create3 starts to move. It then messages to the drone to start honing in on the physical marker installed on it
-3. When the drone is close enough, it will signal to create3 to stop
-4. Once stopped, create3 will message to the drone that it is clear to land. The drone will then land onto the installed platform
-5. Upon completing the landing, the drone will signal that create3 is free to move
-6. Create3 will keep moving. 
+### Real-world considerations
 
-*Add more description later*
+In our simulation case we chose to use solid green as the balloon color, but in real-world applications this will likely not be adequate. To implement this in outside conditions there are at least two main challenges that need to be dealt-with for the operation to succeed: 
+
+1. The marking on the balloon must be able to provide an omnidirectional reference for the drone.
+2. The balloon movement due to wind must be accounted for. 
+
+Changing the balloon pattern would be fairly straightforward since there are many different options in the realm of computer vision. For example, a pattern of fiducial markers spanning across the balloon could be used to define the balloon centroid regardless of the approach angle of the drone. On the other hand, dealing with the wind could prove more difficult, especially if the balloon system is meant to be affordable. For this perhaps active-stabilization combined with multiple tethering points to the ground robot could be used, or alternatively implement wind-correction to Cv-algorithms on the drone side by using wind markers attached to the balloon. 
+
+# How to install the code
+
+- Clone `src`
+- Install dependencies
+
+```bash
+cd ~/your_ws
+sudo apt-get update
+rosdep install --from-path src -yi
+cd cd ~/your_ws/scripts 
+chmod +x worldLaunch droneLaunch controlLaunch
+```
+- Build package
+
+# How to launch the simulation
+
+There are three scripts provided with the code It is recommended to launch each one in a separate terminal. They all have a line included to source install/setup.bash, so there is no need to do so separately. After building the workspace, they need to be executed in the following order:
+
+1. worldLaunch.sh will launch the gazebo worlds as well as spawn the modified create3 model. Before doing so it will kill any lingering gazebo and Tello related processes. This is done to avoid any glitches with the robot description (e.g. Create3 turning into a Tello)
+2. droneLaunch.sh will spawn the Tello drone model and then do a "takeoff" server call
+3. controlLaunch will launch all of the contoller nodes at the same time and thus the simulation will begin. 
+
+## Notes on the code implementation
+
+### Basic control logic
+
+In addition to existing packages for Tello and Create3, the system consist of four nodes: One for Create3 and three for Tello. 
+Tello has one node to mask and detect green areas and their centroids as coordinates within camera feed reference frame. These coordinates will be published to a topic, to which the controller node will subscribe. The controller node for the tello will move the drone forward, if the received centroid locations are close enough to the center. If not, it will center the coordinates by using a PID-control scheme that publishes velocity commands. To determine whether the drone is close enough to the balloon, a separate node is used to calculate, how large percentage of all the screen pixels are green and within the centered bounding box. If a threshold is reached, the drone will land. 
+
+In Create3, the square_mover node contained in create3_controller script is responsible for the square movement pattern. In theory, this could, for example be a trajectory generated by a path-planning algorithm or any other autonomous movement; the idea for this use case stays the same. 
+
+### Communication architecture
+
+We chose to use topics as the main communication channels. They are simple, clear and very straightforward to implement. Both robots publish String-type messages that communicate the status of the robot. Once again, message type does not really matter here, strings just clarify what is happening in the code. Then, depending on the status messages, the robots will act with the following logic: 
+
+
+1. Upon startin the simulation, Create3 will start to move, and this prompts the drone to start honing in on the guide sphere
+2. When close enough, the drone will signal for Create3 to stop
+3. Once Create3 has stopped, it will publish this status
+4. When drone is informed that Create3 has stopped, it will do a server call to land
+
+Communication topics and status messages are as follows:
+
+/drone1/status -> Create3 subscribes to this, messages are:
+    - "Drone following" -> Drone is honing in on the targe¨
+    - "Drone is close" -> Drone is close to the target and has stopped
+    - "Drone has landed" -> Drone has landed
+
+/create3_status  -> Drone subscribes to this, messages are: 
+    - "Create3 moving" -> The robot is moving
+    - "Create3 stopped" -> The robot has stopped 
+
+## Useful commands
+
+### Drone commands  
+`ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"`  
+`ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'land'}"`  
+`ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1`  
+`ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'up 30'}"`  
+`ros2 launch tello_driver teleop_launch.py`
+
+
 
 ## How to install the code
 
@@ -37,12 +99,4 @@ rosdep install --from-path src -yi
 ### Insert tello to simulator (simulator running)
 `ros2 launch tello_gazebo tello_launch.py`
 
-## Useful commands
-
-### Drone commands  
-`ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"`  
-`ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'land'}"`  
-`ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1`  
-`ros2 service call /tello_action tello_msgs/TelloAction "{cmd: 'up 30'}"`  
-`ros2 launch tello_driver teleop_launch.py`
 
