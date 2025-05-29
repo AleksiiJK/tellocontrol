@@ -91,12 +91,17 @@ class CoordinateController(Node):
     def status_callback(self,msg):
         self.status = msg
         self.get_logger().info(msg.data)
-        if msg.data == "Create3 stopped":
+        if msg.data in ["Create3 stopped"]:
             self.request = TelloAction.Request()
             self.request.cmd = 'land'
             self.client.call_async(self.request)
             message = String(data="Drone has landed")
             self.status_pub.publish(message)
+        elif msg.data in ["Waiting complete"]:
+            pass
+        else:
+            pass
+    
 
 
         

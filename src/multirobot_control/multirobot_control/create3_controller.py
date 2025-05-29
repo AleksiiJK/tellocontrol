@@ -56,11 +56,20 @@ class SquareMover(Node):
         if self.status in ["Drone is close"]:
             self.movement_phase = "stop"
             self.get_logger().info("Stopping due to drone proximity")
-        elif self.status in ["Drone following", "Start"]:
+        elif self.status in ["Drone following"]:
             if self.movement_phase == "stop":
                 self.movement_phase = "forward"
                 self.phase_start_time = self.get_clock().now().seconds_nanoseconds()[0]
                 self.get_logger().info("Starting square movement")
+
+        elif self.status in ["Drone has landed"]:
+            self.movement_phase = "stop"
+            self.get_logger().info("Waiting for the drone to land")
+            time.sleep(10)
+            msg = String()
+            msg.data = "Waiting complete"
+            self.status_publisher.publish(msg)
+            self.movement_phase = "forward" # Continue movement after the wait
 
     def cmd_vel_callback(self):
         # Take the time and set initial message
